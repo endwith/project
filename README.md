@@ -5,7 +5,7 @@
 
   ：丢失session参考博文https://blog.csdn.net/crystalqy/article/details/79083857 ，注意启动类中注入该配置文件，
   
-  ：respose无法通过feign返回给客户端cookie，导致登录认证无法实现，这里可以直接将登录模块从业务逻辑模块抽出，直接nginx方向代理登录模块，不通过feign。
+  ：respose无法通过feign返回给客户端cookie，导致登录认证无法实现，这里可以直接将登录模块从业务逻辑模块抽出，直接nginx方向代理登录模块，不通过feign。这是我的nginx配置 https://github.com/endwith/project/blob/master/nginx%E9%85%8D%E7%BD%AE.txt
   
 2>feign入参
 
