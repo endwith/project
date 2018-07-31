@@ -137,4 +137,7 @@ eureka.instance.lease-renewal-interval-in-seconds = 10
 
 eureka.instance.lease-expiration-duration-in-seconds = 30
             
-            
+
+8>部署服务器ip地址不是真实ip地址，无法从git上面fetch配置文件
+  
+  我的解决办法https://blog.csdn.net/as4566/article/details/81292333
