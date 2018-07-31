@@ -12,11 +12,12 @@
   ：feign入参参数必须添加注解@RequestParam(value = "pageNum", defaultValue =false) 没有注解会自动添加@RequestBody();如果过多@RequestBody()或报错，建议都用@RequestParam。不要入参实体类。
   
 3>feign上传文件：produces，consumes必须要，入参注解改为@RequestPart
-  /**
+    /**
      *上传图片
      */
     @RequestMapping(value ="/a/u/picture",method = RequestMethod.POST,produces = {MediaType.APPLICATION_JSON_UTF8_VALUE},
     consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    
     JSONObject loadPicture(@RequestPart(value = "picture",required = false)MultipartFile picture);
     @Configuration
      class MultipartSupportConfig {
