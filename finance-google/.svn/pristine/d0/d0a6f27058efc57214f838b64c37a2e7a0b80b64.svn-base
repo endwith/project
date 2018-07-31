@@ -1,0 +1,68 @@
+package com.ptteng.service.impl;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.ProductRecommendService;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ProductRecommendServiceHystric implements ProductRecommendService {
+    @Override
+    public JSONObject getAllBanner() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getBanners() {
+        return null;
+    }
+
+    @Override
+    public JSONObject addBanner() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getBannerById() {
+        return null;
+    }
+
+    @Override
+    public JSONObject updateBanner() {
+        return null;
+    }
+
+    @Override
+    public JSONObject deleteBanner() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getAllRecommend() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getRecommends() {
+        return null;
+    }
+
+    @Override
+    public JSONObject addRecommend() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getRecommend() {
+        return null;
+    }
+
+    @Override
+    public JSONObject updateRecommend() {
+        return null;
+    }
+
+    @Override
+    public JSONObject deleteRecommend() {
+        return null;
+    }
+}

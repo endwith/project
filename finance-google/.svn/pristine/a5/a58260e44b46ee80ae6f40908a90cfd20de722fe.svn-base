@@ -1,0 +1,17 @@
+server:
+  port: 20401
+
+eureka:
+  server:
+        enableSelfPreservation: false
+        evictionIntervalTimerInMs: 10000
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/,http://localhost:20409/eureka/
+spring:
+  freemarker:
+    prefer-file-system-access: false

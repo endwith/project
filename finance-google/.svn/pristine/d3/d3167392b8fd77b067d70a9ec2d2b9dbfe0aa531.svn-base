@@ -1,0 +1,51 @@
+package com.ptteng.service.impl;
+
+import com.ptteng.dao.InvestmentContractMapper;
+import com.ptteng.model.InvestmentContract;
+import com.ptteng.service.InvestmentContractService;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
+@Service
+public class InvestmentContractServiceImpl implements InvestmentContractService {
+@Resource
+    InvestmentContractMapper investmentContractMapper;
+    @Override
+    public int deleteByPrimaryKey(Long id) {
+        return 0;
+    }
+
+    @Override
+    public int insert(InvestmentContract record) {
+        return this.investmentContractMapper.insert(record);
+    }
+
+    @Override
+    public int insertSelective(InvestmentContract record) {
+        return 0;
+    }
+
+    @Override
+    public InvestmentContract selectByPrimaryKey(Long id) {
+        return investmentContractMapper.selectByPrimaryKey(id);
+    }
+
+
+    @Override
+    public int updateByPrimaryKeySelective(InvestmentContract record) {
+        return 0;
+    }
+
+    @Override
+    public int updateByPrimaryKey(InvestmentContract record) {
+        return 0;
+    }
+
+    @Override
+    public List<InvestmentContract> selectByPhone(String phone, Long a, Long b) {
+        return investmentContractMapper.selectByPhone(phone,a,b);
+    }
+}

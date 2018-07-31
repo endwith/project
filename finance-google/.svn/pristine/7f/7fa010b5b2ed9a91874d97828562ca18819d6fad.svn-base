@@ -1,0 +1,133 @@
+package com.ptteng.controller;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.model.BackstageAccount;
+
+import com.ptteng.model.ModuleManage;
+import com.ptteng.model.ModuleRole;
+import com.ptteng.model.User;
+import com.ptteng.service.BackstageAccountService;
+import com.ptteng.service.ModuleManageService;
+import com.ptteng.service.UserService;
+
+import com.ptteng.util.Md5Utils;
+import com.ptteng.util.Token;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.*;
+
+@RefreshScope
+@Controller
+public class UserController {
+    @Autowired
+    private JSONObject jsonObject;
+    @Autowired
+    private BackstageAccountService backstageAccountService;
+    @Autowired
+    private ModuleManageService moduleManageService;
+
+
+    org.slf4j.Logger logger = LoggerFactory.getLogger(UserController.class);
+    /**
+     *44后台登录
+     */
+    @RequestMapping(value ="/admin/a/login", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject login(Long id ,String password,HttpServletResponse response){
+        logger.info("/admin/a/login---POST---" +
+                "the request parameters are id:{},password:{},response;{}",id , password, response);
+//        String salt= UUID.randomUUID().toString();
+        logger.info(""+id);
+        logger.info(password);
+        //Token 和 md5
+        Token t=new Token();
+        String passwordWithMD5= Md5Utils.MD5(password);
+        logger.info("登录密码:::"+passwordWithMD5);
+        BackstageAccount backstageAccount=backstageAccountService.selectByPrimaryKey(id);
+        //没有该用户
+        if(backstageAccount==null)
+        {
+            jsonObject.put("code",1005);
+            jsonObject.put("data","");
+            return jsonObject;
+        }
+        //密码错误
+        if(!(backstageAccount.getPassword().equals(passwordWithMD5)))
+        {
+            jsonObject.put("code",9000);
+            jsonObject.put("data","");
+            return jsonObject;
+        }
+            String adminRole = backstageAccount.getAdminRole();
+            String[] roles ;
+            roles = adminRole.split(",");
+            List<ModuleRole> moduleManages = moduleManageService.selectByRole(Arrays.asList(roles));
+            Set modulesSet = new HashSet(moduleManages);//所有权限
+            Set roleSet = new HashSet();
+            for( ModuleRole moduleManage: moduleManages){
+                roleSet.add(moduleManage.getModuleName());
+            }
+        Long thisTime=System.currentTimeMillis();
+        Token tk=new Token();
+        //加密登录时间，用户名
+        String psw=tk.makeToken(String.valueOf(thisTime));
+        String idWithToken=tk.makeToken(String.valueOf(id));
+        Cookie userCookie=new Cookie("userId",idWithToken);//添加用户名
+        userCookie.setMaxAge(7*24*60*60);
+        userCookie.setPath("/");
+        response.addCookie(userCookie);
+        //cookie添加登录时间
+        Cookie c = new Cookie("key",psw);//添加登录时间
+        c.setMaxAge(7*24*60*60);
+        response.addCookie(c);
+        Cookie roleCookie = new Cookie("roleCookie",String.valueOf(roleSet));//添加登录角色
+        roleCookie.setMaxAge(7*24*60*60);
+        response.addCookie(roleCookie);
+            jsonObject.put("code",1000);
+            jsonObject.put("data",modulesSet);
+            logger.info(modulesSet.toString());
+            return jsonObject;
+    }
+    /**
+     *98密码管理
+     */
+    @RequestMapping(value ="/admin/a/u/password", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject updatePassword(String lastPassword, String newPassword1, String newPassword2,
+                                     HttpServletRequest request){
+        logger.info("/admin/a/u/password---POST---" +
+                "the request parameters are lastPassword:{},newPassword1:{},newPassword2;{}",
+                lastPassword,newPassword1,newPassword2);
+        Cookie[] cookies = request.getCookies();
+        long id = 0;
+        if(cookies!=null){
+            for(Cookie cookie:cookies){
+                if(cookie.getName().equals("userId")){
+                    id = Long.valueOf(cookie.getValue());
+                }
+            }
+        }
+        if(backstageAccountService.selectByPrimaryKey(id).getPassword().equals(Md5Utils.MD5(lastPassword))) {
+            if (newPassword1.equals(newPassword2)) {
+                BackstageAccount backstageAccount = new BackstageAccount();
+                backstageAccount.setPassword(newPassword1);
+                backstageAccount.setId(id);
+                backstageAccountService.updateByPrimaryKeySelective(backstageAccount);
+                jsonObject.put("code", 1000);
+            }
+        }
+        jsonObject.put("data","");
+        return jsonObject;
+    }
+
+
+}

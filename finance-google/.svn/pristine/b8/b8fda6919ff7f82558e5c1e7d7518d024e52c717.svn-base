@@ -1,0 +1,15 @@
+package com.ptteng.userHandler;
+
+
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+
+public class  UserLoginHandler extends UserHandler {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        return true;
+    }
+}

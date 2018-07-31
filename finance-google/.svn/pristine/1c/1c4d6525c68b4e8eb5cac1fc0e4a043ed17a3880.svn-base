@@ -1,0 +1,18 @@
+spring.application.name=finance-admin
+spring.cloud.config.label=master
+spring.cloud.config.profile=dev
+spring.cloud.config.uri=  http://118.126.113.248:20412/
+
+eureka.client.serviceUrl.defaultZone= http://39.108.173.252:20401/eureka/,http://120.78.91.61:20409/eureka/
+spring.cloud.config.discovery.enabled=true
+spring.cloud.config.discovery.serviceId=config-server-admin
+server.port= 20405
+#租期更新时间间隔（默认30秒）
+eureka.instance.lease-renewal-interval-in-seconds = 10
+#租期到期时间（默认90秒）
+eureka.instance.lease-expiration-duration-in-seconds = 30
+
+
+## 刷新时，关闭安全验证
+management.security.enabled=false
+

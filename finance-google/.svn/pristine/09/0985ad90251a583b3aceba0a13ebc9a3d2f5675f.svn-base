@@ -1,0 +1,62 @@
+package com.ptteng.service.impl;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.model.User;
+import com.ptteng.service.ManageUserService;
+import feign.Param;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ManageUserServiceHystric implements ManageUserService {
+@Autowired
+private  JSONObject jsonObject;
+    @Override
+    public JSONObject usersManage(Long page, Long size) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject getUsers(Long size, Long page, String trueName, String phone, Long id, Integer status) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject freeze(Integer status, String phone, Long id, User user) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject getUser(Long id) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject getRecord(Long userId, Long size, Long page) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject contractAll(Long userId, Long size, Long page) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject contract(Long id) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+}

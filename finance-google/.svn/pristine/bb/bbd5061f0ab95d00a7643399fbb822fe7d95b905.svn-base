@@ -1,0 +1,15 @@
+package com.ptteng.service.impl;
+
+import com.ptteng.service.FeignService;
+import org.springframework.stereotype.Component;
+
+//熔断器的实现类
+@Component
+public class FeignServiceHystric implements FeignService {
+    @Override
+    public String FromClient() {
+        return "sorry,连接断开";
+    }
+
+
+}

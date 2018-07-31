@@ -1,0 +1,35 @@
+eureka:
+  instance:
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 10
+  client:
+    serviceUrl:
+      defaultZone: http://39.108.173.252:20401/eureka/,http://120.78.91.61:20409/eureka/
+    fetch-registry: true
+server:
+  port: 20407
+spring:
+  redis:
+    port: 6379
+    host: 118.126.113.248
+    timeout: 0
+  session:
+   store-type: redis
+  application:
+   name: server-feign-client
+
+ribbon:
+ ReadTimeout: 120000
+ribbon:
+ ConnectTimeout: 30000
+
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+    command:
+      default:
+          execution:
+              isolation:
+                  thread:
+                      timeoutInMilliseconds: 60000

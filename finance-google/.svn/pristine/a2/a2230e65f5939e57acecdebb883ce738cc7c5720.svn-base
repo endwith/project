@@ -1,0 +1,55 @@
+package com.ptteng.service;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.impl.ModuleManageServiceHystric;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+/**
+ *提供一个java接口连接服务， 接口中的方法对应url接口就能直接访问了，不需要ribbon实例服务提供者
+ */
+//@FeignClient声明feign，添加fallback熔断器实现类
+@FeignClient(value = "finance-admin",fallback=ModuleManageServiceHystric.class)
+public interface ModuleManageService {
+    /**
+     *106模块管理查询模块
+     */
+    @RequestMapping(value ="/a/u/all-module", produces="application/json",method = RequestMethod.GET)
+     JSONObject getAllModule(@RequestParam(value = "page",required = false)Long page, @RequestParam(value = "size",required = false)Long size);
+    /**
+     *107模块模糊查询查询
+     */
+    @RequestMapping(value ="/a/u/modules", produces="application/json",method = RequestMethod.GET)
+     JSONObject getModules(@RequestParam(value = "id",required = false)Long id,@RequestParam(value = "moduleName",required = false)String moduleName,
+                           @RequestParam(value = "parentModule",required = false)Long parentModule,@RequestParam(value = "founder",required = false)String founder,
+                           @RequestParam(value = "page",required = false)Long page,@RequestParam(value = "size",required = false)Long size);
+    /**
+     *108模块查找（实际上是编辑按钮）
+     */
+    @RequestMapping(value ="/a/u/module/{id}", produces="application/json",method = RequestMethod.GET)
+     JSONObject getModuleById(@RequestParam(value = "id",required = false)long id);
+    /**
+     *109模块删除
+     */
+    @RequestMapping(value ="/a/u/module/{id}", produces="application/json",method = RequestMethod.DELETE)
+     JSONObject deleteModule(@RequestParam(value = "id",required = false)long id);
+    /**
+     *110模块更改（编辑好角色后点击保存）
+     */
+    @RequestMapping(value ="/a/u/module", produces="application/json",method = RequestMethod.PUT)
+     JSONObject updateModule(@RequestParam(value = "id",required = false)long id,@RequestParam(value = "moduleName",required = false)String moduleName,@RequestParam(value = "moduleUrl",required = false)String moduleUrl
+            ,@RequestParam(value = "parentModule",required = false)Long parentModule,@RequestParam(value = "type",required = false)String type);
+
+    /**
+     *111模块新增（新增好角色后点击保存）
+     */
+    @RequestMapping(value ="/a/u/module", produces="application/json",method = RequestMethod.POST)
+    JSONObject addModule(@RequestParam(value = "moduleName",required = false)String moduleName,
+                         @RequestParam(value = "moduleUrl",required = false)String moduleUrl
+            ,@RequestParam(value = "parentModule",required = false)Long parentModule,@RequestParam(value = "type",required = false)String type);
+}

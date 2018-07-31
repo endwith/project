@@ -1,0 +1,90 @@
+package com.ptteng.controller;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.model.ObligatoryRight;
+import com.ptteng.service.ObligatoryRightService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
+import java.math.BigDecimal;
+
+@RefreshScope
+@RestController
+public class ObligatoryRightController {
+    @Autowired
+    ObligatoryRightService obligatoryRightService;
+
+    /**
+     *54债权管理模块
+     */
+    @RequestMapping(value ="/a/u/obligatory-right", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getAllOblRight(Long page,Long size){
+        return obligatoryRightService.getAllOblRight(page, size);
+    }
+    /**
+     *55模糊查询债权管理
+     */
+    @RequestMapping(value ="/a/u/obligatory-rights", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getOblRights(Long page,Long size,Long id,String company,String corporate,Integer status){
+        return obligatoryRightService.getOblRights(page, size, id, company, corporate, status);
+    }
+    /**
+     *56添加债权
+     */
+    @RequestMapping(value ="/a/u/obligatory-right", produces="application/json",method = RequestMethod.POST)
+    public JSONObject addOblRight( String company,
+                                  String corporate, String mobile, String idCard, Long loanTime, BigDecimal loanSum,
+                                  Long loanTerm ,HttpServletRequest request){
+        return obligatoryRightService.addOblRight(company, corporate, mobile, idCard, loanTime, loanSum, loanTerm,request);
+    }
+    /**
+     *57编辑获取债权
+     */
+    @RequestMapping(value ="/a/u/obligatory-right/{id}", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getOblRight(Long id){
+        return obligatoryRightService.getOblRight(id);
+    }
+    /**
+     *58编辑-保存债权
+     */
+    @RequestMapping(value ="/a/u/obligatory-right", produces="application/json",method = RequestMethod.PUT)
+    public JSONObject updateOblRight(Long id,String company,String corporate,String mobile,String idCard,
+                                     Long loanTime,BigDecimal loanSum,Long loanTerm,HttpServletRequest request){
+        return obligatoryRightService.updateOblRight(id, company, corporate, mobile, idCard, loanTime, loanSum, loanTerm,request);
+    }
+    /**
+     *59删除债权
+     */
+    @RequestMapping(value ="/a/u/obligatory-right/{id}", produces="application/json",method = RequestMethod.DELETE)
+    public JSONObject deleteOblRight(Long id){
+        return obligatoryRightService.deleteOblRight(id);
+    }
+    /**
+     *60债权配置管理
+     */
+    @RequestMapping(value ="/a/u/unmatched-obligatory-right", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getUnmatchedOblRight(Long id){
+        return obligatoryRightService.getUnmatchedOblRight(id);
+    }
+    /**
+     *61债权配置管理-所有投资
+     */
+    @RequestMapping(value ="/a/u/matched-contract", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getMatchedContract(Long page,Long size,Long id){
+        return obligatoryRightService.getMatchedContract(page, size, id);
+    }
+    /**
+     *62债权配置管理-匹配
+     */
+    @RequestMapping(value ="/a/u/matching-obligatory-right", produces="application/json",method = RequestMethod.PUT)
+    public JSONObject matchingOblRight(BigDecimal matchingAmount,
+                                       Long obligatoryId,HttpServletRequest request){
+        return obligatoryRightService.matchingOblRight(matchingAmount, obligatoryId,request);
+    }
+
+}

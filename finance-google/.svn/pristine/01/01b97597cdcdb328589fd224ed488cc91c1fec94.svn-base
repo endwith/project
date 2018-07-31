@@ -1,0 +1,11 @@
+server:
+  port: 20402
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:20401/eureka/,http://localhost:20409/eureka/
+
+spring:
+  application:
+    name: web-admin

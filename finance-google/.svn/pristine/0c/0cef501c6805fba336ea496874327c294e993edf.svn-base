@@ -1,0 +1,36 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://39.108.173.252:20401/eureka/,http://120.78.91.61:20409/eureka/
+server:
+  port: 20413
+spring:
+  application:
+    name: service-zuul
+zuul:
+  routes:
+    admin:
+      path: /admin/**
+      serviceId: server-feign-admin
+      sensitiveHeaders:
+    client:
+      path: /client/**
+      serviceId: server-feign-client
+      sensitiveHeaders:
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+ribbon:
+ ReadTimeout: 120000
+ ConnectTimeout: 30000
+
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000

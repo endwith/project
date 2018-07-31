@@ -1,0 +1,79 @@
+package com.ptteng.service;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.model.ObligatoryRight;
+import com.ptteng.service.impl.ObligatoryRightServiceHystric;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import java.math.BigDecimal;
+
+/**
+ *提供一个java接口连接服务， 接口中的方法对应url接口就能直接访问了，不需要ribbon实例服务提供者
+ */
+//@FeignClient声明feign，添加fallback熔断器实现类
+@FeignClient(value = "finance-admin",fallback=ObligatoryRightServiceHystric.class)
+public interface ObligatoryRightService {
+    /**
+     *54债权管理模块
+     */
+    @RequestMapping(value ="/a/u/obligatory-right", produces="application/json",method = RequestMethod.GET)
+     JSONObject getAllOblRight(@RequestParam(value = "page",required = false)Long page, @RequestParam(value = "size",required = false)Long size);
+    /**
+     *55模糊查询债权管理
+     */
+    @RequestMapping(value ="/a/u/obligatory-rights", produces="application/json",method = RequestMethod.GET)
+     JSONObject getOblRights(@RequestParam(value = "page",required = false)Long page,@RequestParam(value = "size",required = false)Long size,
+                             @RequestParam(value = "id",required = false)Long id, @RequestParam(value = "company",required = false)String company,
+                             @RequestParam(value = "corporate",required = false)String corporate,@RequestParam(value = "status",required = false)Integer status);
+    /**
+     *56添加债权
+     */
+    @RequestMapping(value ="/a/u/obligatory-right", produces="application/json",method = RequestMethod.POST)
+     JSONObject addOblRight(@RequestParam(value = "company",required = false)String company,
+                            @RequestParam(value = "corporate",required = false)String corporate, @RequestParam(value = "mobile",required = false)String mobile,
+                            @RequestParam(value = "idCard",required = false)String idCard, @RequestParam(value = "loanTime",required = false)Long loanTime, @RequestParam(value = "loanSum",required = false)BigDecimal loanSum,
+                            @RequestParam(value = "loanTerm",required = false)Long loanTerm
+                            , @RequestParam(value = "request",required = false)HttpServletRequest request);
+    /**
+     *57编辑获取债权
+     */
+    @RequestMapping(value ="/a/u/obligatory-right/{id}", produces="application/json",method = RequestMethod.GET)
+     JSONObject getOblRight(@RequestParam(value = "id",required = false)Long id);
+    /**
+     *58编辑-保存债权
+     */
+    @RequestMapping(value ="/a/u/obligatory-right", produces="application/json",method = RequestMethod.PUT)
+     JSONObject updateOblRight(@RequestParam(value = "id",required = false)Long id,@RequestParam(value = "company",required = false)String company,@RequestParam(value = "corporate",required = false)String corporate,
+                               @RequestParam(value = "mobile",required = false)String mobile,@RequestParam(value = "idCard",required = false)String idCard,
+                               @RequestParam(value = "loanTime",required = false)Long loanTime,@RequestParam(value = "loanSum",required = false)BigDecimal loanSum,@RequestParam(value = "loanTerm",required = false)Long loanTerm
+                                , @RequestParam(value = "request",required = false)HttpServletRequest request
+                             );
+    /**
+     *59删除债权
+     */
+    @RequestMapping(value ="/a/u/obligatory-right/{id}", produces="application/json",method = RequestMethod.DELETE)
+     JSONObject deleteOblRight(@RequestParam(value = "id",required = false)Long id);
+    /**
+     *60债权配置管理
+     */
+    @RequestMapping(value ="/a/u/unmatched-obligatory-right", produces="application/json",method = RequestMethod.GET)
+     JSONObject getUnmatchedOblRight(@RequestParam(value = "id",required = false)Long id);
+    /**
+     *61债权配置管理-所有投资
+     */
+    @RequestMapping(value ="/a/u/matched-contract", produces="application/json",method = RequestMethod.GET)
+     JSONObject getMatchedContract(@RequestParam(value = "page",required = false)Long page,@RequestParam(value = "size",required = false)Long size,@RequestParam(value = "id",required = false)Long id);
+    /**
+     *62债权配置管理-匹配
+     */
+    @RequestMapping(value ="/a/u/matching-obligatory-right", produces="application/json",method = RequestMethod.PUT)
+     JSONObject matchingOblRight( @RequestParam(value = "json",required = false)String  json,
+                                  @RequestParam(value = "obligatoryId",required = false) Long obligatoryId,
+                                  @RequestParam(value = "matchingAmount",required = false)BigDecimal matchingAmount
+            , @RequestParam(value = "request",required = false)HttpServletRequest request);
+
+}

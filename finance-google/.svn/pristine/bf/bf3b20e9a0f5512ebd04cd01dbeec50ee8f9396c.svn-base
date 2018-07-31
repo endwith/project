@@ -1,0 +1,53 @@
+package com.ptteng.service.impl;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.UserOperationService;
+import org.springframework.stereotype.Component;
+
+@Component
+public class UserOperationServiceHystric implements UserOperationService {
+    @Override
+    public JSONObject verify() {
+        return null;
+    }
+
+    @Override
+    public JSONObject verifyphone() {
+        return null;
+    }
+
+    @Override
+    public JSONObject pictureCode() {
+        return null;
+    }
+
+    @Override
+    public JSONObject register() {
+        return null;
+    }
+
+    @Override
+    public JSONObject signer() {
+        return null;
+    }
+
+    @Override
+    public JSONObject findPassword() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getPassword() {
+        return null;
+    }
+
+    @Override
+    public JSONObject outer() {
+        return null;
+    }
+
+    @Override
+    public JSONObject opinion() {
+        return null;
+    }
+}

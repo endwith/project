@@ -1,0 +1,43 @@
+package com.ptteng.service.impl;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.ManageUserService;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ManageUserServiceHystric implements ManageUserService {
+    @Override
+    public JSONObject usersManage() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getUsers() {
+        return null;
+    }
+
+    @Override
+    public JSONObject freeze() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getUser() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getRecord() {
+        return null;
+    }
+
+    @Override
+    public JSONObject contractAll() {
+        return null;
+    }
+
+    @Override
+    public JSONObject contract() {
+        return null;
+    }
+}

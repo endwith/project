@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ptteng.dao.MessageRelationshipMapper" >
+  <resultMap id="BaseResultMap" type="com.ptteng.model.MessageRelationship" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="infor_id" property="inforId" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+  </resultMap>
+  <!-- 定义resultMap，type为HashMap -->
+  <resultMap id="PartMessRelaMap" type="java.util.HashMap">
+    <result column="infor_id" property="inforId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, infor_id, user_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from message_relationship
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from message_relationship
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ptteng.model.MessageRelationship" >
+    insert into message_relationship (id, infor_id, user_id
+      )
+    values (#{id,jdbcType=BIGINT}, #{inforId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ptteng.model.MessageRelationship" >
+    insert into message_relationship
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="inforId != null" >
+        infor_id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="inforId != null" >
+        #{inforId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ptteng.model.MessageRelationship" >
+    update message_relationship
+    <set >
+      <if test="inforId != null" >
+        infor_id = #{inforId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ptteng.model.MessageRelationship" >
+    update message_relationship
+    set infor_id = #{inforId,jdbcType=BIGINT},
+      user_id = #{userId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="selectByUserId" resultMap="PartMessRelaMap">
+    SELECT distinct
+		   infor_id
+				FROM
+					message_relationship
+				WHERE
+					user_id = #{userId}
+  </select>
+
+  <delete id="deleteByInforId" parameterType="java.lang.Long" >
+    delete from message_relationship
+    where infor_id = #{inforId,jdbcType=BIGINT}
+  </delete>
+</mapper>

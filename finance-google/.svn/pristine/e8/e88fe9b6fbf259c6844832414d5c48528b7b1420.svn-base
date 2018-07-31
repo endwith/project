@@ -1,0 +1,53 @@
+package com.ptteng.service;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.model.Suggestion;
+import com.ptteng.service.impl.SuggestionServiceHystric;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+
+/**
+ *提供一个java接口连接服务， 接口中的方法对应url接口就能直接访问了，不需要ribbon实例服务提供者
+ */
+//@FeignClient声明feign，添加fallback熔断器实现类
+@FeignClient(value = "finance-admin",fallback=SuggestionServiceHystric.class)
+public interface SuggestionService {
+    /**
+     *92意见反馈入口
+     */
+    @RequestMapping(value ="/a/u/all-suggestion", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+     JSONObject getAllSuggestion(@RequestParam("page")Long page, @RequestParam("size")Long size);
+    /**
+     *93意见反馈查询
+     */
+    @RequestMapping(value ="/a/u/suggestion", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+     JSONObject getSuggestions(@RequestParam("page")Long page,@RequestParam("size")Long size,@RequestParam("id")Long id,@RequestParam("suggeContent")String suggeContent,
+                               @RequestParam("adviser")String adviser, @RequestParam("phone")String phone);
+    /**
+     *94意见反馈查看详情
+     *95意见反馈回复-获取
+     */
+    @RequestMapping(value ="/a/u/suggestion/{id}", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+     JSONObject getSuggestionById(@RequestParam("id")Long id);
+    /**
+     *96意见反馈回复
+     */
+    @RequestMapping(value ="/a/u/suggestion/{id}", produces="application/json",method = RequestMethod.PUT)
+    @ResponseBody
+     JSONObject updateSuggestion(@RequestBody HttpServletRequest request, @RequestParam("id")Long id, @RequestParam("status")Integer status,
+                                 @RequestParam("replyContent")String replyContent, @RequestBody Suggestion suggestion);
+    /**
+     *97意见反馈删除
+     */
+    @RequestMapping(value ="/a/u/suggestion/{id}", produces="application/json",method = RequestMethod.DELETE)
+    @ResponseBody
+     JSONObject deleteSuggestion(@RequestParam("id")Long id);
+
+}

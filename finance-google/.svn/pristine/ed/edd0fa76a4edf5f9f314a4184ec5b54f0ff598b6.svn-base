@@ -1,0 +1,73 @@
+package com.ptteng.service;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.impl.UserOperationServiceHystric;
+import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+/**
+ *提供一个java接口连接服务， 接口中的方法对应url接口就能直接访问了，不需要ribbon实例服务提供者
+ */
+//@FeignClient声明feign，添加fallback熔断器实现类
+@FeignClient(value = "finance-client",fallback=UserOperationServiceHystric.class)
+public interface UserOperationService {
+    /**
+     *1获取短信验证码
+     */
+    @RequestMapping(value ="/a/verification-sms-code", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+     JSONObject verify();
+    /**
+     *2判断手机号码正确性
+     */
+    @RequestMapping(value ="/a/phone-number", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+     JSONObject verifyphone();
+    /**
+     *3获取图形验证码
+     */
+    @RequestMapping(value ="/a/picture-code", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+     JSONObject pictureCode();
+    /**
+     *4注册用户并显示主页面
+     */
+    @RequestMapping(value ="/a/register", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+     JSONObject register();
+    /**
+     *5登录显示主页面
+     */
+    @RequestMapping(value ="/a/signer", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+     JSONObject signer(@RequestParam("phoneNumber")String phoneNumber,@RequestParam("password")String password);
+    /**
+     *6找回密码前验证手机
+     */
+    @RequestMapping(value ="/a/mobile", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+     JSONObject findPassword();
+    /**
+     *7找回密码
+     */
+    @RequestMapping(value ="/a/password", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+     JSONObject getPassword();
+    /**
+     *25退出登录
+     */
+    @RequestMapping(value ="/a/u/outer", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+     JSONObject outer();
+    /**
+     *43意见反馈
+     */
+    @RequestMapping(value ="/a/u/opinion", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+     JSONObject opinion();
+
+
+}

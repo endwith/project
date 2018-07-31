@@ -1,0 +1,32 @@
+package com.ptteng.dao;
+
+import com.ptteng.model.InformationManage;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
+
+@Mapper
+public interface InformationManageMapper {
+    int deleteByPrimaryKey(Long id);
+
+    int insert(InformationManage record);
+
+    int insertSelective(InformationManage record);
+
+    InformationManage selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(InformationManage record);
+
+    int updateByPrimaryKey(InformationManage record);
+
+    List<InformationManage> forSelect(@Param("a") Long a, @Param("b") Long b);
+
+    List<InformationManage> select(@Param("a") Long a, @Param("b") Long b, @Param("inforTitle") String inforTitle, @Param("inforStatus") int inforStatus, @Param("founder") String founder, @Param("sendBeginTime") Long sendBeginTime, @Param("sendEndTime") Long sendEndTime);
+
+    List<Object> selectInforByRead(@Param("userId") Long userId,@Param("b") Long b);
+
+    List<Object> selectInforByReadList(@Param("list") List<Long> inforId,@Param("b") Long b);
+
+    List<Object> selectContent(@Param("id") Long id);
+}

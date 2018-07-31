@@ -1,0 +1,58 @@
+server.tomcat.uri-encoding= UTF-8
+spring.http.encoding.force= true
+spring.http.encoding.charset= UTF-8
+spring.http.encoding.enabled= true
+
+#数据库
+spring.datasource.url= jdbc:mysql://118.126.113.248:3306/polyFinance-google?useUnicode=true&amp;characterEncoding=utf8
+spring.datasource.username= arthur
+spring.datasource.password= arthur
+#spring.datasource.url= jdbc:mysql://127.0.0.1:3306/finance_google?useUnicode=true&amp;characterEncoding=utf8
+#spring.datasource.username=root
+#spring.datasource.password=123456
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+spring.datasource.type=org.apache.commons.dbcp2.BasicDataSource
+spring.datasource.dbcp2.initial-size= 50
+spring.datasource.dbcp2.max-idle= 50
+spring.datasource.dbcp2.min-idle=5
+spring.datasource.dbcp2.max-wait-millis=10000
+spring.datasource.dbcp2.validation-query= SELECT 1
+
+
+#redis
+spring.redis.timeout=0
+spring.redis.host=118.126.113.248
+spring.redis.port=6379
+spring.redis.pool.max-idle=8
+spring.redis.pool.max-active=10
+spring.redis.pool.max-wait= -1
+spring.redis.pool.min-idle= 0
+
+## Mybatis \u914D\u7F6E
+mybatis.type-aliases-package= com.ptteng.model
+mybatis.mapper-locations=classpath:mapper/*.xml
+
+## 刷新时，关闭安全验证
+management.security.enabled=false
+## 开启消息跟踪
+spring.cloud.bus.trace.enabled=true
+spring.rabbitmq.host=localhost
+spring.rabbitmq.port=20415
+spring.rabbitmq.username=guest
+spring.rabbitmq.password=guest
+
+
+
+#aliyun
+endpoint=oss-cn-shenzhen.aliyuncs.com
+accessKeyId=LTAIKnqIIeA3uHck
+accessKeySecret=JSoSk7dfaEz8aq7QLLKjkzQ2WWEHvH
+bucketName=endwith
+folderName=finance-google
+
+
+##qiniuyun
+qiniu.endpoint=p966blihe.bkt.clouddn.com
+qiniu.accessKeyId=eizh5lDk30sdzu_4GQa6A_UhEBrULN8__BvRPWeD
+qiniu.accessKeySecret=CuV9ZQPIlycm-ON04iz-luhAbvQ-5BPvXl-UkzXv
+qiniu.bucketName=endwith

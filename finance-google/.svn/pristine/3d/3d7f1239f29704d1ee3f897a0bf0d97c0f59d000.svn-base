@@ -1,0 +1,14 @@
+package com.ptteng.quartz;
+
+import org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean;
+
+import java.sql.Ref;
+
+public class JobDetailDO {
+    public void addJobDetail(MethodInvokingJobDetailFactoryBean jobDetail) {
+    }
+
+    public MethodInvokingJobDetailFactoryBean getJobDetail(String balanceProfit) {
+        return null;
+    }
+}

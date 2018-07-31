@@ -1,0 +1,86 @@
+package com.ptteng.controller;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.model.ModuleRole;
+import com.ptteng.model.ModuleRoleManage;
+import com.ptteng.model.RoleManage;
+import com.ptteng.service.BackstageAccountService;
+import com.ptteng.service.RoleService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.security.RolesAllowed;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+@RefreshScope
+@RestController
+public class RoleController {
+    @Autowired
+    RoleService roleService;
+
+    /**
+     * 111角色管理查询角色
+     */
+    @RequestMapping(value = "/a/u/all-role", produces = "application/json", method = RequestMethod.GET)
+    public JSONObject getAllRole(Long page, Long size) {
+        return roleService.getAllRole(page, size);
+    }
+
+    /**
+     * 112角色模糊查询
+     */
+    @RequestMapping(value = "/a/u/roles", produces = "application/json", method = RequestMethod.GET)
+    public JSONObject getRoles(Long id, String role, String founder,
+                               String modifier, Long page, Long size) {
+        return roleService.getRoles(id, role, founder, modifier, page, size);
+    }
+
+    /**
+     * 113角色查找（编辑）
+     */
+    @RequestMapping(value = "/a/u/role/{id}", produces = "application/json", method = RequestMethod.GET)
+    public JSONObject getRoleById(long id) {
+        return roleService.getRoleById(id);
+    }
+
+    /**
+     * 114角色删除
+     */
+    @RequestMapping(value = "/a/u/role/{id}", produces = "application/json", method = RequestMethod.DELETE)
+    public JSONObject deleteRole(long id) {
+        return roleService.deleteRole(id);
+    }
+
+    /**
+     * 115角色更改（编辑好角色后点击保存）
+     */
+    @RequestMapping(value = "/a/u/role", produces = "application/json", method = RequestMethod.PUT)
+    public JSONObject updateRole(long roleId, String role, String moduleIdArray) {
+        return roleService.updateRole(roleId, role, moduleIdArray);
+    }
+
+    /**
+     * 116角色增加
+     */
+    @RequestMapping(value = "/a/u/role", produces = "application/json", method = RequestMethod.GET)
+    public JSONObject addRole() {
+        return roleService.addRole();
+    }
+
+    /**
+     * 117角色保存（增加好角色后点击保存）
+     */
+    @RequestMapping(value = "/a/u/role", produces = "application/json", method = RequestMethod.POST)
+    public JSONObject addRole(String role, String moduleIdArray) {
+        return roleService.addRole(role, moduleIdArray);
+    }
+}

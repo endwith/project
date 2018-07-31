@@ -1,0 +1,20 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://39.108.173.252:20401/eureka/,http://118.126.113.248:20409/eureka/
+server:
+  port: 20413
+spring:
+  application:
+    name: service-zuul
+zuul:
+  routes:
+    admin:
+      path: /admin/**
+      serviceId: server-feign-admin
+      sensitiveHeaders:
+    client:
+      path: /client/**
+      serviceId: server-feign-client
+      sensitiveHeaders:
+

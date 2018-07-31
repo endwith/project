@@ -1,0 +1,66 @@
+package com.ptteng.controller;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.BackstageAccountService;
+import com.ptteng.service.ModuleManageService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@RefreshScope
+@Controller
+public class ModuleManageController {
+    @Autowired
+    ModuleManageService moduleManageService;
+
+    /**
+     *106模块管理查询模块
+     */
+    @RequestMapping(value ="/a/u/all-module", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getAllModule(Long page,Long size){
+        return moduleManageService.getAllModule(page, size);
+    }
+    /**
+     *107模块模糊查询查询
+     */
+    @RequestMapping(value ="/a/u/modules", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getModules(Long id,String moduleName,Long parentModule
+            ,String founder,Long page,Long size){
+        return moduleManageService.getModules(id, moduleName, parentModule, founder, page, size);
+    }
+    /**
+     *108模块查找（实际上是编辑按钮）
+     */
+    @RequestMapping(value ="/a/u/module/{id}", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getModuleById(long id){
+        return moduleManageService.getModuleById(id);
+    }
+    /**
+     *109模块删除
+     */
+    @RequestMapping(value ="/a/u/module/{id}", produces="application/json",method = RequestMethod.DELETE)
+    public JSONObject deleteModule(long id){
+        return moduleManageService.deleteModule(id);
+    }
+    /**
+     *110模块更改（编辑好角色后点击保存）
+     */
+    @RequestMapping(value ="/a/u/module", produces="application/json",method = RequestMethod.PUT)
+    public JSONObject updateModule(long id,String moduleName,String moduleUrl
+            ,Long parentModule,String type){
+        return moduleManageService.updateModule(id, moduleName, moduleUrl, parentModule, type);
+    }
+    /**
+     *111模块新增（新增好角色后点击保存）
+     */
+    @RequestMapping(value ="/a/u/module", produces="application/json",method = RequestMethod.POST)
+    public JSONObject addModule(String moduleName,String moduleUrl
+            ,Long parentModule,String type){
+        return moduleManageService.addModule(moduleName, moduleUrl
+                , parentModule, type);
+    }
+
+}

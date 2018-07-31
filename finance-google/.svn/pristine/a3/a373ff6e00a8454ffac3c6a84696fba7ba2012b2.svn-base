@@ -1,0 +1,71 @@
+package com.ptteng.service;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.model.InformationManage;
+import com.ptteng.service.impl.InformationServiceHystric;
+import feign.Param;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+
+/**
+ *提供一个java接口连接服务， 接口中的方法对应url接口就能直接访问了，不需要ribbon实例服务提供者
+ */
+//@FeignClient声明feign，添加fallback熔断器实现类
+@FeignClient(value = "finance-admin",fallback=InformationServiceHystric.class)
+public interface InformationService {
+    /**
+     *84消息管理入口
+     */
+    @RequestMapping(value ="/a/u/all-information", produces="application/json",method = RequestMethod.GET)
+     JSONObject getAllInformation(@Param("page") Long page, @Param("size")Long size);
+    /**
+     *85消息管理查询
+     */
+    @RequestMapping(value ="/a/u/information", produces="application/json",method = RequestMethod.GET)
+     JSONObject getInformation(@Param("page")Long page,@Param("size")Long size,@Param("inforTitle")String inforTitle,
+                               @Param("inforStatus")Integer inforStatus,
+                               @Param("founder")String founder,@Param("sendBeginTime")Long sendBeginTime,
+                               @Param("sendEndTime")Long sendEndTime);
+    /**
+     *86消息管理新增
+     */
+    @RequestMapping(value ="/a/u/information", produces="application/json",method = RequestMethod.POST)
+     JSONObject addInformation(@Param("inforTitle")String inforTitle,
+                               @RequestBody MultipartFile inforPicture,
+                               @Param("inforContent") String inforContent,
+                               @Param("sendTime")Long sendTime,
+                               @Param("inforStatus")Integer inforStatus,
+                               @RequestBody InformationManage informationManage);
+    /**
+     *87消息管理编辑-获取
+     *90消息管理查看详情
+     */
+    @RequestMapping(value ="/a/u/information/{id}", produces="application/json",method = RequestMethod.GET)
+     JSONObject getInformationById(@Param("id")Long id);
+    /**
+     *88消息管理编辑-更改
+     *89消息管理取消推送
+     */
+    @RequestMapping(value ="/a/u/information/{id}", produces="application/json",method = RequestMethod.PUT)
+     JSONObject updateInformation(@Param("id")Long id, @Param("inforTitle")String inforTitle,
+                                  @RequestBody MultipartFile inforPicture,
+                                  @Param("inforContent")String inforContent,
+                                  @Param("sendTime") Long sendTime,
+                                  @Param("inforStatus")  Integer inforStatus,
+                                  @RequestBody InformationManage informationManage);
+    /**
+     *91消息管理删除
+     */
+    @RequestMapping(value ="/a/u/information/{id}", produces="application/json",method = RequestMethod.DELETE)
+     JSONObject deleteInformation(@Param("id") Long id);
+
+
+}

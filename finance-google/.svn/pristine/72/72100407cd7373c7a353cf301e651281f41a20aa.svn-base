@@ -1,0 +1,75 @@
+package com.ptteng.service.impl;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.UserOperationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class UserOperationServiceHystric implements UserOperationService {
+    @Autowired
+    private JSONObject jsonObject;
+    @Override
+    public JSONObject verify() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject verifyphone() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject pictureCode() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject register() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject signer(String phoneNumber, String password) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+
+    @Override
+    public JSONObject findPassword() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject getPassword() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject outer() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject opinion() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+}

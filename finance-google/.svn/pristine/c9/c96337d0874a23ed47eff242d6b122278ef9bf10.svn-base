@@ -1,0 +1,21 @@
+server:
+  port: 3917
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://backup1:8761/eureka/,http://master:8761/eureka/
+
+spring:
+  application:
+    name: web-admin
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/student
+    username: root
+    password: 654321
+
+#mybatis
+mybatis:
+ mapper-locations: classpath:mapper/*.xml
+ type-aliases-package: com.ptteng.model

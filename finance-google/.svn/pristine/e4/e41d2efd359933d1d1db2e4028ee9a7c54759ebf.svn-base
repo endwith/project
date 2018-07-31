@@ -1,0 +1,95 @@
+package com.ptteng.controller;
+
+
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.UserMessageService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
+
+
+@RestController
+public class UserMessageController  {
+    @Autowired
+    UserMessageService userMessageService ;
+    /**
+     *16显示个人信息
+     */
+    @RequestMapping(value ="/client/a/u/own-messages", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getMessages(){
+        return userMessageService.getMessages();
+    }
+    /**
+     *17实名验证
+     */
+    @RequestMapping(value ="/client/a/u/real-name", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject realName(){
+        return userMessageService.realName();
+    }
+
+    /**
+     *20需要短信验证（更换手机时）
+     */
+    @RequestMapping(value ="/client/a/u/sms-code", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject smsCode(){
+        return userMessageService.smsCode();
+    }
+
+    /**
+     *23更换手机
+     */
+    @RequestMapping(value ="/client/a/u/new-phone-number", produces="application/json",method = RequestMethod.PUT)
+    @ResponseBody
+    public JSONObject newPhone(){
+        return userMessageService.newPhone();
+    }
+    /**
+     *24修改密码
+     */
+    @RequestMapping(value ="/client/a/u/new-password", produces="application/json",method = RequestMethod.PUT)
+    @ResponseBody
+    public JSONObject newPassword(){
+        return userMessageService.newPassword();
+    }
+    /**
+     *26消息中心(应用消息)
+     */
+    @RequestMapping(value ="/client/a/u/information-center", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject informationCenter(){
+        return userMessageService.informationCenter();
+    }
+    /**
+     *27消息阅读(应用消息)
+     */
+    @RequestMapping(value ="/client/a/u/information", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject information(){
+        return userMessageService.information();
+    }
+    /**
+     *26消息中心(用户建议)
+     */
+    @RequestMapping(value ="/client/a/u/sugge-center", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject suggeCenter() {
+        return userMessageService.suggeCenter();
+    }
+    /**
+     *27消息阅读(用户建议)
+     */
+    @RequestMapping(value ="/client/a/u/sugge", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject sugge() {
+        return userMessageService.suggeCenter();
+    }
+
+}

@@ -1,0 +1,63 @@
+package com.ptteng.service.impl;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.UserMessageService;
+import org.springframework.stereotype.Component;
+
+@Component
+public class UserMessageServiceHystric implements UserMessageService {
+    @Override
+    public JSONObject getMessages() {
+        return null;
+    }
+
+    @Override
+    public JSONObject realName() {
+        return null;
+    }
+
+    @Override
+    public JSONObject bingBankCard() {
+        return null;
+    }
+
+    @Override
+    public JSONObject trueName() {
+        return null;
+    }
+
+    @Override
+    public JSONObject smsCode() {
+        return null;
+    }
+
+    @Override
+    public JSONObject verificationCode() {
+        return null;
+    }
+
+    @Override
+    public JSONObject checkedCode() {
+        return null;
+    }
+
+    @Override
+    public JSONObject newPhone() {
+        return null;
+    }
+
+    @Override
+    public JSONObject newPassword() {
+        return null;
+    }
+
+    @Override
+    public JSONObject informationCenter() {
+        return null;
+    }
+
+    @Override
+    public JSONObject information() {
+        return null;
+    }
+}

@@ -1,0 +1,343 @@
+package com.ptteng.controller;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.model.*;
+import com.ptteng.service.BackstageAccountService;
+import com.ptteng.service.MatchService;
+import com.ptteng.service.ObligatoryRightService;
+import com.ptteng.service.TradeService;
+import com.ptteng.util.CheckPhone;
+import com.ptteng.util.Token;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.lang.reflect.Field;
+import java.math.BigDecimal;
+import java.util.*;
+
+@RefreshScope
+@RestController
+public class ObligatoryRightController {
+    org.slf4j.Logger logger = LoggerFactory.getLogger(ObligatoryRightController.class);
+    @Autowired
+    private JSONObject jsonObject;
+    @Resource
+    private TradeService tradeService;
+    @Resource
+    private ObligatoryRightService obligatoryRightService;
+    @Resource
+    private MatchService matchService;
+    @Resource
+    private Token token;
+    @Resource
+    BackstageAccountService backstageAccountService;
+    @Autowired
+    HttpServletRequest request;
+    @Autowired
+    HttpServletResponse response;
+    /**
+     *54债权管理模块
+     */
+    @RequestMapping(value ="/a/u/obligatory-right", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getAllOblRight(Long page,Long size){
+        logger.info("/a/u/obligatory-right---GET---the request parameters are page:{},size:{}",page,size);
+        List<ObligatoryRight> obligatoryRights;
+        Long total;
+        try{
+        if(page!=null){
+            obligatoryRights=obligatoryRightService.forSelect((page-1)*size, size);
+        }else {
+            obligatoryRights=obligatoryRightService.forSelect(0L,size);
+        }
+        total=obligatoryRightService.selectCount();
+
+        List<ObligatoryAndTrade> obligatoryAndTrades = new ArrayList<>();
+        for(ObligatoryRight obligatoryRight :obligatoryRights) {
+            ObligatoryAndTrade obligatoryAndTrade = new ObligatoryAndTrade();
+            obligatoryAndTrade.setObligatoryRight(obligatoryRight);
+             obligatoryAndTrade.setTrades(obligatoryRightService.getTrade(obligatoryRight.getId()));
+             obligatoryAndTrades.add(obligatoryAndTrade);
+        }
+        logger.info(obligatoryAndTrades.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",obligatoryAndTrades);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        return jsonObject;
+}
+    /**
+     *55模糊查询债权管理
+     */
+    @RequestMapping(value ="/a/u/obligatory-rights", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getOblRights(Long page,Long size,Long id,String company,String corporate,Integer status){
+        logger.info("/a/u/obligatory-rights---GET---the request parameters are page:{},size:{},id:{},company:{},corporate:{},status:{}",page,size,id,company,corporate,status);
+        List<ObligatoryRight> obligatoryRights;
+        Long total;
+        try{
+        if(page!=null){
+            obligatoryRights=obligatoryRightService.select((page-1)*size, size,id,company,corporate,status);
+        }else {
+            obligatoryRights=obligatoryRightService.select(0L,size,id,company,corporate,status);
+        }
+        total=obligatoryRightService.selectCount();
+        } catch (Throwable e){
+        logger.error("异常"+e);
+        jsonObject.put("data","");
+        jsonObject.put("code",2001);
+        return jsonObject;
+        }
+        Map<String,Object> map=new HashMap<>();
+        map.put("total",total);
+        map.put("obligatoryRights",obligatoryRights);
+//        logger.info(obligatoryRights.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",map);
+        return jsonObject;
+    }
+    /**
+     *56添加债权
+     */
+    @RequestMapping(value ="/a/u/obligatory-right", produces="application/json",method = RequestMethod.POST)
+    public JSONObject addOblRight(String company,
+                                  String corporate,String mobile,String idCard,Long loanTime,BigDecimal loanSum,
+                                  Long loanTerm){
+        logger.info("/a/u/obligatory-right---POST---the request parameters are company:{},corporate:{},mobile:{},idCard:{},loanTime:{},loanSum:{},loanTerm", company,corporate,mobile,idCard,loanTime,loanSum,loanTerm);
+        CheckPhone checkPhone=new CheckPhone();
+        if(!checkPhone.isPhone(mobile)){
+            jsonObject.put("code", 1002);
+            jsonObject.put("data", "");
+            return jsonObject;
+        }
+        String thisId = null;
+        Cookie[] cookie = request.getCookies();
+        if (cookie != null) {
+            for (Cookie c : cookie) {  // 遍历Cookie
+                if("userId".equals(c.getName()))
+                    thisId=c.getValue();
+            }
+        }
+        ObligatoryRight obligatoryRight=new ObligatoryRight();
+        obligatoryRight.setCompany(company);
+        obligatoryRight.setCorporate(corporate);
+        obligatoryRight.setMobile(mobile);
+        obligatoryRight.setIdCard(idCard);
+        obligatoryRight.setLoanTime(loanTime);
+        obligatoryRight.setLoanSum(loanSum);
+        obligatoryRight.setLoanTerm(loanTerm);
+        obligatoryRight.setStatus(0);
+        obligatoryRight.setModifier("");
+        obligatoryRight.setRepayTime(loanTime+loanTerm*24*3600*1000L);
+        obligatoryRight.setMatchingAmount(loanSum);
+        int s;
+        try{
+        Long userId=Long.valueOf(token.SolveToken(thisId));
+        obligatoryRight.setCreateAt(System.currentTimeMillis());
+        obligatoryRight.setFounder(backstageAccountService.selectByPrimaryKey(userId).getAdmin());
+         s=obligatoryRightService.insert(obligatoryRight);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        logger.info(""+s);
+        if(s>0)
+            jsonObject.put("code",1000);
+        else
+            jsonObject.put("code",1001);
+        jsonObject.put("data","");
+        return jsonObject;
+    }
+    /**
+     *57编辑获取债权
+     */
+    @RequestMapping(value ="/a/u/obligatory-right/{id}", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getOblRight(Long id){
+        logger.info("/a/u/obligatory-right/{id}---GET---the request parameters are id:{}",id);
+        ObligatoryRight obligatoryRight;
+        try{
+         obligatoryRight=obligatoryRightService.selectByPrimaryKey(id);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        logger.info(""+obligatoryRight.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",obligatoryRight);
+        return jsonObject;
+    }
+    /**
+     *58编辑-保存债权
+     */
+    @RequestMapping(value ="/a/u/obligatory-right", produces="application/json",method = RequestMethod.PUT)
+    public JSONObject updateOblRight(Long id,String company,String corporate,String mobile,String idCard,
+                                     Long loanTime,BigDecimal loanSum,Long loanTerm
+                                    ){
+        logger.info("/a/u/obligatory-right---PUT---the request parameters are id:{},company:{},corporate:{},mobile:{},idCard:{},loanTime:{},loanSum:{},loanTerm:{}",id,company,corporate,mobile,idCard,loanTime,loanSum,loanTerm);
+        String thisId = null;
+        Cookie[] cookie = request.getCookies();
+        if (cookie != null) {
+            for (Cookie c : cookie) {  // 遍历Cookie
+                if("userId".equals(c.getName()))
+                    thisId=c.getValue();
+            }
+        }
+        ObligatoryRight obligatoryRight=new ObligatoryRight();
+        obligatoryRight.setId(id);
+        obligatoryRight.setCompany(company);
+        obligatoryRight.setCorporate(corporate);
+        obligatoryRight.setMobile(mobile);
+        obligatoryRight.setIdCard(idCard);
+        obligatoryRight.setLoanTime(loanTime);
+        obligatoryRight.setLoanSum(loanSum);
+        obligatoryRight.setLoanTerm(loanTerm);
+        obligatoryRight.setRepayTime(loanTime+loanTerm*24*3600*1000L);
+        int a;
+        try{
+            //更新人更新时间
+            Long userId=Long.valueOf(token.SolveToken(thisId));
+            obligatoryRight.setUpdateAt(System.currentTimeMillis());
+            obligatoryRight.setModifier(backstageAccountService.selectByPrimaryKey(userId).getAdmin());
+         a=obligatoryRightService.updateByPrimaryKeySelective(obligatoryRight);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        if(a>0)
+            jsonObject.put("code",1000);
+        else
+            jsonObject.put("code",1001);
+        jsonObject.put("data","");
+        return jsonObject;
+
+    }
+    /**
+     *59删除债权
+     */
+    @RequestMapping(value ="/a/u/obligatory-right/{id}", produces="application/json",method = RequestMethod.DELETE)
+    public JSONObject deleteOblRight(Long id){
+        logger.info("/a/u/obligatory-right/{id}---GET---the request parameters are id:{}",id);
+        int a;
+        try{
+            a=obligatoryRightService.deleteByPrimaryKey(id);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        if(a>0)
+            jsonObject.put("code", 1000);
+        else
+            jsonObject.put("code", 1001);
+        jsonObject.put("data", "");
+        return jsonObject;
+    }
+    /**
+     *60债权配置管理
+     */
+    @RequestMapping(value ="/a/u/unmatched-obligatory-right", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getUnmatchedOblRight(Long id){
+        logger.info("/a/u/unmatched-obligatory-right---GET---the request parameters are id:{}",id);
+        Map<String,Object> map=new HashMap<>();
+        try{
+            ObligatoryRight obligatoryRight=obligatoryRightService.selectByPrimaryKey(id);
+            Long loanTerm=obligatoryRight.getLoanTerm();
+            BigDecimal matchingAmount=obligatoryRight.getMatchingAmount();
+            Long repayTime=obligatoryRight.getRepayTime();
+            List<Object> trade=tradeService.limitMatchSelect(id,loanTerm,repayTime,matchingAmount);
+            logger.info("**"+trade+"**"+obligatoryRight);
+            map.put("obl",obligatoryRight);
+            map.put("trade",trade);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        jsonObject.put("code",1000);
+        jsonObject.put("data",map);
+        return jsonObject;
+    }
+    /**
+     *61债权配置管理-所有投资
+     */
+    @RequestMapping(value ="/a/u/matched-contract", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getMatchedContract(Long id,Long size,Long page){
+        logger.info("/a/u/unmatched-obligatory-right---GET---the request parameters are id:{},page:{},size:{}",id,page,size);
+        List<Object> thisTrade;
+        try{
+            thisTrade=tradeService.matchSelect(id,page,size);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        logger.info(""+thisTrade);
+        jsonObject.put("code",1000);
+        jsonObject.put("data",thisTrade);
+        return jsonObject;
+    }
+    /**
+     *62债权配置管理-匹配
+     */
+    @RequestMapping(value ="/a/u/matching-obligatory-right", produces="application/json",method = RequestMethod.PUT)
+    public JSONObject matchingOblRight(String  json,Long obligatoryId,BigDecimal matchingAmount){
+        String JSON=request.getParameter("JSON");
+        logger.info("/a/u/matching-obligatory-right---PUT---the request parameters are matchingAmount:{},obligatoryId:{},JSON:{}",obligatoryId,JSON);
+        List<Map<String,String>> obj= (List<Map<String,String>>) JSONObject.parse(json);
+        for(Map i: obj){
+            BigDecimal toBeMatched= BigDecimal.valueOf(Long.valueOf(String.valueOf(i.get("toBeMatched"))));
+            if(matchingAmount.subtract(toBeMatched).compareTo(BigDecimal.valueOf(0))<0){
+                jsonObject.put("code",1001);
+                jsonObject.put("data","");
+                return jsonObject;
+            }
+        }
+//        try{
+                 for(Map i: obj){
+                     Long investmentContractId= Long.valueOf(String.valueOf(i.get("investmentContractId")));
+                     BigDecimal toBeMatched= BigDecimal.valueOf(Long.valueOf(String.valueOf(i.get("toBeMatched"))));
+                     Trade trade=tradeService.selectByInvestmentContractId(investmentContractId);
+                     trade.setToBeMatched(trade.getToBeMatched().subtract(toBeMatched));
+                     tradeService.updateByPrimaryKeySelective(trade);
+                    Match match = new Match();
+                    match.setOblId(obligatoryId);
+                    match.setTradeId(investmentContractId);
+                    match.setAmount(toBeMatched);
+                    matchService.insert(match);
+                     matchingAmount= matchingAmount.subtract(toBeMatched);
+                 }
+                 ObligatoryRight obligatoryRight=new ObligatoryRight();
+            obligatoryRight.setMatchingAmount(matchingAmount);
+            obligatoryRightService.updateByPrimaryKeySelective(obligatoryRight);
+//        }catch (Throwable e){
+//            logger.error("异常"+e);
+//            jsonObject.put("data","");
+//            jsonObject.put("code",2001);
+//            return jsonObject;
+//        }
+        jsonObject.put("code",1000);
+        jsonObject.put("data","");
+        return jsonObject;
+    }
+
+}

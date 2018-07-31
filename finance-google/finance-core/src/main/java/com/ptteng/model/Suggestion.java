@@ -1,0 +1,93 @@
+package com.ptteng.model;
+
+public class Suggestion {
+    private Long id;
+
+    private String suggeContent;
+
+    private String adviser;
+
+    private String phone;
+
+    private Long submitTime;
+
+    private String replier;
+
+    private String replyContent;
+
+    private Integer status;
+
+    private Long replyTime;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getSuggeContent() {
+        return suggeContent;
+    }
+
+    public void setSuggeContent(String suggeContent) {
+        this.suggeContent = suggeContent == null ? null : suggeContent.trim();
+    }
+
+    public String getAdviser() {
+        return adviser;
+    }
+
+    public void setAdviser(String adviser) {
+        this.adviser = adviser == null ? null : adviser.trim();
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
+    }
+
+    public Long getSubmitTime() {
+        return submitTime;
+    }
+
+    public void setSubmitTime(Long submitTime) {
+        this.submitTime = submitTime;
+    }
+
+    public String getReplier() {
+        return replier;
+    }
+
+    public void setReplier(String replier) {
+        this.replier = replier == null ? null : replier.trim();
+    }
+
+    public String getReplyContent() {
+        return replyContent;
+    }
+
+    public void setReplyContent(String replyContent) {
+        this.replyContent = replyContent == null ? null : replyContent.trim();
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Long getReplyTime() {
+        return replyTime;
+    }
+
+    public void setReplyTime(Long replyTime) {
+        this.replyTime = replyTime;
+    }
+}

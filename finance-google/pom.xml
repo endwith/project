@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ptteng</groupId>
+    <artifactId>finance-google</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <modules>
+        <module>finance-server-admin</module>
+        <module>finance-server-client</module>
+        <module>finance-config-server</module>
+        <module>finance-core</module>
+        <module>finance-eureka</module>
+        <module>finance-eureka-config</module>
+        <module>finance-feign-admin</module>
+        <module>finance-feign-client</module>
+        <module>finance-web-admin</module>
+        <module>finance-web-client</module>
+        <module>finance-zuul</module>
+        <module>finance-quartz</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <name>finance-google</name>
+
+
+</project>

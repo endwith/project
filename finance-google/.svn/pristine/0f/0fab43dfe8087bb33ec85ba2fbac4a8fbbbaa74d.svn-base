@@ -1,0 +1,55 @@
+package com.ptteng.service.impl;
+
+import com.ptteng.dao.SuggestionMapper;
+import com.ptteng.model.Suggestion;
+import com.ptteng.service.SuggestionService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
+@Service
+public class SuggestionServiceImpl implements SuggestionService {
+@Resource
+private SuggestionMapper suggestionMapper;
+
+    @Override
+    public int deleteByPrimaryKey(Long id) {
+        return 0;
+    }
+
+    @Override
+    public int insert(Suggestion record) {
+        return this.suggestionMapper.insert(record);
+    }
+
+    @Override
+    public int insertSelective(Suggestion record) {
+        return 0;
+    }
+
+    @Override
+    public Suggestion selectByPrimaryKey(Long id) {
+        return null;
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(Suggestion record) {
+        return 0;
+    }
+
+    @Override
+    public int updateByPrimaryKey(Suggestion record) {
+        return 0;
+    }
+
+    @Override
+    public List<Suggestion> forSelect(Long a, Long b) {
+        return this.suggestionMapper.forSelect(a,b);
+    }
+
+    @Override
+    public List<Suggestion> select(Long a, Long b, Long id, String suggeContent,String adviser, String phone) {
+        return this.suggestionMapper.select(a,b,id,suggeContent,adviser,phone);
+    }
+}

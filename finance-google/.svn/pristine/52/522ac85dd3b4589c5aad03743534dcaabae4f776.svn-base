@@ -1,0 +1,27 @@
+package com.ptteng.service;
+
+import com.ptteng.model.InformationManage;
+import org.apache.ibatis.annotations.Param;
+
+
+import java.util.List;
+
+
+public interface InformationManageService {
+    int deleteByPrimaryKey(Long id);
+
+    int insert(InformationManage record);
+
+    int insertSelective(InformationManage record);
+
+    InformationManage selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(InformationManage record);
+
+    int updateByPrimaryKey(InformationManage record);
+
+    List<InformationManage> forSelect(Long a,Long b);
+
+    List<InformationManage> select(Long a,Long b,String inforTitle,int inforStatus,String founder,Long sendBeginTime,Long sendEndTime);
+
+}

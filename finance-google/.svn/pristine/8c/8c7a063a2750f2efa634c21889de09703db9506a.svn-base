@@ -1,0 +1,33 @@
+package com.ptteng.service.impl;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.SuggestionService;
+import org.springframework.stereotype.Component;
+
+@Component
+public class SuggestionServiceHystric implements SuggestionService {
+    @Override
+    public JSONObject getAllSuggestion() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getSuggestions() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getSuggestionById() {
+        return null;
+    }
+
+    @Override
+    public JSONObject updateSuggestion() {
+        return null;
+    }
+
+    @Override
+    public JSONObject deleteSuggestion() {
+        return null;
+    }
+}

@@ -1,0 +1,18 @@
+package com.ptteng.service.impl;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.UserService;
+import org.springframework.stereotype.Component;
+
+@Component
+public class UserServiceHystric implements UserService {
+    @Override
+    public JSONObject login() {
+        return null;
+    }
+
+    @Override
+    public JSONObject updatePassword() {
+        return null;
+    }
+}

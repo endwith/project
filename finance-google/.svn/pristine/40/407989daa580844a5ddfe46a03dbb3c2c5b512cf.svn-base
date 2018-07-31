@@ -1,0 +1,226 @@
+package com.ptteng.controller;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.model.HistoryProduct;
+import com.ptteng.model.InvestmentContract;
+import com.ptteng.model.User;
+import com.ptteng.service.HistoryProductService;
+import com.ptteng.service.InvestmentContractService;
+import com.ptteng.service.UserService;
+import com.ptteng.util.Token;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+
+@RefreshScope
+@Controller
+public class ManageUserController {
+    org.slf4j.Logger logger = LoggerFactory.getLogger(ManageUserController.class);
+    @Autowired
+    private JSONObject jsonObject;
+    @Resource
+    private UserService userService;
+    @Resource
+    private HistoryProductService historyProductService;
+    @Resource
+    private InvestmentContractService investmentContractService;
+    @Resource
+    private Token token;
+    /**
+     *45后台登录
+     */
+    @RequestMapping(value ="/admin/a/u/usersmanage", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject usersManage(Long page,Long size){
+        logger.info("/admin/a/u/usersmanage---GET---the request parameters are page:{},size:{}",page,size);
+        Map<String,Object> map=new HashMap<>();
+        List<User> users;
+        List<User> newUsers=new ArrayList<>();
+        Long total;
+        try{
+        if(page!=null){
+            users=userService.forSelect((page-1)*size, size);
+        }else {
+            users=userService.forSelect(0L,size);
+        }
+        for(User i:users){
+            i.setPhone(token.SolveToken(i.getPhone()));
+            i.setTrueName(token.SolveToken(i.getTrueName()));
+            i.setBankCard1(token.SolveToken(i.getBankCard1()));
+            i.setBankCard2(token.SolveToken(i.getBankCard2()));
+            i.setIdCard(token.SolveToken(i.getIdCard()));
+            newUsers.add(i);
+        }
+         total=userService.selectCount();
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        map.put("total",total);
+        map.put("users",newUsers);
+//        logger.info(users.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",map);
+        return jsonObject;
+    }
+    /**
+     *46模糊查询用户
+     */
+    @RequestMapping(value ="/admin/a/u/users", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getUsers(Long size,Long page,String trueName,String phone,Long id,Integer status){
+        logger.info("/admin/a/u/users---GET---the request parameters are size:{},page:{},trueName:{},phone:{},id:{},status:{}",size,page,trueName,phone,id,status);
+        Map<String,Object> map=new HashMap<>();
+        List<User> newUsers=new ArrayList<>();
+        List<User> users;
+        Long total;
+        try{
+        if(page!=null){
+            users=userService.select((page-1)*size, size,id,trueName,phone,status);
+        }else {
+            users=userService.select(0L,size,id,trueName,phone,status);
+        }
+            for(User i:users){
+                i.setPhone(token.SolveToken(i.getPhone()));
+                i.setTrueName(token.SolveToken(i.getTrueName()));
+                i.setBankCard1(token.SolveToken(i.getBankCard1()));
+                i.setBankCard2(token.SolveToken(i.getBankCard2()));
+                i.setIdCard(token.SolveToken(i.getIdCard()));
+                newUsers.add(i);
+            }
+        total=userService.selectCountWithCondition();
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        map.put("total",total);
+        map.put("users",newUsers);
+//        logger.info(users.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",map);
+        return jsonObject;
+    }
+    /**
+     *47冻结账户（点冻结status-0，解冻status-1—默认1）
+     *49更换手机
+     */
+    @RequestMapping(value ="/admin/a/u/user/{id}", produces="application/json",method = RequestMethod.PUT)
+    @ResponseBody
+    public JSONObject freeze(Integer status,String phone,Long id,User user){
+        logger.info("/admin/a/u/user/{id}---PUT---the request parameters are status:{},phone:{},id:{},bankCard1:{},bankCard2:{},",status,phone,id);
+        if(null!=phone){
+            user.setPhone(token.makeToken(phone));
+        }
+        int a;
+        try{
+         a=userService.updateByPrimaryKeySelective(user);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        logger.info(""+a);
+        jsonObject.put("code",1000);
+        jsonObject.put("data","");
+        return jsonObject;
+    }
+    /**
+     *48查看指定用户详情（原型图中银行卡1、2都要显示）
+     */
+    @RequestMapping(value ="/admin/a/u/user/{id}", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getUser(@PathVariable Long id){
+        logger.info("/admin/a/u/user/{id}---GET---the request parameters are id:{},",id);
+        User user;
+        try{
+         user= userService.selectByPrimaryKey(id);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        user.setPhone(token.SolveToken(user.getPhone()));
+        user.setTrueName(token.SolveToken(user.getTrueName()));
+        user.setBankCard1(token.SolveToken(user.getBankCard1()));
+        user.setBankCard2(token.SolveToken(user.getBankCard2()));
+        user.setIdCard(token.SolveToken(user.getIdCard()));
+        logger.info(user.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",user);
+        return jsonObject;
+    }
+    /**
+     *51后台查看个人交易记录
+     */
+    @RequestMapping(value ="/admin/a/u/user/record/{id}", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getRecord(Long id,Long size,Long page){
+        logger.info("/admin/a/u/user/record/{id}---GET---the request parameters are id:{},size:{},page:{}",id,size,page);
+        List<HistoryProduct> historyProducts;
+        try{
+            if(page!=null){
+                historyProducts=historyProductService.selectAllByUserId(id,(page-1)*size,size);
+            }else {
+                historyProducts=historyProductService.selectAllByUserId(id,0L,size);
+            }
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        logger.info(historyProducts.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",historyProducts);
+        return jsonObject;
+    }
+    /**
+     *52后台查看个人投资合同
+     */
+    @RequestMapping(value ="/admin/a/u/user/contract", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject contractAll(Long id,Long size,Long page){
+        logger.info("/admin/a/u/user/contract---GET---the request parameters are id:{},size:{},page:{}",id,size,page);
+        List<InvestmentContract> investmentContracts;
+        if(page!=null){
+            investmentContracts=investmentContractService.selectByUserId(id,(page-1)*size,size);
+        }else {
+            investmentContracts=investmentContractService.selectByUserId(id,0L,size);
+        }
+        logger.info(investmentContracts.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",investmentContracts);
+        return jsonObject;
+    }
+    /**
+     *53后台查看个人投资合同详情
+     */
+    @RequestMapping(value ="/admin/a/u/user/contract/{id}", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject contract(@PathVariable Long id){
+        logger.info("/admin/a/u/user/contract/{id}---GET---the request parameters are id:{}",id);
+        InvestmentContract investmentContract=investmentContractService.selectByPrimaryKey(id);
+        logger.info(investmentContract.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",investmentContract);
+        return jsonObject;
+    }
+
+}

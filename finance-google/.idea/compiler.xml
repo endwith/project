@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="finance-config-server" />
+        <module name="finance-core" />
+        <module name="finance-eureka" />
+        <module name="finance-eureka-config" />
+        <module name="finance-feign-admin" />
+        <module name="finance-feign-client" />
+        <module name="finance-quartz" />
+        <module name="finance-server-admin" />
+        <module name="finance-server-client" />
+        <module name="finance-web-admin" />
+        <module name="finance-web-client" />
+        <module name="finance-zuul" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="finance-config-server" target="1.8" />
+      <module name="finance-core" target="1.8" />
+      <module name="finance-eureka" target="1.8" />
+      <module name="finance-eureka-config" target="1.8" />
+      <module name="finance-feign-admin" target="1.8" />
+      <module name="finance-feign-client" target="1.8" />
+      <module name="finance-google" target="1.5" />
+      <module name="finance-quartz" target="1.8" />
+      <module name="finance-server-admin" target="1.8" />
+      <module name="finance-server-client" target="1.8" />
+      <module name="finance-web-admin" target="1.8" />
+      <module name="finance-web-client" target="1.8" />
+      <module name="finance-zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

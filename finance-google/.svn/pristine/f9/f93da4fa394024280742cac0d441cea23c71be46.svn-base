@@ -1,0 +1,43 @@
+package com.ptteng.service.impl;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.BackstageAccountService;
+import org.springframework.stereotype.Component;
+
+@Component
+public class BackstageAccountServiceHystric implements BackstageAccountService {
+    @Override
+    public JSONObject getAllBackstageAccount() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getBackstageAccounts() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getAllRole() {
+        return null;
+    }
+
+    @Override
+    public JSONObject addBackstageAccount() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getBackstageAccount() {
+        return null;
+    }
+
+    @Override
+    public JSONObject updateBackstageAccount() {
+        return null;
+    }
+
+    @Override
+    public JSONObject deleteBackstageAccount() {
+        return null;
+    }
+}

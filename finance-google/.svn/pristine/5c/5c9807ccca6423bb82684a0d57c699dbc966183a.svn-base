@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ptteng.dao.HistoryProductMapper" >
+  <resultMap id="BaseResultMap" type="com.ptteng.model.HistoryProduct" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="product" property="product" jdbcType="VARCHAR" />
+    <result column="bank_card" property="bankCard" jdbcType="VARCHAR" />
+    <result column="buyer" property="buyer" jdbcType="VARCHAR" />
+    <result column="buy_time" property="buyTime" jdbcType="BIGINT" />
+    <result column="arrive_time" property="arriveTime" jdbcType="BIGINT" />
+    <result column="transaction_action" property="transactionAction" jdbcType="INTEGER" />
+    <result column="transaction_amouont" property="transactionAmouont" jdbcType="DECIMAL" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+  </resultMap>
+  <!-- 定义resultMap，type为HashMap -->
+  <resultMap id="PartHistoryMap" type="java.util.HashMap">
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="buy_time" property="buyTime" jdbcType="BIGINT" />
+    <result column="true_name" property="trueName" jdbcType="VARCHAR" />
+    <result column="transaction_amouont" property="transactionAmouont" jdbcType="DECIMAL" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, product, bank_card, buyer, buy_time, arrive_time, transaction_action, transaction_amouont,
+    phone,user_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from history_product
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from history_product
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ptteng.model.HistoryProduct" >
+    insert into history_product (id, product, bank_card,
+      buyer, buy_time, arrive_time,
+      transaction_action, transaction_amouont,
+      phone,user_id)
+    values (#{id,jdbcType=BIGINT}, #{product,jdbcType=VARCHAR}, #{bankCard,jdbcType=VARCHAR},
+      #{buyer,jdbcType=VARCHAR}, #{buyTime,jdbcType=BIGINT}, #{arriveTime,jdbcType=BIGINT},
+      #{transactionAction,jdbcType=INTEGER}, #{transactionAmouont,jdbcType=DECIMAL},
+      #{phone,jdbcType=VARCHAR},#{userId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ptteng.model.HistoryProduct" >
+    insert into history_product
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="product != null" >
+        product,
+      </if>
+      <if test="bankCard != null" >
+        bank_card,
+      </if>
+      <if test="buyer != null" >
+        buyer,
+      </if>
+      <if test="buyTime != null" >
+        buy_time,
+      </if>
+      <if test="arriveTime != null" >
+        arrive_time,
+      </if>
+      <if test="transactionAction != null" >
+        transaction_action,
+      </if>
+      <if test="transactionAmouont != null" >
+        transaction_amouont,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="product != null" >
+        #{product,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCard != null" >
+        #{bankCard,jdbcType=VARCHAR},
+      </if>
+      <if test="buyer != null" >
+        #{buyer,jdbcType=VARCHAR},
+      </if>
+      <if test="buyTime != null" >
+        #{buyTime,jdbcType=BIGINT},
+      </if>
+      <if test="arriveTime != null" >
+        #{arriveTime,jdbcType=BIGINT},
+      </if>
+      <if test="transactionAction != null" >
+        #{transactionAction,jdbcType=INTEGER},
+      </if>
+      <if test="transactionAmouont != null" >
+        #{transactionAmouont,jdbcType=DECIMAL},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ptteng.model.HistoryProduct" >
+    update history_product
+    <set >
+      <if test="product != null" >
+        product = #{product,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCard != null" >
+        bank_card = #{bankCard,jdbcType=VARCHAR},
+      </if>
+      <if test="buyer != null" >
+        buyer = #{buyer,jdbcType=VARCHAR},
+      </if>
+      <if test="buyTime != null" >
+        buy_time = #{buyTime,jdbcType=BIGINT},
+      </if>
+      <if test="arriveTime != null" >
+        arrive_time = #{arriveTime,jdbcType=BIGINT},
+      </if>
+      <if test="transactionAction != null" >
+        transaction_action = #{transactionAction,jdbcType=INTEGER},
+      </if>
+      <if test="transactionAmouont != null" >
+        transaction_amouont = #{transactionAmouont,jdbcType=DECIMAL},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ptteng.model.HistoryProduct" >
+    update history_product
+    set product = #{product,jdbcType=VARCHAR},
+      bank_card = #{bankCard,jdbcType=VARCHAR},
+      buyer = #{buyer,jdbcType=VARCHAR},
+      buy_time = #{buyTime,jdbcType=BIGINT},
+      arrive_time = #{arriveTime,jdbcType=BIGINT},
+      transaction_action = #{transactionAction,jdbcType=INTEGER},
+      transaction_amouont = #{transactionAmouont,jdbcType=DECIMAL},
+      phone = #{phone,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=BIGINT},
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectAllByUserId" resultMap="BaseResultMap">
+    select * from history_product where user_id = #{userId} limit #{a},#{b}
+  </select>
+  <select id="selectCount" resultType="Long" >
+    select count(1) from history_product where user_id = #{userId}
+  </select>
+  <select id="selectByUserId" resultMap="BaseResultMap">
+    select * from history_product where user_id = #{userId}
+    and transaction_action=1
+  </select>
+  <select id="selectUserProductByUserId" resultMap="BaseResultMap">
+    select * from history_product where user_id = #{userId}
+  </select>
+  <select id="selectByProduct" resultMap="PartHistoryMap">
+    select true_name,transaction_amouont,buy_time from history_product,user where history_product.user_id = user.id and
+    product = #{product} and transaction_action=2 limit #{a},#{b}
+  </select>
+  <select id="selectByProductCount" resultType="Long">
+    select count(1) from history_product,user where history_product.user_id = user.id and
+    product = #{product} and transaction_action=2
+  </select>
+</mapper>

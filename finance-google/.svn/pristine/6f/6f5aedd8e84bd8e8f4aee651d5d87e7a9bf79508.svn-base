@@ -1,0 +1,38 @@
+package com.ptteng.service.impl;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.ProductService;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ProductServiceHystric implements ProductService {
+    @Override
+    public JSONObject getAllProduct() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getProducts() {
+        return null;
+    }
+
+    @Override
+    public JSONObject addProduct() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getProduct() {
+        return null;
+    }
+
+    @Override
+    public JSONObject updateProduct() {
+        return null;
+    }
+
+    @Override
+    public JSONObject deleteProduct() {
+        return null;
+    }
+}

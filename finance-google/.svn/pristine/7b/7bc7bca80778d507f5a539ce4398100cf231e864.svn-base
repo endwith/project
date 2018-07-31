@@ -1,0 +1,11 @@
+server:
+  port: 20403
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://backup1:8761/eureka/,http://master:8762/eureka/
+
+spring:
+  application:
+    name: web-client

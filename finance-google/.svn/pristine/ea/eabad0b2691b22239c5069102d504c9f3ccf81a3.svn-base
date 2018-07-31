@@ -1,0 +1,221 @@
+package com.ptteng.controller;
+
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.FinanceService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@RestController
+public class FinanceController {
+
+    @Autowired
+    private FinanceService financeService;
+    /**
+     *8首页
+     */
+    @RequestMapping(value ="/a/u/main-page", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject mainPage(){
+        return financeService.mainPage();
+    }
+    /**
+     *9产品详情
+     */
+    @RequestMapping(value ="/a/product", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject product(){
+        return financeService.product();
+    }
+    /**
+     *9 产品的投资记录
+     */
+    @RequestMapping(value ="/a/product/record", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject productRecord(){
+        return financeService.productRecord();
+    }
+    /**
+     *10理财
+     */
+    @RequestMapping(value ="/a/u/finances", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject finances(){
+        return financeService.finances();
+    }
+    /**
+     *11立即购买
+     * 14支付银行卡选择
+     */
+    @RequestMapping(value ="/a/u/buyer", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject buy(){
+        return financeService.buy();
+    }
+    /**
+     *12确认购买
+     */
+    @RequestMapping(value ="/a/u/confirming-payment", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject payment(){
+        return financeService.payment();
+    }
+    /**
+     *13支付方式选择
+     */
+    @RequestMapping(value ="/a/u/payment", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject choosePay(){
+        return financeService.choosePay();
+    }
+    /**
+     *14支付银行卡选择
+     */
+    @RequestMapping(value ="/a/u/one-payment", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject choosePayment(){
+        return financeService.choosePayment();
+    }
+    /**
+     *15确认支付
+     */
+    @RequestMapping(value ="/a/u/real-payment", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject realPayment(){
+        return financeService.realPayment();
+    }
+    /**
+     *确认支付-回落后台接口
+     */
+    @RequestMapping(value ="/a/u/real-paymentReport", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject realPaymentReport() {
+        return financeService.realPaymentReport();
+    }
+        /**
+         *28我的理财(显示已投资部分)
+         *32显示已续投内容
+         * /
+    @RequestMapping(value ="/a/u/finance", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject finance(){
+        return financeService.finance();
+    }
+
+    /**
+     *29查看合同
+     */
+    @RequestMapping(value ="/a/u/contract", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject contract(){
+        return financeService.contract();
+    }
+
+    /**
+     *30预约续投
+     *31取消续投
+     */
+    @RequestMapping(value ="/a/u/reservation", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject reservation(){
+        return financeService.reservation();
+    }
+
+
+    /**
+     *33显示已退出的内容
+     */
+    @RequestMapping(value ="/a/u/quited-contract", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject quitedContract(){
+        return financeService.quitedContract();
+    }
+
+    /**
+     *34交易记录
+     */
+    @RequestMapping(value ="/a/u/records", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject records(){
+        return financeService.records();
+    }
+
+    /**
+     *35显示银行卡
+     */
+    @RequestMapping(value ="/a/u/bank-cards", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject bankCards(){
+        return financeService.bankCards();
+    }
+
+    /**
+     *36添加银行卡
+     */
+    @RequestMapping(value ="/a/u/bank-card", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject bankCard(){
+        return financeService.bankCard();
+    }
+
+    /**
+     *37填写银行卡信息
+     */
+    @RequestMapping(value ="/a/u/bank-message", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject bankMessage(){
+        return financeService.bankMessage();
+    }
+
+    /**
+     *38银行卡验证手机号
+     */
+    @RequestMapping(value ="/a/u/phone-number", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject phoneNumber(){
+        return financeService.phoneNumber();
+    }
+    /**
+     *39银行卡绑卡
+     *18绑卡
+     */
+    @RequestMapping(value ="/a/u/new-bank-card", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject newBankCard(){
+        return financeService.newBankCard();
+    }
+
+    /**
+     *40选择银行卡
+     */
+    @RequestMapping(value ="/a/u/one-bank", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject oneBank(){
+        return financeService.oneBank();
+    }
+    /**
+     *41银行卡解绑前先验证手机号
+     */
+    @RequestMapping(value ="/a/u/bank-phone-number", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject bankPhoneNumber(){
+        return financeService.bankPhoneNumber();
+    }
+    /**
+     *42解除绑定
+     */
+    @RequestMapping(value ="/a/u/unbinding-card", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject unbingCard(){
+        return financeService.unbingCard();
+    }
+
+
+
+}

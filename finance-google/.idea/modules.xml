@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/finance-config-server/finance-config-server.iml" filepath="$PROJECT_DIR$/finance-config-server/finance-config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/finance-core/finance-core.iml" filepath="$PROJECT_DIR$/finance-core/finance-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/finance-eureka/finance-eureka.iml" filepath="$PROJECT_DIR$/finance-eureka/finance-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/finance-eureka-config/finance-eureka-config.iml" filepath="$PROJECT_DIR$/finance-eureka-config/finance-eureka-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/finance-feign-admin/finance-feign-admin.iml" filepath="$PROJECT_DIR$/finance-feign-admin/finance-feign-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/finance-feign-client/finance-feign-client.iml" filepath="$PROJECT_DIR$/finance-feign-client/finance-feign-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/finance-google.iml" filepath="$PROJECT_DIR$/.idea/finance-google.iml" />
+      <module fileurl="file://$PROJECT_DIR$/finance-quartz/finance-quartz.iml" filepath="$PROJECT_DIR$/finance-quartz/finance-quartz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/finance-server-admin/finance-server-admin.iml" filepath="$PROJECT_DIR$/finance-server-admin/finance-server-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/finance-server-client/finance-server-client.iml" filepath="$PROJECT_DIR$/finance-server-client/finance-server-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/finance-web-admin/finance-web-admin.iml" filepath="$PROJECT_DIR$/finance-web-admin/finance-web-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/finance-web-client/finance-web-client.iml" filepath="$PROJECT_DIR$/finance-web-client/finance-web-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/finance-zuul/finance-zuul.iml" filepath="$PROJECT_DIR$/finance-zuul/finance-zuul.iml" />
+    </modules>
+  </component>
+</project>

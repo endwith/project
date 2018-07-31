@@ -1,0 +1,24 @@
+package com.ptteng.quartz;
+
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Service;
+
+import java.util.concurrent.TimeUnit;
+
+@Service
+public class ScheduleRefreshRedis {
+    org.slf4j.Logger logger = LoggerFactory.getLogger(ScheduleRefreshRedis.class);
+    @Autowired
+    private RedisTemplate redisTemplate;
+    @Scheduled(cron = "0 0 0 1/1 * ?  ") //每天零点删除关于“google”的缓存
+    public void reidsFresh() {
+        logger.info("删除");
+        redisTemplate.delete(redisTemplate.keys("google"+"*"));
+    }
+
+
+
+}

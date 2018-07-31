@@ -1,0 +1,120 @@
+package com.ptteng.quartz.scheduler;
+
+import com.ptteng.quartz.config.SpringUtil ;
+import com.ptteng.quartz.job.*;
+import org.quartz.*;
+import org.quartz.impl.StdScheduler;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Component;
+
+@Component
+public class MyScheduler {
+@Autowired
+private RedisTemplate redisTemplate;
+
+    public void schedulerJob() throws SchedulerException {
+        ApplicationContext annotationContext = SpringUtil.getApplicationContext();
+        StdScheduler stdScheduler = (StdScheduler) annotationContext.getBean("mySchedulerFactoryBean");//获得上面创建的bean
+        Scheduler myScheduler =stdScheduler;
+        startScheduler1(myScheduler);
+        startScheduler2(myScheduler);
+        myScheduler.start();
+    }
+
+    //推送消息
+    private void startScheduler1(Scheduler scheduler) throws SchedulerException {
+        JobDetail jobDetail = JobBuilder.newJob(InformationSchedulerJob.class).withIdentity("job1", "jobGroup1").build();
+        CronScheduleBuilder cronScheduleBuilder = CronScheduleBuilder.cronSchedule("0/5 * * * * ?");
+        CronTrigger trigger = TriggerBuilder.newTrigger()
+                .withIdentity("trigger1", "triggerGroup1")
+                .withSchedule(cronScheduleBuilder)
+                .build();
+        scheduler.scheduleJob(jobDetail, trigger);
+    }
+
+    //刷新redis和记录是否节假日
+    private void startScheduler2(Scheduler scheduler) throws SchedulerException {
+        JobDetail jobDetail = JobBuilder.newJob(RedisFreshJob.class).withIdentity("job2", "jobGroup2").build();
+        CronScheduleBuilder cronScheduleBuilder = CronScheduleBuilder.cronSchedule("0 0 0 * * ? *");
+        CronTrigger trigger = TriggerBuilder.newTrigger()
+                .withIdentity("trigger2", "triggerGroup2")
+                .withSchedule(cronScheduleBuilder)
+                .build();
+        scheduler.scheduleJob(jobDetail, trigger);
+
+    }
+    //查出并返息
+    private void startScheduler3(Scheduler scheduler) throws SchedulerException {
+        JobDetail jobDetail = JobBuilder.newJob(ReturnInterestJob.class).withIdentity("job3", "jobGroup3").build();
+        int day = 20;
+
+        if(redisTemplate.hasKey("googleJudgeHolidayStatus")) {
+            if((int)redisTemplate.opsForValue().get("googleJudgeHolidayStatus")==1){
+                day = (int)redisTemplate.opsForValue().get("googleJudgeHoliday");
+            }else {
+                day = (int)redisTemplate.opsForValue().get("googleJudgeHoliday");
+                if(day<=20){
+                    day = 20;
+                }
+            }
+        }
+        String cron = "1 0 0 "+String.valueOf(day)+" * ? *";
+        CronScheduleBuilder cronScheduleBuilder = CronScheduleBuilder.cronSchedule(cron);
+        CronTrigger trigger = TriggerBuilder.newTrigger()
+                .withIdentity("trigger3", "triggerGroup3")
+                .withSchedule(cronScheduleBuilder)
+                .build();
+        scheduler.scheduleJob(jobDetail, trigger);
+
+    }
+    //查出是在最后一个月需要返息的产品将本金和月息一起给
+    private void startScheduler4(Scheduler scheduler) throws SchedulerException {
+        JobDetail jobDetail = JobBuilder.newJob(ReturnInterestJob.class).withIdentity("job4", "jobGroup4").build();
+        int day = 20;
+
+        if(redisTemplate.hasKey("googleJudgeHolidayStatus")) {
+            if((int)redisTemplate.opsForValue().get("googleJudgeHolidayStatus")==1){
+                day = (int)redisTemplate.opsForValue().get("googleJudgeHoliday");
+            }else {
+                day = (int)redisTemplate.opsForValue().get("googleJudgeHoliday");
+                if(day<=20){
+                    day = 20;
+                }
+            }
+        }
+        String cron = "1 0 0 "+String.valueOf(day)+" * ? *";
+        CronScheduleBuilder cronScheduleBuilder = CronScheduleBuilder.cronSchedule(cron);
+        CronTrigger trigger = TriggerBuilder.newTrigger()
+                .withIdentity("trigger4", "triggerGroup4")
+                .withSchedule(cronScheduleBuilder)
+                .build();
+        scheduler.scheduleJob(jobDetail, trigger);
+
+    }
+    //返本金
+    private void startScheduler5(Scheduler scheduler) throws SchedulerException {
+        JobDetail jobDetail = JobBuilder.newJob(ReturnAccountAllJob.class).withIdentity("job5", "jobGroup5").build();
+        int day = 20;
+
+        if(redisTemplate.hasKey("googleJudgeHolidayStatus")) {
+            if((int)redisTemplate.opsForValue().get("googleJudgeHolidayStatus")==1){
+                day = (int)redisTemplate.opsForValue().get("googleJudgeHoliday");
+            }else {
+                day = (int)redisTemplate.opsForValue().get("googleJudgeHoliday");
+                if(day<=20){
+                    day = 20;
+                }
+            }
+        }
+        String cron = "1 0 0 "+String.valueOf(day)+" * ? *";
+        CronScheduleBuilder cronScheduleBuilder = CronScheduleBuilder.cronSchedule(cron);
+        CronTrigger trigger = TriggerBuilder.newTrigger()
+                .withIdentity("trigger5", "triggerGroup5")
+                .withSchedule(cronScheduleBuilder)
+                .build();
+        scheduler.scheduleJob(jobDetail, trigger);
+
+    }
+}

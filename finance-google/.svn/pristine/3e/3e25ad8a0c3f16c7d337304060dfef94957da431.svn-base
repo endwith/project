@@ -1,0 +1,27 @@
+package com.ptteng.dao;
+
+import com.ptteng.model.Product;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
+
+@Mapper
+public interface ProductMapper {
+    int deleteByPrimaryKey(Long id);
+
+    int insert(Product record);
+
+    int insertSelective(Product record);
+
+    Product selectByPrimaryKey(Long id);
+    Product selectByProduct(String product);
+    int updateByPrimaryKeySelective(Product record);
+
+    int updateByPrimaryKey(Product record);
+    List<Product> selectAll();
+    //分页查询
+    List<Product> forSelect(@Param("a") Long a, @Param("b") Long b);
+    //分页模糊查询
+    List<Product> select(@Param("a") Long a, @Param("b") Long b, @Param("id") Long id, @Param("productName") String productName, @Param("founder") String founder, @Param("status") int status);
+}

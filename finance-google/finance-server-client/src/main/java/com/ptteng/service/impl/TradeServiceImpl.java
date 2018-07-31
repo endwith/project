@@ -1,0 +1,72 @@
+package com.ptteng.service.impl;
+
+import com.ptteng.dao.TradeMapper;
+import com.ptteng.model.Trade;
+import com.ptteng.service.TradeService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.math.BigDecimal;
+import java.util.List;
+
+@Service
+public class TradeServiceImpl implements TradeService {
+@Resource
+private TradeMapper tradeMapper;
+    @Override
+    public int deleteByPrimaryKey(Long id) {
+        return tradeMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public int insert(Trade record) {
+        return this.tradeMapper.insert(record);
+    }
+
+    @Override
+    public int insertSelective(Trade record) {
+        return tradeMapper.insertSelective(record);
+    }
+
+    @Override
+    public Trade selectByPrimaryKey(Long id) {
+        return tradeMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(Trade record) {
+        return tradeMapper.updateByPrimaryKeySelective(record);
+    }
+
+    @Override
+    public int updateByPrimaryKey(Trade record) {
+        return this.tradeMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public List<Object> matchSelect(Long id, Long a, Long b) {
+        return this.tradeMapper.matchSelect(id,a,b);
+    }
+
+    @Override
+    public List<Object> limitMatchSelect(Long id, Long loanTerm, Long repayTime, BigDecimal matchingAmount) {
+        return this.tradeMapper.limitMatchSelect(id,loanTerm,repayTime,matchingAmount);
+    }
+
+    @Override
+    public int updateByTradeId(Long tradeId, BigDecimal toBeMatched) {
+        return this.tradeMapper.updateByTradeId(tradeId,toBeMatched);
+    }
+
+    @Override
+    public List<Trade> selectByUserId(Long userId,int a,int b) {
+        return this.tradeMapper.selectByUserId(userId,a,b);
+    }
+
+    @Override
+    public int updateStatusByID(Long id, int status) {
+        return this.tradeMapper.updateStatusByID(id,status);
+    }
+
+
+}

@@ -1,0 +1,17 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://master:8762/eureka/
+server:
+  port: 20413
+spring:
+  application:
+    name: service-zuul
+zuul:
+  routes:
+    admin:
+      path: /admin/**
+      serviceId: server-feign-admin
+    client:
+      path: /client/**
+      serviceId: server-feign-client

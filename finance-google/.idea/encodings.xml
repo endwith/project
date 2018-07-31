@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/finance-config-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/finance-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/finance-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/finance-eureka-config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/finance-feign-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/finance-feign-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/finance-quartz" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/finance-server-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/finance-server-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/finance-web-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/finance-web-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/finance-zuul" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

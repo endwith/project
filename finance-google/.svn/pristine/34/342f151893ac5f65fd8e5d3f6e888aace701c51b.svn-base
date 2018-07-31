@@ -1,0 +1,120 @@
+package com.ptteng.service.impl;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.FinanceService;
+import org.springframework.stereotype.Component;
+
+@Component
+public class FinanceServiceHystric implements FinanceService {
+    @Override
+    public JSONObject mainPage() {
+        JSONObject jsonObject=new JSONObject();
+        jsonObject.put("code",6);
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject product() {
+        return null;
+    }
+
+    @Override
+    public JSONObject finances() {
+        return null;
+    }
+
+    @Override
+    public JSONObject buy() {
+        return null;
+    }
+
+    @Override
+    public JSONObject payment() {
+        return null;
+    }
+
+    @Override
+    public JSONObject choosePay() {
+        return null;
+    }
+
+    @Override
+    public JSONObject choosePayment() {
+        return null;
+    }
+
+    @Override
+    public JSONObject realPayment() {
+        return null;
+    }
+
+    @Override
+    public JSONObject finance() {
+        return null;
+    }
+
+    @Override
+    public JSONObject contract() {
+        return null;
+    }
+
+    @Override
+    public JSONObject reservation() {
+        return null;
+    }
+
+    @Override
+    public JSONObject continuation() {
+        return null;
+    }
+
+    @Override
+    public JSONObject quitedContract() {
+        return null;
+    }
+
+    @Override
+    public JSONObject records() {
+        return null;
+    }
+
+    @Override
+    public JSONObject bankCards() {
+        return null;
+    }
+
+    @Override
+    public JSONObject bankCard() {
+        return null;
+    }
+
+    @Override
+    public JSONObject bankMessage() {
+        return null;
+    }
+
+    @Override
+    public JSONObject phoneNumber() {
+        return null;
+    }
+
+    @Override
+    public JSONObject newBankCard() {
+        return null;
+    }
+
+    @Override
+    public JSONObject oneBank() {
+        return null;
+    }
+
+    @Override
+    public JSONObject bankPhoneNumber() {
+        return null;
+    }
+
+    @Override
+    public JSONObject unbingCard() {
+        return null;
+    }
+}

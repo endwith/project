@@ -1,0 +1,36 @@
+package com.ptteng.service;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.impl.UserServiceHystric;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ *提供一个java接口连接服务， 接口中的方法对应url接口就能直接访问了，不需要ribbon实例服务提供者
+ */
+//@FeignClient声明feign，添加fallback熔断器实现类
+@FeignClient(value = "finance-admin",fallback=UserServiceHystric.class)
+public interface UserService {
+    /**
+     *44后台登录
+     */
+    @RequestMapping(value ="/a/login", produces="application/json",method = RequestMethod.POST)
+     JSONObject login(@RequestParam("id")Long id ,@RequestParam("password")String password);
+    /**
+     * 44权限模块显示
+     */
+    @RequestMapping(value ="/a/u/loginer", produces="application/json",method = RequestMethod.GET)
+    JSONObject showRoleModule();
+
+    /**
+     *98密码管理
+     */
+    @RequestMapping(value ="/a/u/password", produces="application/json",method = RequestMethod.POST)
+     JSONObject updatePassword(@RequestParam("lastPassword") String lastPassword, @RequestParam("newPassword1")String newPassword1, @RequestParam("newPassword2")String newPassword2);
+
+}

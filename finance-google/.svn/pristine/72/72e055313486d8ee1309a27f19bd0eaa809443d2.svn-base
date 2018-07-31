@@ -1,0 +1,8 @@
+spring.application.name=config-server
+server.port=20412
+eureka.client.serviceUrl.defaultZone=http://39.108.173.252:20401/eureka/,http://118.126.113.248:20409/eureka/
+spring.cloud.config.server.git.uri=https://github.com/endwith/lengsheng
+spring.cloud.config.server.git.searchPaths=/config
+spring.cloud.config.label=master
+spring.cloud.config.server.git.username=
+spring.cloud.config.server.git.password=

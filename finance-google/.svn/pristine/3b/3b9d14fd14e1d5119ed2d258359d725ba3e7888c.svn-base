@@ -1,0 +1,87 @@
+package com.ptteng.controller;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.model.ProductRecommend;
+import com.ptteng.service.ProductRecommendService;
+import com.ptteng.service.UploadPictureService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+
+@RefreshScope
+@RestController
+public class ProductRecommendController {
+    @Autowired
+    ProductRecommendService productRecommendService;
+    @Autowired
+    UploadPictureService uploadPictureService;
+
+    /**
+     *70运营管理中的banner图入口
+     * 77鼎力推荐入口
+     */
+    @RequestMapping(value ="/a/u/product-recommend", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getAllBanner(Long page,Long size,Integer type){
+        return productRecommendService.getAllBanner(page, size, type);
+    }
+    /**
+     *71运营管理中的banner图模糊查询
+     * 78鼎力推荐查询模糊查询
+     */
+    @RequestMapping(value ="/a/u/product-recommends", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getBanners(Long page,Long size,Integer type,Long id,String title,String product,
+                                 String founder,String modifier){
+        return productRecommendService.getBanners(page, size, type, id, title, product, founder, modifier);
+    }
+    /**
+     *上传图片
+     */
+    @RequestMapping(value ="/a/u/picture", produces="application/json",method = RequestMethod.POST)
+    public JSONObject loadPicture(MultipartFile picture){
+        System.out.println("***************");
+        return uploadPictureService.loadPicture(picture);
+    }
+    /**
+     *72banner图新增
+     * 79鼎力推荐新增
+     */
+    @RequestMapping(value ="/a/u/product-recommend", produces="application/json",method = RequestMethod.POST)
+    public JSONObject addBanner(String title, String product, Integer interval,
+                                 String pictureFile,
+                                Integer type,String url,HttpServletRequest request  ){
+        return productRecommendService.addBanner(title, product, interval, pictureFile, type, url,request );
+    }
+    /**
+     *73banner图编辑—获取
+     * 80鼎力推荐编辑-获取
+     */
+    @RequestMapping(value ="/a/u/product-recommend/{id}", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getBannerById(Long id){
+        return productRecommendService.getBannerById(id);
+    }
+    /**
+     *74banner图编辑—保存
+     *75banner图上下架
+     *81鼎力推荐编辑-更改保存
+     *82鼎力推荐上下架
+     */
+    @RequestMapping(value ="/a/u/product-recommend/{id}", produces="application/json",method = RequestMethod.PUT)
+    public JSONObject updateBanner(String title,String product,Long id,Integer interval,String pictureFile,String url,
+                                   Integer bannerStatus,Integer status,HttpServletRequest request ){
+        return productRecommendService.updateBanner(title, product, id, interval, pictureFile, url, bannerStatus, status,request);
+    }
+    /**
+     *76banner图删除
+     *83鼎力推荐删除
+     */
+    @RequestMapping(value ="/a/u/product-recommend/{id}", produces="application/json",method = RequestMethod.DELETE)
+    public JSONObject deleteBanner(Long id){
+        return productRecommendService.deleteBanner(id);
+    }
+
+
+
+}

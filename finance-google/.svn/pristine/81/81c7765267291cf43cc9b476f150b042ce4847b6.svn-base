@@ -1,0 +1,56 @@
+package com.ptteng.userHandler;
+
+import com.ptteng.service.BackstageAccountService;
+import com.ptteng.util.Token;
+import org.apache.log4j.Logger;
+
+import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+public class UserRoleHandler extends UserHandler {
+    @Resource
+    private BackstageAccountService backstageAccountService;
+    @Resource
+    private Token token;
+    private static Logger logger=Logger.getLogger("UserRoleHandler.class");
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        String key = null;
+        String userId = null;
+        Cookie[] cookie = request.getCookies();
+        if (cookie != null) {
+            for (Cookie c : cookie) {  // 遍历Cookie
+                if ("userTime".equals(c.getName()))
+                    key = c.getValue();
+
+                if ("userId".equals(c.getName()))
+                    userId = c.getValue();
+            }
+        }
+        Long id=Long.valueOf(token.SolveToken(userId));
+        if (backstageAccountService.selectByPrimaryKey(id) != null && key != null) {
+            logger.info("用户Id:::"+userId);
+            logger.info("key：" + key);
+            Long keytime=Long.valueOf(token.SolveToken(key));
+            logger.info("keytime:"+keytime);
+            Long thistime=System.currentTimeMillis();
+            Long gettime=thistime-keytime;
+            logger.info("gettime:"+gettime);
+            logger.info("cookiekey值：" + key);
+            if (gettime<30*60*1000) {//加密规则正确，说明已经登录
+                System.out.println(key);
+                return true;
+
+            } else {
+                response.sendRedirect(request.getContextPath() + "/admin/a/login");
+                logger.info("cookie失效");
+            }
+        }
+
+        logger.info("没有cookie");
+        return false;
+    }
+
+}

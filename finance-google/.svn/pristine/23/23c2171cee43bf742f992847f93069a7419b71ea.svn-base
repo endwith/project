@@ -1,0 +1,257 @@
+package com.ptteng.controller;
+
+import com.alibaba.fastjson.JSONObject;
+
+import com.ptteng.model.*;
+import com.ptteng.service.BackstageAccountService;
+import com.ptteng.service.ModuleManageService;
+import com.ptteng.service.RoleManageService;
+import com.ptteng.util.Token;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.*;
+
+@RefreshScope
+@RestController
+public class RoleController {
+    org.slf4j.Logger logger = LoggerFactory.getLogger(RoleController.class);
+    @Resource
+    private RoleManageService roleManageService;
+    @Autowired
+    private BackstageAccountService backstageAccountService;
+    @Autowired
+    private ModuleManageService moduleManageService;
+    @Autowired
+    JSONObject jsonObject;
+    @Autowired
+    HttpServletRequest request;
+    @Autowired
+    HttpServletResponse response;
+    /**
+     *111角色管理查询角色
+     */
+    @RequestMapping(value ="/a/u/all-role", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getAllRole(Long page,Long size){
+        logger.info("/a/u/all-role---GET---the request parameters are page:{},size:{}",page,size);
+        List<RoleManage> roles;
+        Long total;
+        try{
+            if(page!=null){
+                roles=roleManageService.forSelect((page-1)*size, size);
+            }else {
+                roles=roleManageService.forSelect(0L,size);
+            }
+            total=roleManageService.selectCount();
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        Map<String,Object> map=new HashMap<>();
+        map.put("total",total);
+        map.put("products",roles);
+        logger.info(roles.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",map);
+        return jsonObject;
+
+        }
+
+    /**
+     *112角色模糊查询
+     */
+    @RequestMapping(value ="/a/u/roles", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getRoles(Long id,String role,String founder,
+                               String modifier,Long page,Long size){
+        logger.info("/a/u/roles---GET---the request parameters a" +
+                "re id:{},role:{},founder:{},modifier:{},page:{},size:{}",
+                id,role,founder,modifier,page,size);
+        List<RoleManage> roles;
+        Long total;
+        try{
+            if(page!=null){
+                roles=roleManageService.select((page-1)*size,size,id,role,founder,modifier);
+            }else {
+                roles=roleManageService.select(0L,size,id,role,founder,modifier);
+            }
+            total=roleManageService.selectCountWithCondition(id, role, founder, modifier);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        Map<String,Object> map=new HashMap<>();
+        map.put("total",total);
+        map.put("products",roles);
+        logger.info(roles.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",map);
+        return jsonObject;
+    }
+    /**
+     *113角色查找（编辑）
+     */
+    @RequestMapping(value ="/a/u/role/{id}", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getRoleById(long id){
+        logger.info("/a/u/all-role---GET---the request parameters are id:{}",id);
+        try {
+            List<ModuleManage> moduleManages = roleManageService.selectById(id);
+            jsonObject.put("data", moduleManages);
+            logger.info(moduleManages.toString());
+            jsonObject.put("code",1000);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+
+        }
+
+        return jsonObject;
+    }
+    /**
+     *114角色删除
+     */
+    @RequestMapping(value ="/a/u/role/{id}", produces="application/json",method = RequestMethod.DELETE)
+    public JSONObject deleteRole(long id){
+        logger.info("/a/u/role/{id}---GET---the request parameters are id:{}",id);
+        try {
+            moduleManageService.deleteRole(roleManageService.selectByPrimaryKey(id).getRole());
+            //删除关系表的有关该角色的所有信息
+            roleManageService.deleteByPrimaryKey(id);//删除该角色
+            jsonObject.put("code",1000);
+            jsonObject.put("data","");
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+
+        }
+        return jsonObject;
+    }
+    /**
+     *115角色更改（编辑好角色后点击保存）
+     */
+    @RequestMapping(value ="/a/u/role", produces="application/json",method = RequestMethod.PUT)
+    public JSONObject updateRole(long roleId, String role, String moduleIdArray){
+        logger.info("/a/u/role/{id}---GET---the request parameters are roleId:{},role:{},moduleIdArray:{}"
+                ,roleId,role,moduleIdArray);
+        Cookie[] cookies = request.getCookies();
+        String modifier = "";
+        try {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("userId")) {
+                    Token token = new Token();
+                    modifier = backstageAccountService.selectByPrimaryKey(Long.valueOf(token.SolveToken(cookie.getValue()))).getAdmin();
+                }
+            }
+            RoleManage roleManage = new RoleManage();
+            roleManage.setId(roleId);
+            roleManage.setRole(role);
+            roleManage.setModifier(modifier); //更新人
+            roleManage.setUpdateAt(new Date().getTime());
+            roleManageService.updateByPrimaryKeySelective(roleManage);//更新角色表
+            RoleManage getRoleManage = roleManageService.selectByPrimaryKey(roleId);
+            moduleManageService.deleteRole(getRoleManage.getRole());//把关系表之前角色删除
+            String[] modules;
+            ModuleRoleManage moduleRoleManage = new ModuleRoleManage();
+            modules = moduleIdArray.split(",");
+            for (Object module : modules) {
+                //这里得和前端交流，这里传进去是没有父模块id的
+                ///
+                ///
+                moduleRoleManage.setModuleId(Long.valueOf((String) module));
+                moduleRoleManage.setRole(role);
+                moduleManageService.insert(moduleRoleManage);
+            }
+            jsonObject.put("code", 1000);
+            jsonObject.put("data", "");
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+        }
+        return jsonObject;
+    }
+    /**
+     *116角色增加
+     */
+    @RequestMapping(value ="/a/u/role", produces="application/json",method = RequestMethod.GET)
+    public JSONObject addRole(){
+        logger.info("/a/u/role/---GET---the request parameters are null ");
+        try {
+            List<ModuleRole> FirstModuleId = moduleManageService.selectFirst();
+            List<FirstModule> nestModules = new ArrayList<>();
+            for(ModuleRole moduleRole :FirstModuleId){
+                List<ModuleRole> secondModules = moduleManageService.selectSecond(moduleRole.getId());
+                FirstModule firstModule = new FirstModule();
+                firstModule.setId(moduleRole.getId());
+                firstModule.setModuleName(moduleRole.getModuleName());
+                firstModule.setSecondModules(secondModules);
+                nestModules.add(firstModule);
+            }
+            jsonObject.put("code", 1000);
+            logger.info(nestModules.toString());
+            jsonObject.put("data", nestModules);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+
+        }
+        return jsonObject;
+    }
+    /**
+     *117角色保存（增加好角色后点击保存）
+     */
+    @RequestMapping(value ="/a/u/role", produces="application/json",method = RequestMethod.POST)
+    public JSONObject addRole(String role, String moduleIdArray){
+        logger.info("/a/u/role/{id}---GET---the request parameters are roleId:{},moduleIdArray:{}"
+                ,role,moduleIdArray);
+        Cookie[] cookies = request.getCookies();
+        String founder = "";
+        try {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("userId")) {
+                    Token token = new Token();
+                    founder = backstageAccountService.selectByPrimaryKey(Long.valueOf(token.SolveToken(cookie.getValue()))).getAdmin();
+                }
+            }
+            RoleManage roleManage = new RoleManage();
+            roleManage.setRole(role);
+            roleManage.setModifier(founder); //增加人
+            roleManage.setUpdateAt(new Date().getTime());
+            roleManageService.insert(roleManage);//更新角色表
+            String[] modules;
+            ModuleRoleManage moduleRoleManage = new ModuleRoleManage();
+            modules = moduleIdArray.split(",");
+            for (Object module : modules) {
+                //这里得和前端交流，这里传进去是没有父模块id的
+                ///
+                ///
+                moduleRoleManage.setModuleId(Long.valueOf((String) module));
+                moduleRoleManage.setRole(role);
+                moduleManageService.insert(moduleRoleManage);
+            }
+            jsonObject.put("code", 1000);
+            jsonObject.put("data", "");
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+
+        }
+        return jsonObject;
+    }
+}

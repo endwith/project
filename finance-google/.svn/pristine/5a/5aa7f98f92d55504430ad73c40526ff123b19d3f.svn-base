@@ -1,0 +1,65 @@
+package com.ptteng.service;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.model.User;
+import com.ptteng.service.impl.FinanceServiceHystric;
+import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ *提供一个java接口连接服务， 接口中的方法对应url接口就能直接访问了，不需要ribbon实例服务提供者
+ */
+//@FeignClient声明feign，添加fallback熔断器实现类
+@FeignClient(value = "finance-client",fallback=FinanceServiceHystric.class)
+public interface FinanceService {
+    /**
+     *8首页
+     */
+    @RequestMapping(value ="/a/main-page", produces="application/json",method = RequestMethod.GET)
+    JSONObject mainPage();
+    /**
+     *9产品详情
+     */
+    @RequestMapping(value ="/a/product", produces="application/json",method = RequestMethod.GET)
+    JSONObject product(@RequestParam("product")String product);
+    /**
+     *9 产品的投资记录
+     */
+    @RequestMapping(value ="/a/product/record", produces="application/json",method = RequestMethod.GET)
+    JSONObject productRecord(@RequestParam("product")String product,@RequestParam("page")Long page,@RequestParam("size")Long size);
+    /**
+     *10理财
+     */
+    @RequestMapping(value ="/a/u/finances", produces="application/json",method = RequestMethod.GET)
+    JSONObject finances(@RequestParam("count")long count);
+    /**
+     *11立即购买
+     *14支付银行卡选择
+     */
+    @RequestMapping(value ="/a/u/buyer", produces="application/json",method = RequestMethod.GET)
+     JSONObject buy(@RequestParam("id")Long id);
+    /**
+     *12确认购买
+     */
+    @RequestMapping(value ="/a/u/confirming-payment", produces="application/json",method = RequestMethod.GET)
+     JSONObject payment(@RequestParam("money")Long money,@RequestParam("bankCard")String bankCard,@RequestParam("id")Long id);
+    /**
+     *13支付方式选择
+     */
+    @RequestMapping(value ="/a/u/payment", produces="application/json",method = RequestMethod.GET)
+     JSONObject choosePay();
+    /**
+     *15确认支付
+     */
+    @RequestMapping(value ="/a/u/real-payment", produces="application/json",method = RequestMethod.POST)
+     JSONObject realPayment(@RequestParam("id")Long id);
+    /**
+     *确认支付-回落后台接口
+     */
+    @RequestMapping(value ="/a/u/real-paymentReport", produces="application/json",method = RequestMethod.GET)
+    JSONObject realPaymentReport();
+
+}

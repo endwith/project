@@ -1,0 +1,33 @@
+package com.ptteng.service.impl;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.ModuleManageService;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ModuleManageServiceHystric implements ModuleManageService {
+    @Override
+    public JSONObject getAllModule() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getModules() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getModuleById() {
+        return null;
+    }
+
+    @Override
+    public JSONObject deleteModule() {
+        return null;
+    }
+
+    @Override
+    public JSONObject updateModule() {
+        return null;
+    }
+}

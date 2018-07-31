@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ptteng.dao.MatchMapper" >
+  <resultMap id="BaseResultMap" type="com.ptteng.model.Match" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="trade_id" property="tradeId" jdbcType="BIGINT" />
+    <result column="obl_id" property="oblId" jdbcType="BIGINT" />
+    <result column="amount" property="amount" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, trade_id, obl_id, amount
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from matchs
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from matchs
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ptteng.model.Match" >
+    insert into matchs (id, trade_id, obl_id,
+      amount)
+    values (#{id,jdbcType=BIGINT}, #{tradeId,jdbcType=BIGINT}, #{oblId,jdbcType=BIGINT}, 
+      #{amount,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ptteng.model.Match" >
+    insert into matchs
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="tradeId != null" >
+        trade_id,
+      </if>
+      <if test="oblId != null" >
+        obl_id,
+      </if>
+      <if test="amount != null" >
+        amount,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="tradeId != null" >
+        #{tradeId,jdbcType=BIGINT},
+      </if>
+      <if test="oblId != null" >
+        #{oblId,jdbcType=BIGINT},
+      </if>
+      <if test="amount != null" >
+        #{amount,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ptteng.model.Match" >
+    update matchs
+    <set >
+      <if test="tradeId != null" >
+        trade_id = #{tradeId,jdbcType=BIGINT},
+      </if>
+      <if test="oblId != null" >
+        obl_id = #{oblId,jdbcType=BIGINT},
+      </if>
+      <if test="amount != null" >
+        amount = #{amount,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ptteng.model.Match" >
+    update matchs
+    set trade_id = #{tradeId,jdbcType=BIGINT},
+      obl_id = #{oblId,jdbcType=BIGINT},
+      amount = #{amount,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ptteng.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.ptteng.model.User" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="id_card" property="idCard" jdbcType="VARCHAR" />
+    <result column="total_assets" property="totalAssets" jdbcType="DECIMAL" />
+    <result column="account_number" property="accountNumber" jdbcType="VARCHAR" />
+    <result column="salt" property="salt" jdbcType="VARCHAR" />
+    <result column="true_name" property="trueName" jdbcType="VARCHAR" />
+    <result column="bank_card1" property="bankCard1" jdbcType="VARCHAR" />
+    <result column="bank_card2" property="bankCard2" jdbcType="VARCHAR" />
+    <result column="is_novice_gift" property="isNoviceGift" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="accumul_income" property="accumulIncome" jdbcType="DECIMAL" />
+    <result column="create_at" property="createAt" jdbcType="BIGINT" />
+    <result column="update_at" property="updateAt" jdbcType="BIGINT" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, phone, password, id_card, total_assets, account_number, salt, true_name, bank_card1, 
+    bank_card2, is_novice_gift, status, accumul_income, create_at, update_at, modifier
+  </sql>
+  <select id="selectByPhoneNumber" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from user
+    where phone = #{phone}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from user
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ptteng.model.User"  >
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into user (id, phone, password, 
+      id_card, total_assets, account_number, 
+      salt, true_name, bank_card1, 
+      bank_card2, is_novice_gift, status, 
+      accumul_income, create_at, update_at,
+      modifier
+      )
+    values (#{id,jdbcType=BIGINT}, #{phone,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{idCard,jdbcType=VARCHAR}, #{totalAssets,jdbcType=DECIMAL}, #{accountNumber,jdbcType=VARCHAR}, 
+      #{salt,jdbcType=VARCHAR}, #{trueName,jdbcType=VARCHAR}, #{bankCard1,jdbcType=VARCHAR}, 
+      #{bankCard2,jdbcType=VARCHAR}, #{isNoviceGift,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, 
+      #{accumulIncome,jdbcType=DECIMAL}, #{createAt,jdbcType=BIGINT}, #{updateAt,jdbcType=BIGINT},
+      #{modifier,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ptteng.model.User" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="idCard != null" >
+        id_card,
+      </if>
+      <if test="totalAssets != null" >
+        total_assets,
+      </if>
+      <if test="accountNumber != null" >
+        account_number,
+      </if>
+      <if test="salt != null" >
+        salt,
+      </if>
+      <if test="trueName != null" >
+        true_name,
+      </if>
+      <if test="bankCard1 != null" >
+        bank_card1,
+      </if>
+      <if test="bankCard2 != null" >
+        bank_card2,
+      </if>
+      <if test="isNoviceGift != null" >
+        is_novice_gift,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="accumulIncome != null" >
+        accumul_income,
+      </if>
+      <if test="createAt != null" >
+        create_at,
+      </if>
+      <if test="updateAt != null" >
+        update_at,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="totalAssets != null" >
+        #{totalAssets,jdbcType=DECIMAL},
+      </if>
+      <if test="accountNumber != null" >
+        #{accountNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null" >
+        #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="trueName != null" >
+        #{trueName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCard1 != null" >
+        #{bankCard1,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCard2 != null" >
+        #{bankCard2,jdbcType=VARCHAR},
+      </if>
+      <if test="isNoviceGift != null" >
+        #{isNoviceGift,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="accumulIncome != null" >
+        #{accumulIncome,jdbcType=DECIMAL},
+      </if>
+      <if test="createAt != null" >
+        #{createAt,jdbcType=BIGINT},
+      </if>
+      <if test="updateAt != null" >
+        #{updateAt,jdbcType=BIGINT},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ptteng.model.User" >
+    update user
+    <set >
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        id_card = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="totalAssets != null" >
+        total_assets = #{totalAssets,jdbcType=DECIMAL},
+      </if>
+      <if test="accountNumber != null" >
+        account_number = #{accountNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null" >
+        salt = #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="trueName != null" >
+        true_name = #{trueName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCard1 != null" >
+        bank_card1 = #{bankCard1,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCard2 != null" >
+        bank_card2 = #{bankCard2,jdbcType=VARCHAR},
+      </if>
+      <if test="isNoviceGift != null" >
+        is_novice_gift = #{isNoviceGift,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="accumulIncome != null" >
+        accumul_income = #{accumulIncome,jdbcType=DECIMAL},
+      </if>
+      <if test="createAt != null" >
+        create_at = #{createAt,jdbcType=BIGINT},
+      </if>
+      <if test="updateAt != null" >
+        update_at = #{updateAt,jdbcType=BIGINT},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ptteng.model.User" >
+    update user
+    set phone = #{phone,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      total_assets = #{totalAssets,jdbcType=DECIMAL},
+      account_number = #{accountNumber,jdbcType=VARCHAR},
+      salt = #{salt,jdbcType=VARCHAR},
+      true_name = #{trueName,jdbcType=VARCHAR},
+      bank_card1 = #{bankCard1,jdbcType=VARCHAR},
+      bank_card2 = #{bankCard2,jdbcType=VARCHAR},
+      is_novice_gift = #{isNoviceGift,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      accumul_income = #{accumulIncome,jdbcType=DECIMAL},
+      create_at = #{createAt,jdbcType=BIGINT},
+      update_at = #{updateAt,jdbcType=BIGINT},
+      modifier = #{modifier,jdbcType=VARCHAR},
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="forSelect" resultMap="BaseResultMap" parameterType="Long">
+  select  <include refid="Base_Column_List" /> from user limit #{a},#{b}
+</select>
+  <select id="select" resultMap="BaseResultMap" >
+      SELECT * FROM user
+      <where>
+        <if test="id != null">
+          id=#{id}
+        </if>
+        <if test="trueName != null">
+          AND trueName like #{trueName}
+        </if>
+        <if test="phone != null ">
+          AND phone like #{phone}
+        </if>
+        <if test="status != null ">
+          AND status like #{status}
+        </if>
+      </where>
+    limit #{a},#{b}
+    </select>
+
+</mapper>

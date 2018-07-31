@@ -1,0 +1,67 @@
+package com.ptteng.service;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.model.ProductRecommend;
+import com.ptteng.service.impl.ProductRecommendServiceHystric;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+
+/**
+ *提供一个java接口连接服务， 接口中的方法对应url接口就能直接访问了，不需要ribbon实例服务提供者
+ */
+//@FeignClient声明feign，添加fallback熔断器实现类
+@FeignClient(value = "finance-admin",fallback=ProductRecommendServiceHystric.class)
+public interface ProductRecommendService {
+    /**
+     *70运营管理中的banner图入口
+     */
+    @RequestMapping(value ="/a/u/banner", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+     JSONObject getAllBanner(@RequestParam("id")Long page,@RequestParam("size")Long size,@RequestParam("type")Integer type);
+    /**
+     *71运营管理中的banner图模糊查询
+     * 78鼎力推荐查询模糊查询
+     */
+    @RequestMapping(value ="/a/u/banners", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+     JSONObject getBanners(@RequestParam("page")Long page,@RequestParam("size")Long size,@RequestParam("type")Integer type,@RequestParam("id")Long id,@RequestParam("title")String title,@RequestParam("product")String product,
+                           @RequestParam("founder")String founder,@RequestParam("modifier")String modifier);
+    /**
+     *72banner图新增
+     * 79鼎力推荐新增
+     */
+    @RequestMapping(value ="/a/u/banner", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+     JSONObject addBanner(@RequestBody HttpServletRequest request, @RequestParam("title")String title, @RequestParam("product")String product, @RequestParam("interval")Integer interval,
+                          @RequestParam("picture") MultipartFile picture, @RequestParam("type")Integer type, @RequestBody ProductRecommend productRecommend);
+    /**
+     *73banner图编辑—获取
+     * 80鼎力推荐编辑-获取
+     */
+    @RequestMapping(value ="/a/u/banner/{id}", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+     JSONObject getBannerById(@RequestParam("id")Long id);
+    /**
+     *74banner图编辑—保存
+     *75banner图上下架
+     *81鼎力推荐编辑-更改保存
+     *82鼎力推荐上下架
+     */
+    @RequestMapping(value ="/a/u/banner/{id}", produces="application/json",method = RequestMethod.PUT)
+    @ResponseBody
+     JSONObject updateBanner(@RequestBody HttpServletRequest request,@RequestParam("title")String title,@RequestParam("product")String product,@RequestParam("id")Long id,@RequestParam("interval")Integer interval,@RequestParam("picture")MultipartFile picture,@RequestParam("url")String url,
+                             @RequestParam("bannerStatus")Integer bannerStatus,@RequestParam("status")Integer status,@RequestBody ProductRecommend productRecommend);
+    /**
+     *76banner图删除
+     *83鼎力推荐删除
+     */
+    @RequestMapping(value ="/a/u/banner/{id}", produces="application/json",method = RequestMethod.DELETE)
+    @ResponseBody
+     JSONObject deleteBanner(@RequestParam("id")Long id);
+
+}

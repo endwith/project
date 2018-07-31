@@ -1,0 +1,62 @@
+package com.ptteng.controller;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.BackstageAccountService;
+import com.ptteng.service.RoleService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.annotation.security.RolesAllowed;
+
+@RefreshScope
+@Controller
+public class RoleController {
+    @Autowired
+    RoleService roleService;
+
+    /**
+     *111角色管理查询角色
+     */
+    @RequestMapping(value ="/a/u/all-role", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getAllRole(){
+        return roleService.getAllRole();
+    }
+    /**
+     *112角色模糊查询
+     */
+    @RequestMapping(value ="/a/u/roles", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getRoles(){
+        return roleService.getRoles();
+    }
+    /**
+     *113角色查找（编辑）
+     */
+    @RequestMapping(value ="/a/u/role/{id}", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getRoleById(){
+        return roleService.getRoleById();
+    }
+    /**
+     *114角色删除
+     */
+    @RequestMapping(value ="/a/u/role/{id}", produces="application/json",method = RequestMethod.DELETE)
+    @ResponseBody
+    public JSONObject deleteRole(){
+        return roleService.deleteRole();
+    }
+    /**
+     *115角色更改（编辑好角色后点击保存）
+     */
+    @RequestMapping(value ="/a/u/role", produces="application/json",method = RequestMethod.PUT)
+    @ResponseBody
+    public JSONObject updateRole(){
+        return roleService.updateRole();
+    }
+
+}

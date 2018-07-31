@@ -1,0 +1,215 @@
+package com.ptteng.controller;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.model.Product;
+import com.ptteng.service.BackstageAccountService;
+import com.ptteng.service.ProductService;
+import com.ptteng.util.Token;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import java.math.BigDecimal;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+
+@RefreshScope
+@Controller
+public class ProductController {
+    org.slf4j.Logger logger = LoggerFactory.getLogger(ProductController.class);
+    @Autowired
+    private JSONObject jsonObject;
+    @Resource
+    private ProductService productService;
+    @Resource
+    private Token token;
+    @Resource
+    private BackstageAccountService backstageAccountService;
+    /**
+     *63产品管理入口
+     */
+    @RequestMapping(value ="/a/u/allproduct", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getAllProduct(Long page,Long size){
+        logger.info("/a/u/allproduct---GET---the request parameters are page:{},size:{}",page,size);
+        List<Product> products;
+        Long total;
+        try{
+        if(page!=null){
+            products=productService.forSelect((page-1)*size, size);
+        }else {
+            products=productService.forSelect(0L,size);
+        }
+        total=productService.selectCount();
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        Map<String,Object> map=new HashMap<>();
+        map.put("total",total);
+        map.put("products",products);
+//        logger.info(products.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",map);
+        return jsonObject;
+    }
+    /**
+     *64产品模糊查询
+     */
+    @RequestMapping(value ="/a/u/products", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getProducts(Long page,Long size,Long id,String productName,String founder,Integer status){
+        logger.info("/a/u/products---GET---the request parameters are size:{},page:{},id:{},productName:{},founder:{},status:{}",size,page,productName,founder,id,status);
+        List<Product> products;
+        Long total;
+        try{
+        if(page!=null){
+            products=productService.select((page-1)*size, size,id,productName,founder,status);
+        }else {
+            products=productService.select(0L,size,id,productName,founder,status);
+        }
+        total=productService.selectCountWithCondition(id, productName, founder, status);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        Map<String,Object> map=new HashMap<>();
+        map.put("total",total);
+        map.put("products",products);
+//        logger.info(products.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",map);
+        return jsonObject;
+    }
+    /**
+     *65产品新增
+     */
+    @RequestMapping(value ="/a/u/product", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject addProduct(HttpServletRequest request,String productName, BigDecimal expectedRate, Integer investmentCycle, BigDecimal originMoney, BigDecimal addMoney, Integer returnInterest, String introduce, String moreInformation, Product product){
+        logger.info("/a/u/product---POST---the request parameters are productName:{},expectedRate:{},investmentCycle:{},originMoney:{},addMoney:{},returnInterest:{},introduce:{},moreInformation:{}", productName, expectedRate, investmentCycle, originMoney, addMoney, returnInterest, introduce, moreInformation);
+        String thisId = null;
+        Cookie[] cookie = request.getCookies();
+        if (cookie != null) {
+            for (Cookie c : cookie) {  // 遍历Cookie
+                if("userId".equals(c.getName()))
+                    thisId=c.getValue();
+            }
+        }
+        int s;
+            Long userId=Long.valueOf(token.SolveToken(thisId));
+            product.setCreateAt(System.currentTimeMillis());
+            try{
+            product.setFounder(backstageAccountService.selectByPrimaryKey(userId).getAdmin());
+            //产品创建默认不上架
+            product.setStatus(0);
+         s=productService.insert(product);
+            }catch (Throwable e){
+                logger.error("异常"+e);
+                jsonObject.put("data","");
+                jsonObject.put("code",2001);
+                return jsonObject;
+            }
+        logger.info(""+s);
+        if(s>0)
+            jsonObject.put("code",1000);
+        else
+            jsonObject.put("code",1001);
+        jsonObject.put("data","");
+        return jsonObject;
+    }
+    /**
+     *66产品编辑—获取该产品信息
+     */
+    @RequestMapping(value ="/a/u/product/{id}", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getProduct(Long id){
+        logger.info("/a/u/product/{id}---GET---the request parameters are id:{}", id);
+        Product product;
+        try{
+         product=productService.selectByPrimaryKey(id);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        logger.info(product.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",product);
+        return jsonObject;
+    }
+    /**
+     *67产品编辑—更新该产品
+     *68产品上下架
+     */
+    @RequestMapping(value ="/a/u/product/{id}", produces="application/json",method = RequestMethod.PUT)
+    @ResponseBody
+    public JSONObject updateProduct(HttpServletRequest request,Long id,String productName,BigDecimal expectedRate,Integer investmenCycle,BigDecimal originMoney,BigDecimal addMoney,Integer returnInterest,String introduce,String moreInformation,Integer status,Product product){
+        logger.info("/a/u/product/{id}---PUT---the request parameters are id:{}, productName:{}, expectedRate:{}, investmenCycle:{}, originMoney:{}, addMoney:{}, returnInterest:{}, introduce:{}, moreInformation:{}, status:{}",id,productName, expectedRate, investmenCycle, originMoney, addMoney, returnInterest, introduce, moreInformation, status);
+        String thisId = null;
+        Cookie[] cookie = request.getCookies();
+        if (cookie != null) {
+            for (Cookie c : cookie) {  // 遍历Cookie
+                if("userId".equals(c.getName()))
+                    thisId=c.getValue();
+            }
+        }
+        int a;
+        //更新时间，更新人
+        Long userId=Long.valueOf(token.SolveToken(thisId));
+        product.setUpdateAt(System.currentTimeMillis());
+        try{
+        product.setModifier(backstageAccountService.selectByPrimaryKey(userId).getAdmin());
+         a=productService.updateByPrimaryKeySelective(product);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        if(a>0)
+            jsonObject.put("code",1000);
+        else
+            jsonObject.put("code",1001);
+        jsonObject.put("data","");
+        return jsonObject;
+    }
+    /**
+     *69产品删除
+     */
+    @RequestMapping(value ="/a/u/product/{id}", produces="application/json",method = RequestMethod.DELETE)
+    @ResponseBody
+    public JSONObject deleteProduct(Long id){
+        logger.info("/a/u/product/{id}---DELETE---the request parameters are id:{}", id);
+        int a;
+        try{
+         a=productService.deleteByPrimaryKey(id);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        if(a>0)
+            jsonObject.put("code",1000);
+        else
+            jsonObject.put("code",1001);
+        jsonObject.put("data","");
+        return jsonObject;
+    }
+
+}

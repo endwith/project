@@ -1,0 +1,136 @@
+package com.ptteng.service.impl;
+
+import com.ptteng.model.FatherModule;
+import com.ptteng.model.ModuleManage;
+import com.ptteng.model.SonModule;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class ModuleRoleAssistImpl {
+    public List<FatherModule> addRoleAssist(List<ModuleManage> moduleManages) {
+        List<FatherModule> fatherModules = new ArrayList<>();
+
+        Map moduleMap = new HashMap();//放置模块编号，名称
+        Map fatherMap = new HashMap();//放置父模块编号，父编号
+        Map sonMap = new HashMap();
+        for (ModuleManage module : moduleManages) {
+            moduleMap.put(module.getModuleId(), module.getModuleName());
+            if (module.getModuleId() > 10 && module.getModuleId() < 100) {
+                //        System.out.println(module.getOwnId()+": "+module.getModule());
+                fatherMap.put(module.getModuleId(), module.getParentId());
+            } else if (module.getModuleId() > 100 && module.getModuleId() < 1000) {
+                //        System.out.println(module.getOwnId()+": "+module.getModule());
+                sonMap.put(module.getModuleId(), module.getParentId());
+            }
+        }
+            for (Object fatherKey : fatherMap.keySet()) {
+                FatherModule fatherModule = new FatherModule();
+                fatherModule.setName((String) moduleMap.get(fatherKey));
+                List<SonModule> sonModules = new ArrayList<>();
+                for (Object sonKey : sonMap.keySet()) {
+                    if (sonMap.get(sonKey) == fatherKey) {
+                        SonModule sonModule = new SonModule();
+                        sonModule.setName((String) moduleMap.get(sonKey));
+                        sonModule.setModuleId((long)sonKey);
+                        sonModules.add(sonModule);
+                        for (int j = 0; j < sonModules.size(); j++) {
+                            System.out.println("sonModules: " + sonModules.get(j).getName());
+                        }
+                    }
+                }
+                fatherModule.setSonModules(sonModules);
+                fatherModules.add(fatherModule);
+                for (int j = 0; j < fatherModules.size(); j++) {
+                    System.out.println("fatherModules: " + fatherModules.get(j).getName());
+                }
+            }
+
+
+        return fatherModules;
+    }
+    public List<FatherModule> eachRoleAssist(List<ModuleManage> moduleManages,List modulesRole) {
+        List<FatherModule> fatherModules = new ArrayList<>();
+
+        Map moduleMap = new HashMap();//放置模块编号，名称
+        Map fatherMap = new HashMap();//放置父模块编号，父编号
+        Map moduleStatusMap = new HashMap();//放置状态
+        Map sonMap = new HashMap();
+        for (ModuleManage module : moduleManages) {
+            moduleMap.put(module.getModuleId(), module.getModuleName());
+            System.out.println();
+            if (module.getModuleId() > 10 && module.getModuleId() < 100) {
+                fatherMap.put(module.getModuleId(), module.getParentId());
+            } else if (module.getModuleId() > 100 && module.getModuleId() < 1000) {
+                sonMap.put(module.getModuleId(), module.getParentId());
+                if(modulesRole.contains(module.getModuleId())){
+                    moduleStatusMap.put(module.getModuleId(),1);
+                }else {
+                    moduleStatusMap.put(module.getModuleId(),0);
+                }
+            }
+        }
+            for (Object fatherKey : fatherMap.keySet()) {
+                FatherModule fatherModule = new FatherModule();
+                fatherModule.setName((String) moduleMap.get(fatherKey));
+                List<SonModule> sonModules = new ArrayList<>();
+                for (Object sonKey : sonMap.keySet()) {
+                    if (sonMap.get(sonKey) == fatherKey) {
+                        SonModule sonModule = new SonModule();
+                        sonModule.setName((String) moduleMap.get(sonKey));
+                        sonModule.setModuleId((long)sonKey);
+                        sonModule.setStatus((int)moduleStatusMap.get(sonKey));
+                        sonModules.add(sonModule);
+                        for (int j = 0; j < sonModules.size(); j++) {
+                        }
+                    }
+                }
+                fatherModule.setSonModules(sonModules);
+                fatherModules.add(fatherModule);
+
+            }
+        return fatherModules;
+    }
+    public List<FatherModule> eachRoleShow(List<ModuleManage> moduleManages,List modulesRole) {
+        List<FatherModule> fatherModules = new ArrayList<>();
+        Map moduleNameMap = new HashMap();//放置模块名称，url
+        Map moduleMap = new HashMap();//放置模块编号，名称
+        Map fatherMap = new HashMap();//放置父模块编号，父编号
+        Map moduleStatusMap = new HashMap();//放置状态
+        Map sonMap = new HashMap();
+        for (ModuleManage module : moduleManages) {
+            moduleMap.put(module.getModuleId(), module.getModuleName());
+            moduleNameMap.put(module.getModuleName(),module.getModuleUrl());
+            if (module.getModuleId() > 10 && module.getModuleId() < 100) {
+                fatherMap.put(module.getModuleId(), module.getParentId());
+            } else if (module.getModuleId() > 100 && module.getModuleId() < 1000) {
+                sonMap.put(module.getModuleId(), module.getParentId());
+                if(modulesRole.contains(module.getModuleId())){
+                    moduleStatusMap.put(module.getModuleId(),1);
+                }else {
+                    moduleStatusMap.put(module.getModuleId(),0);
+                }
+            }
+        }
+        for (Object fatherKey : fatherMap.keySet()) {
+            FatherModule fatherModule = new FatherModule();
+            fatherModule.setName((String) moduleMap.get(fatherKey));
+            List<SonModule> sonModules = new ArrayList<>();
+            for (Object sonKey : sonMap.keySet()) {
+                if (sonMap.get(sonKey) == fatherKey&&(int)moduleStatusMap.get(sonKey)==1) {
+                    SonModule sonModule = new SonModule();
+                    sonModule.setName((String) moduleMap.get(sonKey));
+                    sonModule.setModuleId((long)sonKey);
+                    sonModule.setUrl((String) moduleNameMap.get(sonModule.getName()));
+                    sonModule.setStatus((int)moduleStatusMap.get(sonKey));
+                    sonModules.add(sonModule);
+                }
+            }
+            fatherModule.setSonModules(sonModules);
+            fatherModules.add(fatherModule);
+        }
+        return fatherModules;
+    }
+    }

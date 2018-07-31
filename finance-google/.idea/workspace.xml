@@ -1,0 +1,1682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="4f418310-dc21-4c61-8384-1132b33265bd" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/finance-core/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/finance-zuul/target/" />
+    <ignored path="$PROJECT_DIR$/finance-web-admin/target/" />
+    <ignored path="$PROJECT_DIR$/finance-eureka/target/" />
+    <ignored path="$PROJECT_DIR$/finance-feign-client/target/" />
+    <ignored path="$PROJECT_DIR$/finance-feign-admin/target/" />
+    <ignored path="$PROJECT_DIR$/finance-config-server/target/" />
+    <ignored path="$PROJECT_DIR$/finance-server-admin/target/" />
+    <ignored path="$PROJECT_DIR$/finance-server-client/target/" />
+    <ignored path="$PROJECT_DIR$/finance-quartz/target/" />
+    <ignored path="$PROJECT_DIR$/finance-web-client/target/" />
+    <ignored path="$PROJECT_DIR$/finance-eureka-config/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="finance-google" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="UploadPictureService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/UploadPictureService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FinanceServerAdminApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/FinanceServerAdminApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FinanceFeignAdminApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/FinanceFeignAdminApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductRecommendController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ProductRecommendController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="113" column="47" lean-forward="true" selection-start-line="113" selection-start-column="47" selection-end-line="113" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/finance-zuul/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FinanceZuulApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance-zuul/src/main/java/com/ptteng/FinanceZuulApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/resources/bootstrap.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="44" column="36" lean-forward="true" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="43" column="38" lean-forward="true" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SuggestionService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/SuggestionService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit4 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>/admin/</find>
+      <find>18</find>
+      <find>个人</find>
+      <find>35</find>
+      <find>13</find>
+      <find>56</find>
+      <find>selectByRole</find>
+      <find>登录</find>
+      <find>首页</find>
+      <find>updateByPrimaryKeySelective</find>
+      <find>3011</find>
+      <find>28</find>
+      <find>pref</find>
+      <find>HTTP</find>
+      <find>select</find>
+      <find>94</find>
+      <find>身份证</find>
+      <find>实名</find>
+      <find>bann</find>
+      <find>26</find>
+      <find>selectSuggeNoReadCount</find>
+      <find>selectCount</find>
+      <find>16</find>
+      <find>finances</find>
+      <find>selectByUserId</find>
+      <find>getTrade</find>
+      <find>limitMatchSelect</find>
+      <find>54</find>
+      <find>99</find>
+      <find>10</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>/</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/ModuleManageService.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/impl/ModuleManageServiceHystric.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/ModuleManageController.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/ProductService.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/impl/ProductServiceHystric.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/ProductController.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/ProductRecommendController.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/SuggestionService.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/impl/SuggestionServiceHystric.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/SuggestionController.java" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/SuggestionController.java" />
+        <option value="$PROJECT_DIR$/finance-quartz/src/main/java/com/ptteng/quartz/scheduler/MyScheduler.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/ObligatoryRightController.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/ObligatoryRightService.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/impl/ObligatoryRightServiceHystric.java" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/main/resources/mapper/MessageRelationshipMapper.xml" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/controller/FinanceController.java" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/resources/mapper/MessageRelationshipMapper.xml" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/resources/mapper/ObligatoryRightMapper.xml" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ObligatoryRightController.java" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/BackstageAccountController.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/RoleController.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/RoleService.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/impl/RoleServiceHystric.java" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/RoleController.java" />
+        <option value="$PROJECT_DIR$/finance-feign-client/src/main/java/com/ptteng/service/UserOperationService.java" />
+        <option value="$PROJECT_DIR$/finance-feign-client/src/main/java/com/ptteng/service/impl/UserOperationServiceHystric.java" />
+        <option value="$PROJECT_DIR$/finance-feign-client/src/main/java/com/ptteng/controller/UserOperationController.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/UserService.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/impl/UserServiceHystric.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/finance-server-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/finance-feign-client/src/main/java/com/ptteng/controller/FinanceController.java" />
+        <option value="$PROJECT_DIR$/finance-eureka/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/finance-eureka-config/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/userHandler/UserRoleHandler.java" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/controller/UserOperationController.java" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/shiro/ShiroConfig.java" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/main/resources/bootstrap.properties" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/finance-config-server/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/config/FeignClientsConfigurationCustom.java" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/userHandler/UserRoleHandler.java" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/ProductRecommendService.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/impl/ProductRecommendServiceHystric.java" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ProductRecommendController.java" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/resources/bootstrap.properties" />
+        <option value="$PROJECT_DIR$/finance-zuul/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/resources/application.properties" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="G:\maven\apache-maven-3.5.3\maven-dependcies\m2\repository" />
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="finance-eureka" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="finance-eureka" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="934" />
+    <option name="y" value="15" />
+    <option name="width" value="1608" />
+    <option name="height" value="975" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <flattenPackages ProjectPane="false" />
+      <hideEmptyPackages ProjectPane="false" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder5" value="5" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="187" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="187" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="187" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="187" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4" value="187" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth5" value="187" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder5" value="5" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="187" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="187" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="187" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth3" value="187" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="187" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth5" value="187" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="last_opened_file_path" value="G:/endwith/endwith4/springcloud-learning-example/springcloud-eureka-cluster" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.ptteng.dao" />
+      <recent name="com.ptteng.service" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\ideaproject\finance-google\finance-server-client\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ptteng.quartz" />
+      <recent name="com.ptteng.model" />
+      <recent name="com.ptteng.util" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\ideaproject\finance-google\finance-quartz\src\main\java\com\ptteng" />
+      <recent name="G:\ideaproject\finance-google\finance-quartz\src\main\java\com\ptteng\config" />
+      <recent name="G:\ideaproject\finance-google\finance-quartz\src" />
+      <recent name="G:\ideaproject\finance-google\finance-quartz\src\main\resources" />
+      <recent name="G:\ideaproject\finance-google\finance-feign-client\src\main\resources" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.ptteng.quartz" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.FinanceServerAdminApplication">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="MyTest.sss" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="finance-server-admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ptteng.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.ptteng" />
+      <option name="MAIN_CLASS_NAME" value="com.ptteng.MyTest" />
+      <option name="METHOD_NAME" value="sss" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="MyTest.tswswet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="finance-server-admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ptteng.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.ptteng" />
+      <option name="MAIN_CLASS_NAME" value="com.ptteng.MyTest" />
+      <option name="METHOD_NAME" value="tswswet" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="ProductServiceTest.updateByPrimaryKeySelective" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="finance-server-admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ptteng.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.ptteng.service" />
+      <option name="MAIN_CLASS_NAME" value="com.ptteng.service.ProductServiceTest" />
+      <option name="METHOD_NAME" value="updateByPrimaryKeySelective" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="myTest.ttt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="finance-server-client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ptteng.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.ptteng" />
+      <option name="MAIN_CLASS_NAME" value="com.ptteng.myTest" />
+      <option name="METHOD_NAME" value="ttt" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="myTest.ttts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="finance-server-client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ptteng.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.ptteng" />
+      <option name="MAIN_CLASS_NAME" value="com.ptteng.myTest" />
+      <option name="METHOD_NAME" value="ttts" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="FinanceConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="finance-config-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptteng.FinanceConfigServerApplication" />
+    </configuration>
+    <configuration name="FinanceEurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="finance-eureka" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptteng.FinanceEurekaApplication" />
+    </configuration>
+    <configuration name="FinanceEurekaConfigApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="finance-eureka-config" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptteng.financeeurekaconfig.FinanceEurekaConfigApplication" />
+    </configuration>
+    <configuration name="FinanceFeignAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="finance-feign-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptteng.FinanceFeignAdminApplication" />
+    </configuration>
+    <configuration name="FinanceFeignClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="finance-feign-client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptteng.FinanceFeignClientApplication" />
+    </configuration>
+    <configuration name="FinanceQuartzApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="finance-quartz" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptteng.FinanceQuartzApplication" />
+    </configuration>
+    <configuration name="FinanceServerAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="finance-server-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptteng.FinanceServerAdminApplication" />
+    </configuration>
+    <configuration name="FinanceServerClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="finance-server-client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptteng.FinanceServerClientApplication" />
+    </configuration>
+    <configuration name="FinanceWebAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="finance-web-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptteng.FinanceWebAdminApplication" />
+    </configuration>
+    <configuration name="FinanceWebClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="finance-web-client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptteng.FinanceWebClientApplication" />
+    </configuration>
+    <configuration name="FinanceZuulApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="finance-zuul" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptteng.FinanceZuulApplication" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.FinanceZuulApplication" />
+      <item itemvalue="Spring Boot.FinanceWebAdminApplication" />
+      <item itemvalue="Spring Boot.FinanceEurekaApplication" />
+      <item itemvalue="Spring Boot.FinanceFeignClientApplication" />
+      <item itemvalue="Spring Boot.FinanceFeignAdminApplication" />
+      <item itemvalue="Spring Boot.FinanceConfigServerApplication" />
+      <item itemvalue="Spring Boot.FinanceServerAdminApplication" />
+      <item itemvalue="Spring Boot.FinanceServerClientApplication" />
+      <item itemvalue="Spring Boot.FinanceQuartzApplication" />
+      <item itemvalue="Spring Boot.FinanceWebClientApplication" />
+      <item itemvalue="Spring Boot.FinanceEurekaConfigApplication" />
+      <item itemvalue="JUnit.myTest.ttt" />
+      <item itemvalue="JUnit.ProductServiceTest.updateByPrimaryKeySelective" />
+      <item itemvalue="JUnit.myTest.ttts" />
+      <item itemvalue="JUnit.MyTest.tswswet" />
+      <item itemvalue="JUnit.MyTest.sss" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MyTest.tswswet" />
+        <item itemvalue="JUnit.MyTest.sss" />
+        <item itemvalue="JUnit.myTest.ttts" />
+        <item itemvalue="JUnit.myTest.ttt" />
+        <item itemvalue="JUnit.ProductServiceTest.updateByPrimaryKeySelective" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="G:\ideaproject\finance-google" />
+          <option name="myCopyRoot" value="G:\ideaproject\finance-google" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="G:\ideaproject\finance-google\finance-config-server" />
+          <option name="myCopyRoot" value="G:\ideaproject\finance-google\finance-config-server" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="G:\ideaproject\finance-google\finance-core" />
+          <option name="myCopyRoot" value="G:\ideaproject\finance-google\finance-core" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="G:\ideaproject\finance-google\finance-eureka" />
+          <option name="myCopyRoot" value="G:\ideaproject\finance-google\finance-eureka" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="G:\ideaproject\finance-google\finance-eureka-config" />
+          <option name="myCopyRoot" value="G:\ideaproject\finance-google\finance-eureka-config" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="G:\ideaproject\finance-google\finance-feign-admin" />
+          <option name="myCopyRoot" value="G:\ideaproject\finance-google\finance-feign-admin" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="G:\ideaproject\finance-google\finance-feign-client" />
+          <option name="myCopyRoot" value="G:\ideaproject\finance-google\finance-feign-client" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="G:\ideaproject\finance-google\finance-quartz" />
+          <option name="myCopyRoot" value="G:\ideaproject\finance-google\finance-quartz" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="G:\ideaproject\finance-google\finance-server-admin" />
+          <option name="myCopyRoot" value="G:\ideaproject\finance-google\finance-server-admin" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="G:\ideaproject\finance-google\finance-server-client" />
+          <option name="myCopyRoot" value="G:\ideaproject\finance-google\finance-server-client" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="G:\ideaproject\finance-google\finance-web-admin" />
+          <option name="myCopyRoot" value="G:\ideaproject\finance-google\finance-web-admin" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="G:\ideaproject\finance-google\finance-web-client" />
+          <option name="myCopyRoot" value="G:\ideaproject\finance-google\finance-web-client" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="G:\ideaproject\finance-google\finance-zuul" />
+          <option name="myCopyRoot" value="G:\ideaproject\finance-google\finance-zuul" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="G:\ideaproject\finance-google" />
+          <option name="myCopyRoot" value="G:\ideaproject\finance-google" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4f418310-dc21-4c61-8384-1132b33265bd" name="Default" comment="" />
+      <created>1531404253772</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1531404253772</updated>
+      <workItem from="1531404255342" duration="387000" />
+      <workItem from="1531443906770" duration="32689000" />
+      <workItem from="1531532634769" duration="29727000" />
+      <workItem from="1531616474411" duration="7768000" />
+      <workItem from="1531635224460" duration="2527000" />
+      <workItem from="1531638140619" duration="20821000" />
+      <workItem from="1531702531851" duration="8726000" />
+      <workItem from="1531715799193" duration="27047000" />
+      <workItem from="1531753101093" duration="1531000" />
+      <workItem from="1531789059135" duration="2528000" />
+      <workItem from="1531792794052" duration="33460000" />
+      <workItem from="1531835085491" duration="73000" />
+      <workItem from="1531876448242" duration="511000" />
+      <workItem from="1531877363791" duration="31859000" />
+      <workItem from="1531961707668" duration="7153000" />
+      <workItem from="1531969056179" duration="674000" />
+      <workItem from="1531979394930" duration="17932000" />
+      <workItem from="1532002206944" duration="5779000" />
+      <workItem from="1532048141518" duration="24113000" />
+      <workItem from="1532087225684" duration="1147000" />
+      <workItem from="1532088753242" duration="2776000" />
+      <workItem from="1532091898683" duration="635000" />
+      <workItem from="1532092950579" duration="2364000" />
+      <workItem from="1532134890042" duration="1630000" />
+      <workItem from="1532139294461" duration="666000" />
+      <workItem from="1532163800375" duration="3409000" />
+      <workItem from="1532174127626" duration="3344000" />
+      <workItem from="1532226930688" duration="12962000" />
+      <workItem from="1532309832034" duration="29711000" />
+      <workItem from="1532396226506" duration="4421000" />
+      <workItem from="1532413764087" duration="11138000" />
+      <workItem from="1532484892288" duration="3654000" />
+      <workItem from="1532498208004" duration="14453000" />
+      <workItem from="1532570799889" duration="229000" />
+      <workItem from="1532585715662" duration="12601000" />
+      <workItem from="1532604870329" duration="895000" />
+      <workItem from="1532653818024" duration="13431000" />
+      <workItem from="1532673229083" duration="5761000" />
+      <workItem from="1532698361498" duration="2542000" />
+      <workItem from="1532739813688" duration="7062000" />
+      <workItem from="1532827027185" duration="14105000" />
+      <workItem from="1532870697715" duration="5352000" />
+      <workItem from="1532913003765" duration="23544000" />
+      <workItem from="1532999393591" duration="8900000" />
+    </task>
+    <task id="LOCAL-00110">
+      <created>1532525597505</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1532525597506</updated>
+    </task>
+    <task id="LOCAL-00111">
+      <created>1532526355833</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1532526355833</updated>
+    </task>
+    <task id="LOCAL-00112">
+      <created>1532527112472</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1532527112472</updated>
+    </task>
+    <task id="LOCAL-00113">
+      <created>1532570980803</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1532570980804</updated>
+    </task>
+    <task id="LOCAL-00114">
+      <created>1532590732964</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1532590732965</updated>
+    </task>
+    <task id="LOCAL-00115">
+      <created>1532591828067</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1532591828067</updated>
+    </task>
+    <task id="LOCAL-00116">
+      <created>1532593057323</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1532593057323</updated>
+    </task>
+    <task id="LOCAL-00117">
+      <created>1532594250428</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1532594250428</updated>
+    </task>
+    <task id="LOCAL-00118">
+      <created>1532596136012</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1532596136012</updated>
+    </task>
+    <task id="LOCAL-00119">
+      <created>1532596599911</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1532596599911</updated>
+    </task>
+    <task id="LOCAL-00120">
+      <created>1532596865759</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1532596865759</updated>
+    </task>
+    <task id="LOCAL-00121">
+      <created>1532598036646</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1532598036646</updated>
+    </task>
+    <task id="LOCAL-00122">
+      <created>1532604934064</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1532604934065</updated>
+    </task>
+    <task id="LOCAL-00123">
+      <created>1532604969036</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1532604969038</updated>
+    </task>
+    <task id="LOCAL-00124">
+      <created>1532605169670</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1532605169670</updated>
+    </task>
+    <task id="LOCAL-00125">
+      <created>1532658415286</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1532658415287</updated>
+    </task>
+    <task id="LOCAL-00126">
+      <created>1532669515837</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1532669515837</updated>
+    </task>
+    <task id="LOCAL-00127">
+      <created>1532673589128</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1532673589128</updated>
+    </task>
+    <task id="LOCAL-00128">
+      <created>1532677561691</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1532677561691</updated>
+    </task>
+    <task id="LOCAL-00129">
+      <created>1532678261794</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1532678261794</updated>
+    </task>
+    <task id="LOCAL-00130">
+      <created>1532679174393</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1532679174393</updated>
+    </task>
+    <task id="LOCAL-00131">
+      <created>1532694938772</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1532694938772</updated>
+    </task>
+    <task id="LOCAL-00132">
+      <created>1532700900256</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1532700900257</updated>
+    </task>
+    <task id="LOCAL-00133">
+      <created>1532741986774</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1532741986775</updated>
+    </task>
+    <task id="LOCAL-00134">
+      <created>1532760935914</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1532760935914</updated>
+    </task>
+    <task id="LOCAL-00135">
+      <created>1532763724107</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1532763724107</updated>
+    </task>
+    <task id="LOCAL-00136">
+      <created>1532830734952</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1532830734953</updated>
+    </task>
+    <task id="LOCAL-00137">
+      <created>1532832042797</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1532832042797</updated>
+    </task>
+    <task id="LOCAL-00138">
+      <created>1532843485421</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1532843485422</updated>
+    </task>
+    <task id="LOCAL-00139">
+      <created>1532848283437</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1532848283437</updated>
+    </task>
+    <task id="LOCAL-00140">
+      <created>1532855508151</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1532855508151</updated>
+    </task>
+    <task id="LOCAL-00141">
+      <created>1532856867804</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1532856867805</updated>
+    </task>
+    <task id="LOCAL-00142">
+      <created>1532914079559</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1532914079560</updated>
+    </task>
+    <task id="LOCAL-00143">
+      <created>1532915216025</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1532915216025</updated>
+    </task>
+    <task id="LOCAL-00144">
+      <created>1532915827361</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1532915827361</updated>
+    </task>
+    <task id="LOCAL-00145">
+      <created>1532915854430</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1532915854430</updated>
+    </task>
+    <task id="LOCAL-00146">
+      <created>1532915930565</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1532915930566</updated>
+    </task>
+    <task id="LOCAL-00147">
+      <created>1532917152545</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1532917152545</updated>
+    </task>
+    <task id="LOCAL-00148">
+      <created>1532917843904</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1532917843904</updated>
+    </task>
+    <task id="LOCAL-00149">
+      <created>1532917894008</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1532917894008</updated>
+    </task>
+    <task id="LOCAL-00150">
+      <created>1532931867648</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1532931867648</updated>
+    </task>
+    <task id="LOCAL-00151">
+      <created>1532948143400</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1532948143400</updated>
+    </task>
+    <task id="LOCAL-00152">
+      <created>1532948581687</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1532948581687</updated>
+    </task>
+    <task id="LOCAL-00153">
+      <created>1532951481673</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1532951481673</updated>
+    </task>
+    <task id="LOCAL-00154">
+      <created>1532953763185</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1532953763185</updated>
+    </task>
+    <task id="LOCAL-00155">
+      <created>1532953788799</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1532953788799</updated>
+    </task>
+    <task id="LOCAL-00156">
+      <created>1533000433387</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1533000433388</updated>
+    </task>
+    <task id="LOCAL-00157">
+      <created>1533001124347</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1533001124347</updated>
+    </task>
+    <task id="LOCAL-00158">
+      <created>1533007142532</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1533007142532</updated>
+    </task>
+    <option name="localTasksCounter" value="159" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="MyTest_sss - 2018.07.25 at 12h 51m 17s.xml">
+      <configuration name="MyTest.sss" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyTest_tswswet - 2018.07.25 at 21h 37m 37s.xml">
+      <configuration name="MyTest.tswswet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyTest_tswswet - 2018.07.25 at 21h 38m 38s.xml">
+      <configuration name="MyTest.tswswet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyTest_tswswet - 2018.07.25 at 21h 46m 23s.xml">
+      <configuration name="MyTest.tswswet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyTest_tswswet - 2018.07.25 at 21h 50m 06s.xml">
+      <configuration name="MyTest.tswswet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyTest_tswswet - 2018.07.25 at 21h 51m 29s.xml">
+      <configuration name="MyTest.tswswet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyTest_tswswet - 2018.07.25 at 21h 54m 31s.xml">
+      <configuration name="MyTest.tswswet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyTest_tswswet - 2018.07.25 at 21h 57m 29s.xml">
+      <configuration name="MyTest.tswswet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyTest_tswswet - 2018.07.26 at 16h 20m 59s.xml">
+      <configuration name="MyTest.tswswet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyTest_tswswet - 2018.07.26 at 16h 21m 05s.xml">
+      <configuration name="MyTest.tswswet" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="441808000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.5021322" side_tool="true" weight="0.4340045" />
+      <window_info anchor="bottom" id="JRebel Console" order="13" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="9" weight="0.32142857" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="JRebel Executor" order="12" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Database" order="5" weight="0.2707889" />
+      <window_info id="Structure" order="1" sideWeight="0.50086653" side_tool="true" weight="0.26545843" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="5" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32997763" />
+      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.499354" weight="0.37583894" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info id="Image Layers" order="4" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3378076" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978678" visible="true" weight="0.21252796" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.32997763" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32997763" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49392712" visible="true" weight="0.17857143" />
+      <window_info anchor="right" id="Bean Validation" order="8" weight="0.32995737" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info id="JRebel" order="3" side_tool="true" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info id="Favorites" order="6" sideWeight="0.5060729" side_tool="true" weight="0.17697228" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info id="JRebel" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.32997763" />
+      <window_info id="Image Layers" order="4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" visible="true" weight="0.1409396" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.5060729" side_tool="true" weight="0.17697228" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32997763" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.50159913" side_tool="true" weight="0.42393735" />
+      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.499354" weight="0.37583894" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32997763" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.19322033" />
+      <window_info anchor="right" id="Maven Projects" order="9" weight="0.32142857" />
+      <window_info anchor="bottom" id="JRebel Executor" order="12" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49392712" weight="0.13486141" />
+      <window_info anchor="bottom" id="JRebel Console" order="13" side_tool="true" />
+      <window_info anchor="right" id="Database" order="5" weight="0.2707889" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info id="Structure" order="1" sideWeight="0.50086653" side_tool="true" weight="0.26545843" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Bean Validation" order="8" weight="0.32995737" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="11" />
+    </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/finance-eureka-config/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-netflix-eureka-client/1.3.1.RELEASE/spring-cloud-netflix-eureka-client-1.3.1.RELEASE.jar!/org/springframework/cloud/netflix/eureka/EurekaInstanceConfigBean.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="270" column="16" selection-start-line="270" selection-start-column="16" selection-end-line="270" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-config-server/src/main/java/com/ptteng/FinanceConfigServerApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/InformationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/config/UploadOOS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/config/CustomMVCConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/config/MyWebAppConfigurer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ProductController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="41" column="43" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/userHandler/UserRoleHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="65" column="86" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/config/RedisConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/BackstageAccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3260">
+          <caret line="189" column="42" lean-forward="true" selection-start-line="189" selection-start-column="42" selection-end-line="189" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/InformationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ModuleManageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/ManageUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/resources/bootstrap.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-config-server/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/userHandler/UserRoleHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="58" column="74" selection-start-line="58" selection-start-column="74" selection-end-line="58" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-477" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="83" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/config/FeignClientsConfigurationCustom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/config/FeignHystrixConcurrencyStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-161">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-client/src/main/java/com/ptteng/FinanceFeignClientApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-client/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-client/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-276" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/controller/FinanceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="769" column="43" selection-start-line="769" selection-start-column="28" selection-end-line="769" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/FinanceServerClientApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/impl/ProductRecommendServiceHystric.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/impl/RoleServiceHystric.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/impl/UploadPictureServiceHystric.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/RoleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/aspectj/RequestLimitException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/controller/UserOperationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/controller/UserMessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="406" column="45" selection-start-line="406" selection-start-column="28" selection-end-line="406" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-client/src/main/java/com/ptteng/config/FeignHystrixConcurrencyStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-client/src/main/java/com/ptteng/config/FeignClientsConfigurationCustom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="35" column="71" lean-forward="true" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/ProductRecommendController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/ProductRecommendService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/SuggestionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/UploadPictureService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ProductRecommendController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="113" column="47" lean-forward="true" selection-start-line="113" selection-start-column="47" selection-end-line="113" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/resources/bootstrap.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/FinanceFeignAdminApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/FinanceServerAdminApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="43" column="38" lean-forward="true" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-zuul/src/main/java/com/ptteng/FinanceZuulApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="44" column="36" lean-forward="true" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-zuul/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>finance-server-admin</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -1,0 +1,81 @@
+package com.ptteng.service.impl;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.UserMessageService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class UserMessageServiceHystric implements UserMessageService {
+    @Autowired
+    private JSONObject jsonObject;
+    @Override
+    public JSONObject getMessages() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject realName() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject smsCode() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject verificationCode() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject newPhone() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject newPassword() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject informationCenter() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject information() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject suggeCenter() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject sugge() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+}

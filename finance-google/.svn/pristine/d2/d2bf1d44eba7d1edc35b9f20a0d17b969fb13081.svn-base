@@ -1,0 +1,57 @@
+                           ##  Code码
+1000=success massage   成功
+1001=failed  ##失败
+1002=illegal parameter   ##非法入参
+1003=necessary param missing   ##缺少必要的参数
+1004=sign failed   登录失败
+1005=no such user   没有该用户
+1006=user update failed   用户更新失败
+
+##
+2001=Server has something wrong   服务器异常
+2002=Connection disconnection    连接断开（hystric使用）
+
+##
+3001=this phoneNumber already is registered   该号码已经被注册
+3002=send validateCode more than 20 times  验证码过20次，明天再试
+3003=time expired，plz try again   时间过期，再试一次
+3004=validateCode is wrong    验证码错误
+3005=user frozen    用户冻结
+3006=users don‘t exist    用户不存在
+
+##upload
+6001=The upload file is empty	上传文件为空
+6002=The file format is incorrect	文件格式不正确
+6003=File transmission error	文件传输错误
+6004=Module does not exist	模块不存在
+
+##module
+7000=module request parameter error.	模块请求参数错误。
+7001=the module does not exist.	模块不存在。
+7002=The same module name already exists.	相同的模块名称已经存在。
+7003=It is not allowed to modify back-stage management module	不允许修改后台管理模块
+7004=It is not allowed to delete back-stage management module	不允许删除后台管理模块
+
+##role
+8000=role request parameter error.	角色请求参数错误。
+8001=the role does not exist.	该角色不存在。
+8002=the role name already exists.	角色名称已经存在。
+8003=Deletion of your role or admin role is not allowed.	不允许删除您的角色或管理员角色。
+8004=edit of  admin role is not allowed.	不允许编辑管理员角色。
+8005=It is not allowed to modify role of admin's admin authority or roleName	不允许修改admin的管理员权限或roleName的角色
+
+##后台账号manager
+9000=account or password error.	帐户或密码错误。
+9001=account request parameter error.	帐户请求参数错误。
+9002=the username has been registered.	用户名已被注册。
+9003=the phone number has been registered.	电话号码已被注册。
+9004=The user has no corresponding role.	用户没有相应的角色。
+9005=The manager does not exist	经理不存在
+9006=password confirmation error	密码确认错误-
+9007=password too short	密码太短
+9008=Please visit after login.	登录后请登录。
+9009=the original password was entered incorrectly	输入的原始密码不正确
+9010=It is not allowed to delete admin's account	不允许删除管理员帐户
+9011=It is not allowed to modify admin's account	不允许修改管理员帐户
+9012=Password length error	密码长度错误
+

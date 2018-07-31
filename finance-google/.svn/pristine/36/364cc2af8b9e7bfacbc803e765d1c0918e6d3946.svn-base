@@ -1,0 +1,28 @@
+package com.ptteng.quartz;
+
+import com.ptteng.service.InformationManageService;
+import org.quartz.Job;
+import org.quartz.JobExecutionContext;
+import org.quartz.JobExecutionException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
+
+@Configuration
+@Component // 此注解必加
+@EnableScheduling // 此注解必加
+public class JobOne implements Job {
+    @Resource
+    InformationManageService informationManageService;
+    private static final Logger LOGGER =  LoggerFactory.getLogger(JobOne.class);
+    @Override
+    public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
+        LOGGER.info("Hello world, i'm the king of the world!!!");
+        Long  a=informationManageService.selectCount();
+        System.out.println("************************"+a);
+    }
+}

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ptteng.dao.ProductMapper" >
+  <resultMap id="BaseResultMap" type="com.ptteng.model.Product" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="product_name" property="productName" jdbcType="VARCHAR" />
+    <result column="expected_rate" property="expectedRate" jdbcType="DECIMAL" />
+    <result column="investment_cycle" property="investmentCycle" jdbcType="INTEGER" />
+    <result column="origin_money" property="originMoney" jdbcType="DECIMAL" />
+    <result column="add_money" property="addMoney" jdbcType="DECIMAL" />
+    <result column="introduce" property="introduce" jdbcType="VARCHAR" />
+    <result column="return_interest" property="returnInterest" jdbcType="INTEGER" />
+    <result column="repayment_date" property="repaymentDate" jdbcType="BIGINT" />
+    <result column="return_date" property="returnDate" jdbcType="BIGINT" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="more_information" property="moreInformation" jdbcType="VARCHAR" />
+    <result column="founder" property="founder" jdbcType="VARCHAR" />
+    <result column="create_at" property="createAt" jdbcType="BIGINT" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />
+    <result column="update_at" property="updateAt" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, product_name, expected_rate, investment_cycle, origin_money, add_money, introduce, 
+    return_interest, repayment_date, return_date, status, more_information, founder, 
+    create_at, modifier, update_at
+  </sql>
+    <select id="selectAll" resultMap="BaseResultMap" >
+        select *
+        from product
+    </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from product
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <select id="selectByProduct" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from product
+    where product_name = #{product_name}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from product
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ptteng.model.Product" >
+    insert into product (id, product_name, expected_rate, 
+      investment_cycle, origin_money, add_money, 
+      introduce, return_interest, repayment_date, 
+      return_date, status, more_information, 
+      founder, create_at, modifier, 
+      update_at)
+    values (#{id,jdbcType=BIGINT}, #{productName,jdbcType=VARCHAR}, #{expectedRate,jdbcType=DECIMAL}, 
+      #{investmentCycle,jdbcType=INTEGER}, #{originMoney,jdbcType=DECIMAL}, #{addMoney,jdbcType=DECIMAL}, 
+      #{introduce,jdbcType=VARCHAR}, #{returnInterest,jdbcType=INTEGER}, #{repaymentDate,jdbcType=BIGINT}, 
+      #{returnDate,jdbcType=BIGINT}, #{status,jdbcType=INTEGER}, #{moreInformation,jdbcType=VARCHAR}, 
+      #{founder,jdbcType=VARCHAR}, #{createAt,jdbcType=BIGINT}, #{modifier,jdbcType=VARCHAR}, 
+      #{updateAt,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ptteng.model.Product" >
+    insert into product
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="productName != null" >
+        product_name,
+      </if>
+      <if test="expectedRate != null" >
+        expected_rate,
+      </if>
+      <if test="investmentCycle != null" >
+        investment_cycle,
+      </if>
+      <if test="originMoney != null" >
+        origin_money,
+      </if>
+      <if test="addMoney != null" >
+        add_money,
+      </if>
+      <if test="introduce != null" >
+        introduce,
+      </if>
+      <if test="returnInterest != null" >
+        return_interest,
+      </if>
+      <if test="repaymentDate != null" >
+        repayment_date,
+      </if>
+      <if test="returnDate != null" >
+        return_date,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="moreInformation != null" >
+        more_information,
+      </if>
+      <if test="founder != null" >
+        founder,
+      </if>
+      <if test="createAt != null" >
+        create_at,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="updateAt != null" >
+        update_at,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="productName != null" >
+        #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="expectedRate != null" >
+        #{expectedRate,jdbcType=DECIMAL},
+      </if>
+      <if test="investmentCycle != null" >
+        #{investmentCycle,jdbcType=INTEGER},
+      </if>
+      <if test="originMoney != null" >
+        #{originMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="addMoney != null" >
+        #{addMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="introduce != null" >
+        #{introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="returnInterest != null" >
+        #{returnInterest,jdbcType=INTEGER},
+      </if>
+      <if test="repaymentDate != null" >
+        #{repaymentDate,jdbcType=BIGINT},
+      </if>
+      <if test="returnDate != null" >
+        #{returnDate,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="moreInformation != null" >
+        #{moreInformation,jdbcType=VARCHAR},
+      </if>
+      <if test="founder != null" >
+        #{founder,jdbcType=VARCHAR},
+      </if>
+      <if test="createAt != null" >
+        #{createAt,jdbcType=BIGINT},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="updateAt != null" >
+        #{updateAt,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ptteng.model.Product" >
+    update product
+    <set >
+      <if test="productName != null" >
+        product_name = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="expectedRate != null" >
+        expected_rate = #{expectedRate,jdbcType=DECIMAL},
+      </if>
+      <if test="investmentCycle != null" >
+        investment_cycle = #{investmentCycle,jdbcType=INTEGER},
+      </if>
+      <if test="originMoney != null" >
+        origin_money = #{originMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="addMoney != null" >
+        add_money = #{addMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="introduce != null" >
+        introduce = #{introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="returnInterest != null" >
+        return_interest = #{returnInterest,jdbcType=INTEGER},
+      </if>
+      <if test="repaymentDate != null" >
+        repayment_date = #{repaymentDate,jdbcType=BIGINT},
+      </if>
+      <if test="returnDate != null" >
+        return_date = #{returnDate,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="moreInformation != null" >
+        more_information = #{moreInformation,jdbcType=VARCHAR},
+      </if>
+      <if test="founder != null" >
+        founder = #{founder,jdbcType=VARCHAR},
+      </if>
+      <if test="createAt != null" >
+        create_at = #{createAt,jdbcType=BIGINT},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="updateAt != null" >
+        update_at = #{updateAt,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <update id="updateByPrimaryKey" parameterType="com.ptteng.model.Product" >
+    update product
+    set product_name = #{productName,jdbcType=VARCHAR},
+      expected_rate = #{expectedRate,jdbcType=DECIMAL},
+      investment_cycle = #{investmentCycle,jdbcType=INTEGER},
+      origin_money = #{originMoney,jdbcType=DECIMAL},
+      add_money = #{addMoney,jdbcType=DECIMAL},
+      introduce = #{introduce,jdbcType=VARCHAR},
+      return_interest = #{returnInterest,jdbcType=INTEGER},
+      repayment_date = #{repaymentDate,jdbcType=BIGINT},
+      return_date = #{returnDate,jdbcType=BIGINT},
+      status = #{status,jdbcType=INTEGER},
+      more_information = #{moreInformation,jdbcType=VARCHAR},
+      founder = #{founder,jdbcType=VARCHAR},
+      create_at = #{createAt,jdbcType=BIGINT},
+      modifier = #{modifier,jdbcType=VARCHAR},
+      update_at = #{updateAt,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="forSelect" resultMap="BaseResultMap" parameterType="Long">
+    select  <include refid="Base_Column_List" /> from product limit #{a},#{b}
+  </select>
+  <select id="selectCount" resultType="Long">
+    select  count(1) from product
+  </select>
+  <select id="select" resultMap="BaseResultMap" >
+  SELECT * FROM  product
+  <where>
+    <if test="id != null">
+      id=#{id}
+    </if>
+    <if test="productName != null">
+      AND product_name like #{productName}
+    </if>
+    <if test="founer != null ">
+      AND founer like #{founer}
+    </if>
+    <if test="status != null ">
+      AND status like #{status}
+    </if>
+  </where>
+  limit #{a},#{b}
+</select>
+  <select id="selectCountWithCondition" resultType="Long" >
+    SELECT * FROM  product
+    <where>
+      <if test="id != null">
+        id=#{id}
+      </if>
+      <if test="productName != null">
+        AND product_name like #{productName}
+      </if>
+      <if test="founer != null ">
+        AND founer like #{founer}
+      </if>
+      <if test="status != null ">
+        AND status like #{status}
+      </if>
+    </where>
+  </select>
+  <select id="forSelectNotNovice" resultMap="BaseResultMap" parameterType="Long">
+    select  <include refid="Base_Column_List" />
+    from product
+    where  product_name NOT LIKE '新手礼'
+    limit #{a},#{b}
+  </select>
+</mapper>

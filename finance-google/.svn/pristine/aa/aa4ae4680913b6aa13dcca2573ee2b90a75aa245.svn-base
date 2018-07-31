@@ -1,0 +1,93 @@
+package com.ptteng.service;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.impl.ProductRecommendServiceHystric;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+/**
+ *提供一个java接口连接服务， 接口中的方法对应url接口就能直接访问了，不需要ribbon实例服务提供者
+ */
+//@FeignClient声明feign，添加fallback熔断器实现类
+@FeignClient(value = "finance-admin",fallback=ProductRecommendServiceHystric.class)
+public interface ProductRecommendService {
+    /**
+     *70运营管理中的banner图入口
+     */
+    @RequestMapping(value ="/a/u/banner", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+     JSONObject getAllBanner();
+    /**
+     *71运营管理中的banner图模糊查询
+     */
+    @RequestMapping(value ="/a/u/banners", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+     JSONObject getBanners();
+    /**
+     *72banner图新增
+     */
+    @RequestMapping(value ="/a/u/banner", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+     JSONObject addBanner();
+    /**
+     *73banner图编辑—获取
+     */
+    @RequestMapping(value ="/a/u/banner/{id}", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+     JSONObject getBannerById();
+    /**
+     *74banner图编辑—保存
+     *75banner图上下架
+     */
+    @RequestMapping(value ="/a/u/banner/{id}", produces="application/json",method = RequestMethod.PUT)
+    @ResponseBody
+     JSONObject updateBanner();
+    /**
+     *76banner图删除
+     */
+    @RequestMapping(value ="/a/u/banner/{id}", produces="application/json",method = RequestMethod.DELETE)
+    @ResponseBody
+     JSONObject deleteBanner();
+    /**
+     *77鼎力推荐入口
+     */
+    @RequestMapping(value ="/a/u/recommend", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+     JSONObject getAllRecommend();
+    /**
+     *78鼎力推荐查询
+     */
+    @RequestMapping(value ="/a/u/recommends", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+     JSONObject getRecommends();
+    /**
+     *79鼎力推荐新增
+     */
+    @RequestMapping(value ="/a/u/recommend", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+     JSONObject addRecommend();
+    /**
+     *80鼎力推荐编辑-获取
+     */
+    @RequestMapping(value ="/a/u/recommend/{id}", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+     JSONObject getRecommend();
+    /**
+     *81鼎力推荐编辑-更改
+     *82鼎力推荐-上下架
+     */
+    @RequestMapping(value ="/a/u/recommend/{id}", produces="application/json",method = RequestMethod.PUT)
+    @ResponseBody
+     JSONObject updateRecommend();
+    /**
+     *83鼎力推荐删除
+     */
+    @RequestMapping(value ="/a/u/recommend/{id}", produces="application/json",method = RequestMethod.DELETE)
+    @ResponseBody
+     JSONObject deleteRecommend();
+
+
+}

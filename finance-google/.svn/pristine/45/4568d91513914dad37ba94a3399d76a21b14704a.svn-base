@@ -1,0 +1,74 @@
+package com.ptteng.service;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.impl.UserMessageServiceHystric;
+import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+
+/**
+ *提供一个java接口连接服务， 接口中的方法对应url接口就能直接访问了，不需要ribbon实例服务提供者
+ */
+//@FeignClient声明feign，添加fallback熔断器实现类
+@FeignClient(value = "finance-client",fallback=UserMessageServiceHystric.class)
+public interface UserMessageService {
+    /**
+     *16显示个人信息
+     */
+    @RequestMapping(value ="/a/u/own-messages", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+     JSONObject getMessages(@RequestBody HttpServletRequest request);
+    /**
+     *17实名验证
+     */
+    @RequestMapping(value ="/a/u/real-name", produces="application/json",method = RequestMethod.POST)
+    @ResponseBody
+     JSONObject realName(@RequestBody HttpServletRequest request,@RequestParam("realName")String realName,@RequestParam("idCard")String idCard,@RequestParam("bankCard")String bankCard);
+    /**
+     *20需要短信验证（更换手机时）
+     */
+    @RequestMapping(value ="/a/u/sms-code", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+     JSONObject smsCode(@RequestBody HttpServletRequest request);
+
+
+    /**
+     *23更换手机
+     */
+    @RequestMapping(value ="/a/u/new-phone-number", produces="application/json",method = RequestMethod.PUT)
+    @ResponseBody
+     JSONObject newPhone(@RequestBody HttpServletRequest request, @RequestParam("phoneNumber")String phoneNumber, @RequestParam("smsCode")Long smsCode);
+    /**
+     *24修改密码
+     */
+    @RequestMapping(value ="/a/u/new-password", produces="application/json",method = RequestMethod.PUT)
+    @ResponseBody
+     JSONObject newPassword(@RequestBody HttpServletRequest request,@RequestParam("lastPassword")String lastPassword,@RequestParam("newPassword1")String newPassword1,@RequestParam("newPassword2")String newPassword2);
+    /**
+     *26消息中心
+     */
+    @RequestMapping(value ="/a/u/information-center", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+     JSONObject informationCenter(@RequestBody HttpServletRequest request,@RequestParam("size")Long size ,@RequestParam("count")Long count);
+    /**
+     *27消息阅读
+     */
+    @RequestMapping(value ="/a/u/information", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+     JSONObject information(@RequestBody HttpServletRequest request, @RequestParam("id")Long  id);
+    /**
+     *26消息中心(用户建议)
+     */
+    @RequestMapping(value ="/a/u/sugge-center", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    JSONObject suggeCenter(@RequestBody HttpServletRequest request,@RequestParam("size")Long size ,@RequestParam("count")Long count);
+    /**
+     *27消息阅读(用户建议)
+     */
+    @RequestMapping(value ="/a/u/sugge", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    JSONObject sugge(@RequestParam("id")Long  id);
+
+}
+

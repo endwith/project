@@ -1,0 +1,33 @@
+package com.ptteng.service.impl;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.RoleService;
+import org.springframework.stereotype.Component;
+
+@Component
+public class RoleServiceHystric implements RoleService {
+    @Override
+    public JSONObject getAllRole() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getRoles() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getRoleById() {
+        return null;
+    }
+
+    @Override
+    public JSONObject deleteRole() {
+        return null;
+    }
+
+    @Override
+    public JSONObject updateRole() {
+        return null;
+    }
+}

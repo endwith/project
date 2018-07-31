@@ -1,0 +1,82 @@
+package com.ptteng.service.impl;
+
+
+import com.ptteng.dao.InformationManageMapper;
+import com.ptteng.model.InformationManage;
+import com.ptteng.service.InformationManageService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
+@Service
+public class InformationManageServiceImpl implements InformationManageService {
+    @Resource
+    private InformationManageMapper informationManageMapper;
+
+    @Override
+    public int deleteByPrimaryKey(Long id) {
+        return 0;
+    }
+
+    @Override
+    public int insert(InformationManage record) {
+        return this.informationManageMapper.insert(record);
+    }
+
+    @Override
+    public int insertSelective(InformationManage record) {
+        return 0;
+    }
+
+    @Override
+    public InformationManage selectByPrimaryKey(Long id) {
+        return null;
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(InformationManage record) {
+        return 0;
+    }
+
+    @Override
+    public int updateByPrimaryKey(InformationManage record) {
+        return 0;
+    }
+
+    @Override
+    public List<InformationManage> forSelect(Long a, Long b) {
+        return this.informationManageMapper.forSelect(a, b);
+    }
+
+    @Override
+    public List<InformationManage> select(Long a, Long b, String inforTitle, Integer inforStatus, String founder, Long sendBeginTime, Long sendEndTime) {
+        return this.informationManageMapper.select(a, b, inforTitle, inforStatus, founder, sendBeginTime, sendEndTime);
+    }
+
+    @Override
+    public List<Object> selectInforByRead(Long userId, Long b) {
+        return this.informationManageMapper.selectInforByRead(userId, b);
+    }
+
+    @Override
+    public List<Object> selectInforByReadList(List<Long> inforId, Long b) {
+        return this.informationManageMapper.selectInforByReadList(inforId, b);
+    }
+
+    @Override
+    public List<Object> selectContent(Long id) {
+        return this.informationManageMapper.selectContent(id);
+    }
+
+    @Override
+    public Long selectCount() {
+        return this.informationManageMapper.selectCount();
+    }
+
+    @Override
+    public Long selectCountWithCondition(String inforTitle, Integer inforStatus, String founder, Long sendBeginTime, Long sendEndTime) {
+        return this.informationManageMapper.selectCountWithCondition(inforTitle, inforStatus, founder, sendBeginTime, sendEndTime);
+    }
+
+}

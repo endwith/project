@@ -1,0 +1,265 @@
+package com.ptteng.controller;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.config.UploadOOS;
+import com.ptteng.model.Product;
+import com.ptteng.model.ProductRecommend;
+import com.ptteng.service.BackstageAccountService;
+import com.ptteng.service.ProductRecommendService;
+import com.ptteng.util.OOSUtil;
+import com.ptteng.util.Token;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@RefreshScope
+@RestController
+public class ProductRecommendController {
+    org.slf4j.Logger logger = LoggerFactory.getLogger(ProductRecommendController.class);
+    @Autowired
+    private JSONObject jsonObject;
+    @Resource
+    private ProductRecommendService productRecommendService;
+    @Resource
+    private UploadOOS uploadOOS;
+    @Resource
+    private OOSUtil oosUtil;
+    @Resource
+    private Token token;
+    @Resource
+    private BackstageAccountService backstageAccountService;
+    @Autowired
+    HttpServletRequest request;
+    @Autowired
+    HttpServletResponse response;
+    /**
+     *70运营管理中的banner图入口
+     *77鼎力推荐入口
+     */
+    @RequestMapping(value ="/a/u/product-recommend", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getAllProductRecommend(Long page,Long size,Integer type){
+        logger.info("/a/u/product-recommend---GET---the request parameters are page:{},size:{},type:{}",page,size,type);
+        List<ProductRecommend> productRecommends;
+        Long total;
+        try{
+        if(page!=null){
+            productRecommends=productRecommendService.forSelect((page-1)*size, size,type);
+        }else {
+            productRecommends=productRecommendService.forSelect(0L,size,type);
+        }
+        total=productRecommendService.selectCount(type);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        Map<String,Object> map=new HashMap<>();
+        map.put("total",total);
+        map.put("products",productRecommends);
+//        logger.info(productRecommends.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",map);
+        return jsonObject;
+
+    }
+    /**
+     *71运营管理中的banner图模糊查询
+     *78鼎力推荐查询模糊查询
+     */
+    @RequestMapping(value ="/a/u/product-recommends", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getProductRecommends(Long page,Long size,Integer type,Long id,String title,String product,String founder,String modifier){
+        logger.info("/a/u/product-recommends---GET---the request parameters are size:{},page:{},type:{},id:{},title:{},product:{},founder:{},modifier:{}",size,page,type,id,title,product,founder,modifier);
+        List<Product> productRecommends;
+        Long total;
+
+        try{
+            if(page!=null){
+                productRecommends=productRecommendService.select((page-1)*size, size,type,id,title,product,founder,modifier);
+            }else {
+                productRecommends=productRecommendService.select(0L,size,type,id,title,product,founder,modifier);
+            }
+        total=productRecommendService.selectCountWithCondition(type,id,title,product,founder,modifier);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        Map<String,Object> map=new HashMap<>();
+        map.put("total",total);
+        map.put("products",productRecommends);
+        logger.info(productRecommends.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",map);
+        return jsonObject;
+    }
+    /**
+     *72banner图新增
+     *79鼎力推荐新增
+     */
+    @RequestMapping(value ="/a/u/product-recommend", produces="application/json",method = RequestMethod.POST)
+    public JSONObject addProductRecommend(String title, String product, Integer interval,
+                                          @RequestParam("picture") MultipartFile picture,
+                                          Integer type,String url) throws IOException {
+        logger.info("/a/u/product-recommend---POST---the request parameters are title:{},product:{},interval:{},type:{}", title,product,interval,type);
+        String thisId = null;
+        Cookie[] cookie = request.getCookies();
+        if (cookie != null) {
+            for (Cookie c : cookie) {  // 遍历Cookie
+                if("userId".equals(c.getName()))
+                    thisId=c.getValue();
+            }
+        }
+        ProductRecommend productRecommend=new ProductRecommend();
+        productRecommend.setTitle(title);//
+        productRecommend.setProduct(product);//鼎立推荐
+        productRecommend.setInterval(interval);
+        productRecommend.setType(type);
+        productRecommend.setUrl(url);
+        int s;
+        Long userId=Long.valueOf(token.SolveToken(thisId));
+        productRecommend.setCreateAt(System.currentTimeMillis());
+        try {
+            productRecommend.setFounder(backstageAccountService.selectByPrimaryKey(userId).getAdmin());
+            String fileName = null;
+            if (picture != null) {
+                InputStream inputStream = picture.getInputStream();
+                //判断域名所属，对应存储那个云
+                if (oosUtil.getEndpoint().equals("oss-cn-shenzhen.aliyuncs.com")) {
+                    fileName = oosUtil.uploadOSS(inputStream);
+                } else {
+                    fileName = oosUtil.qiniu(inputStream);
+                }
+            }
+            logger.info("add productRecommend : " + productRecommend.toString());
+            //把图片的名字作为picture字段储存
+            productRecommend.setPicture("https://endwith.oss-cn-shenzhen.aliyuncs.com/"+fileName);
+            Long start = System.currentTimeMillis();
+            logger.info(productRecommend.toString());
+            //设置创建时间
+            productRecommend.setCreateAt(start);
+            logger.info("***********" + productRecommend.toString());
+            s = productRecommendService.insert(productRecommend);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        if(s>0)
+            jsonObject.put("code",1000);
+        else
+            jsonObject.put("code",1001);
+        jsonObject.put("data","");
+        return jsonObject;
+    }
+
+    /**
+     *73banner图编辑—获取
+     *80鼎力推荐编辑-获取
+     */
+    @RequestMapping(value ="/a/u/product-recommend/{id}", produces="application/json",method = RequestMethod.GET)
+    public JSONObject getProductRecommendById(Long id){
+        logger.info("/a/u/product-recommend/{id}---GET---the request parameters are id:{}", id);
+        ProductRecommend productRecommend;
+        try {
+             productRecommend = productRecommendService.selectByPrimaryKey(id);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        String url="http://"+oosUtil.getBucketName()+"."+oosUtil.getEndpoint()+"/"+productRecommend.getPicture();
+        productRecommend.setPicture(url);
+        logger.info(productRecommend.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",productRecommend);
+        return jsonObject;
+    }
+    /**
+     *74banner图编辑—保存
+     *75banner图上下架
+     *81鼎力推荐编辑-更改保存
+     *82鼎力推荐上下架
+     */
+    @RequestMapping(value ="/a/u/product-recommend/{id}", produces="application/json",method = RequestMethod.PUT)
+    public JSONObject updateProductRecommend(String title,String product,Long id,Integer interval,@RequestParam("picture")MultipartFile picture,String url,Integer bannerStatus,Integer status,ProductRecommend productRecommend) throws IOException {
+        logger.info("/a/u/product-recommend/{id}---PUT---the request parameters are title:{},product:{},id:{},interval:{},picture:{},url:{},bannerStatus:{},status:{}",title,product, id, interval, picture, url, bannerStatus, status);
+        Cookie[] cookie = request.getCookies();
+        String thisId = null;
+        if (cookie != null) {
+            for (Cookie c : cookie) {  // 遍历Cookie
+                if("userId".equals(c.getName()))
+                    thisId=c.getValue();
+            }
+        }
+        int a;
+        Long userId=Long.valueOf(token.SolveToken(thisId));
+        try{
+        productRecommend.setModifier(backstageAccountService.selectByPrimaryKey(userId).getAdmin());
+        String fileName=null;
+        InputStream inputStream = picture.getInputStream();
+        //判断域名所属，对应存储那个云
+        if(oosUtil.getEndpoint().equals("oss-cn-shenzhen.aliyuncs.com")){
+            fileName =  oosUtil.uploadOSS(inputStream);
+        } else {
+            fileName=oosUtil.qiniu(inputStream);
+        }
+        Long start=System.currentTimeMillis();
+        productRecommend.setUpdateAt(start);
+        //修改该字段
+        productRecommend.setPicture(fileName);
+         a=productRecommendService.updateByPrimaryKeySelective(productRecommend);
+        }catch (Throwable e){
+            logger.error("异常"+e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+            return jsonObject;
+        }
+        if(a>0)
+            jsonObject.put("code",1000);
+        else
+            jsonObject.put("code",1001);
+        jsonObject.put("data","");
+        return jsonObject;
+    }
+
+    /**
+     *76banner图删除
+     *83鼎力推荐删除
+     */
+    @RequestMapping(value ="/a/u/product-recommend/{id}", produces="application/json",method = RequestMethod.DELETE)
+    public JSONObject deleteProductRecommend(Long id){
+        logger.info("/a/u/product-recommend/{id}---DELETE---the request parameters are id:{}", id);
+        int a;
+         try{
+             a=productRecommendService.deleteByPrimaryKey(id);
+         }catch (Throwable e){
+             logger.error("异常"+e);
+             jsonObject.put("data","");
+             jsonObject.put("code",2001);
+             return jsonObject;
+         }
+        if(a>0)
+            jsonObject.put("code",1000);
+        else
+                jsonObject.put("code",1001);
+        jsonObject.put("data","");
+        return jsonObject;
+}
+
+}

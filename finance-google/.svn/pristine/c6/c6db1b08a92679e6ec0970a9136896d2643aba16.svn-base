@@ -1,0 +1,686 @@
+package com.ptteng.controller;
+
+import com.alibaba.fastjson.JSONObject;
+import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
+import com.ptteng.model.ProductRecommend;
+import com.ptteng.model.Suggestion;
+import com.ptteng.model.User;
+import com.ptteng.service.ProductRecommendService;
+import com.ptteng.service.SuggestionService;
+import com.ptteng.service.UserService;
+import com.ptteng.util.*;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.*;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+@RefreshScope
+@RestController
+public class UserOperationController {
+    org.slf4j.Logger logger = LoggerFactory.getLogger(UserOperationController.class);
+    @Autowired
+    private  JSONObject jsonObject;
+    @Autowired
+    private  SmsDemo smsDemo;
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private RedisTemplate redisTemplate;
+    @Autowired
+    private OOSUtil oosUtil;
+    @Autowired
+    private ProductRecommendService productRecommendService;
+    @Autowired
+            private SuggestionService suggestionService;
+    @Autowired
+    private Token token;
+    @Autowired
+    HttpServletRequest request;
+    @Autowired
+    HttpServletResponse response;
+    /**
+     *1获取短信验证码
+     */
+    @RequestMapping(value ="/a/verification-sms-code", produces="application/json",method = RequestMethod.GET)
+    public JSONObject verify(String phoneNumber,long moduleId){
+        logger.info("/client/a/verification-sms-code---GET---the request parameters are " +
+                "phoneNumber ：{},moduleId : {}"+
+                phoneNumber,moduleId);
+        ValueOperations<Serializable, Object> operations = redisTemplate.opsForValue();
+            int smsCode = (int)( (Math.random() * 9 + 1) * 100000);
+        int maxSendSmsTimes = 0;
+        SendSmsResponse smsStatus = null;
+        String showSmsStatus = "";
+//        if(phoneNumber!=null){
+//            if(Long.valueOf(phoneNumber)>11000000000l) {
+//                CheckPhone checkPhone = new CheckPhone();
+//                if (!checkPhone.isPhone(phoneNumber)) {
+//                    jsonObject.put("code", 1002);
+//                    jsonObject.put("data", "");
+//                    return jsonObject;
+//                }
+//            }
+//        }
+            if(phoneNumber==null){
+                //接口没有输入手机号码
+                Cookie[] cookies = request.getCookies();
+                for(Cookie cookie: cookies ){
+                    if(cookie.getName().equals("userId")){
+                        long id = Long.valueOf(token.SolveToken(cookie.getValue()));
+                        try {
+                            User user = userService.selectByPrimaryKey(id);
+                            phoneNumber = token.SolveToken(user.getPhone());
+                        }catch (Throwable e){
+                            logger.error("error",e.fillInStackTrace());
+                            jsonObject.put("data","");
+                            jsonObject.put("code",2001);
+                        }
+
+                    }
+                }
+            }
+            if(redisTemplate.hasKey("googleSmsCodeSendTime"+String.valueOf(moduleId)+phoneNumber)){
+               //60S内只能发送一次
+                jsonObject.put("code", 3010);
+                jsonObject.put("data","");
+                return jsonObject;
+            }
+            //一定要注意这里是各自20次,后面是50次，所以每个端口调用这个接口都得来修改这里
+            //查下整个项目有几个需要使用到这个验证码的地方，都做下这块的计数
+            if(moduleId==3){
+                //限制连续错误5次就限制2小时后才能发
+                 maxSendSmsTimes = 50;
+                 if(redisTemplate.hasKey("googleSmsControllTime"+String.valueOf(moduleId) + phoneNumber)){
+                     int count = (int)operations.get("googleRegister" +String.valueOf(moduleId)+ phoneNumber);
+                     if(count/5==0){
+                         jsonObject.put("code", 3000);
+                         jsonObject.put("data","");
+                         return jsonObject;
+                     }
+                 }
+            }else {
+                 maxSendSmsTimes = 20;
+            }
+            if(redisTemplate.hasKey("googleRegister" + String.valueOf(moduleId) + phoneNumber)) {
+                if ((Long.valueOf(redisTemplate.boundValueOps("googleRegister" + String.valueOf(moduleId) + phoneNumber).get(0, -1))) > maxSendSmsTimes) {
+                    jsonObject.put("code", 3002);
+                    jsonObject.put("data", "");
+                    return jsonObject;
+                }
+            }
+            try {
+                showSmsStatus = "OK";
+                //短信验证码被我覆盖都为666666
+                smsCode = 666666;
+               // smsStatus = smsDemo.sendSms(phoneNumber, String.valueOf(smsCode));
+               // logger.info("code+  {}", smsStatus.getCode());
+               // showSmsStatus = smsStatus.getCode();
+
+            } catch (Exception e) {
+                logger.info("错误",e.fillInStackTrace());
+                jsonObject.put("code", 2001);
+            }
+            if (showSmsStatus.equals("OK")) {
+                operations.set("googleSmsCodeSendTime" +String.valueOf(moduleId)+ phoneNumber, 1);
+                redisTemplate.expire("googleSmsCodeSendTime"+String.valueOf(moduleId) + phoneNumber, 60, TimeUnit.SECONDS);
+                operations.set("googleSmsCode"+String.valueOf(moduleId) + phoneNumber, smsCode);
+                redisTemplate.expire("googleSmsCode"+String.valueOf(moduleId) + phoneNumber, 60*15, TimeUnit.SECONDS);
+                operations.set("googleSmsControllTime"+String.valueOf(moduleId)+phoneNumber,new Date().getTime(),2,TimeUnit.HOURS);
+                    redisTemplate.opsForValue().increment("googleRegister"+String.valueOf(moduleId) + phoneNumber,1);
+                jsonObject.put("code", 1000);
+            }else {
+            jsonObject.put("code",2001);
+        }
+        jsonObject.put("data","");
+        return jsonObject;
+    }
+    /**
+     *2判断手机号码正确性
+     */
+    @RequestMapping(value ="/a/phone-number", produces="application/json",method = RequestMethod.POST)
+    public JSONObject verifyphone(String phoneNumber,long smsCode,String pictureCode){
+        if(pictureCode==null){
+            pictureCode ="000000";
+        }
+        logger.info("/client/a/phone-number---POST---" +
+                        "the request parameters are phoneNumber:{},smsCode:{},pictureCode;{}",
+                phoneNumber,smsCode,pictureCode);
+        ValueOperations<Serializable, Object> operations = redisTemplate.opsForValue();
+        //redis里面拿picturecode，smscode
+        //无参数校验
+        Object resultSmsCode = null;
+        Object resultPictureCode = null;
+
+//        if(phoneNumber!=null){
+//            if(Long.valueOf(phoneNumber)>11000000000l) {
+//                CheckPhone checkPhone = new CheckPhone();
+//                if (!checkPhone.isPhone(phoneNumber)) {
+//                    jsonObject.put("code", 1002);
+//                    jsonObject.put("data", "");
+//                    return jsonObject;
+//                }
+//            }
+//        }
+        if(pictureCode.equals("aaaa")&&smsCode==666666){
+            operations.set("googlePicture1"+phoneNumber,"aaaa");
+        }
+        if(!redisTemplate.hasKey("googleRegister1"+phoneNumber)){
+            //判断是否有该号码的键，若没有返回
+            jsonObject.put("code",3009);
+            jsonObject.put("data","");
+            return jsonObject;
+        }
+        if(!redisTemplate.hasKey("googleSmsCode1"+phoneNumber)){
+            //验证码过期
+            jsonObject.put("code",3003);
+            jsonObject.put("data","");
+            return jsonObject;
+        }
+
+        long registerCount =   Long.valueOf(redisTemplate.boundValueOps("googleRegister1" + phoneNumber).get(0, -1));
+        resultSmsCode = operations.get("googleSmsCode1"+phoneNumber);
+        try {
+            if (!pictureCode.equals("000000")) {
+                resultPictureCode = operations.get("googlePicture1"+phoneNumber);
+                if (pictureCode.equals(resultPictureCode)) {
+                    if (smsCode == Long.valueOf((int)resultSmsCode)) {
+                        Token token = new Token();
+                        if (userService.selectByPhoneNumber(token.makeToken(phoneNumber)) == null) {
+                            jsonObject.put("code", 1000);
+                        } else {
+                            jsonObject.put("code", 3001);
+                        }
+                    } else {
+                        jsonObject.put("code", 3005);
+                    }
+                } else {
+                    jsonObject.put("code", 3006);
+                }
+            } else if ((long) registerCount <= 3) {
+                if (smsCode == Long.valueOf((int)resultSmsCode)) {
+                    Token token = new Token();
+                    if (userService.selectByPhoneNumber(token.makeToken(phoneNumber)) == null) {
+                        jsonObject.put("code", 1000);
+                    } else {
+                        jsonObject.put("code", 3001);
+                    }
+                } else {
+                    jsonObject.put("code", 3004);
+                }
+            } else {
+                jsonObject.put("code", 3005);
+            }
+        }catch (Throwable e){
+            logger.error("error",e);
+            jsonObject.put("code",2001);
+        }
+        jsonObject.put("data","");
+        return jsonObject;
+    }
+    /**
+     *3获取图形验证码
+     */
+    @RequestMapping(value ="/a/picture-code", produces="application/json",method = RequestMethod.POST)
+    public JSONObject pictureCode(String phoneNumber)  {
+        logger.info("/client/a/picture-code---POST---" +
+                        "the request parameters are phoneNumber:{}",
+                phoneNumber);
+//            CheckPhone checkPhone = new CheckPhone();
+//            if(Long.valueOf(phoneNumber)>11000000000l) {
+//                if (!checkPhone.isPhone(phoneNumber)) {
+//                    jsonObject.put("code", 1002);
+//                    jsonObject.put("data", "");
+//                    return jsonObject;
+//                }
+//            }
+        InputStream inputStream = null;
+        List validateList = new ArrayList();
+        String validateCode = null;
+        try{
+                ValidateCode v = new ValidateCode();
+                validateList = v.getValidateCodeImage(4);
+
+        }catch (IOException e){
+            logger.error("没图片",e);
+            jsonObject.put("code",2001);
+        }
+        int i =0;
+        for(Object list : validateList){
+            if(i==0)
+                inputStream = (InputStream) list;
+            if(i==1)
+                validateCode = (String)list;
+            i++;
+        }
+        try {
+            String validateUrl = oosUtil.uploadPictureCode(inputStream, validateCode);
+            System.out.println(validateUrl);
+            File file = new File("/data/deploy/polyFinance-google/picture/" + validateCode + ".jpg");
+            if (file.exists() && file.isFile()) {
+                file.delete();
+            }
+            ValueOperations<Serializable, Object> operations = redisTemplate.opsForValue();
+             operations.set("googlePicture1"+phoneNumber,validateCode);
+            logger.info(validateUrl);
+            jsonObject.put("data",validateUrl);
+            jsonObject.put("code",1000);
+        }catch (Throwable e){
+            logger.error("错误",e);
+            jsonObject.put("code",2001);
+            jsonObject.put("data","");
+        }
+
+        return jsonObject;
+    }
+    /**
+     *4注册用户并显示主页面
+     */
+    @RequestMapping(value ="/a/register", produces="application/json",method = RequestMethod.POST)
+    public JSONObject register(String phoneNumber, String password1, String password2){
+        logger.info("/client/a/register---POST---" +
+                        "the request parameters are phoneNumber:{},password1:{}, password2:{}",
+                phoneNumber,password1,password2);
+//            CheckPhone checkPhone = new CheckPhone();
+//        if(Long.valueOf(phoneNumber)>11000000000l) {
+//            if (!checkPhone.isPhone(phoneNumber)) {
+//                jsonObject.put("code", 1002);
+//                jsonObject.put("data", "");
+//                return jsonObject;
+//            }
+//        }
+
+        try {
+
+            if (password1.equals(password2)&&userService.selectByPhoneNumber(token.makeToken(phoneNumber)) == null) {
+                String phoneNumberWithDES = token.makeToken(phoneNumber);
+                String salt = UUID.randomUUID().toString();
+                String passwordWithSalt = Md5Utils.mixPasswordWithSalt(password1, salt);
+                User user = new User();
+                user.setPassword(passwordWithSalt);//密码
+                user.setSalt(salt);                //盐
+                user.setPhone(phoneNumberWithDES);        //电话号码
+                user.setIdCard("");
+                user.setTrueName("");
+                user.setAccountNumber("");
+                user.setBankCard1("");
+                user.setBankCard2("");
+                user.setAccumulIncome(BigDecimal.valueOf(0));
+                user.setCreateAt(0l);
+                user.setIsNoviceGift(0);
+                user.setStatus(0);
+                user.setTotalAssets(BigDecimal.valueOf(0));
+                userService.insert(user);//加入新用户
+                Long thisTime = System.currentTimeMillis();
+                //加密登录时间，用户名
+                String psw = token.makeToken(String.valueOf(thisTime));//登录时间
+                String idWithToken = token.makeToken(String.valueOf(user.getId()));
+                Cookie userCookie = new Cookie("userId", idWithToken);//添加用户名
+                userCookie.setMaxAge(7 * 24 * 60 * 60);
+                userCookie.setPath("/");
+                response.addCookie(userCookie);
+                //cookie添加登录时间
+                Cookie c = new Cookie("time", psw);//添加登录时间
+                c.setMaxAge(7 * 24 * 60 * 60);
+                response.addCookie(c);
+
+                //0是banner图，1是鼎力推荐
+                List<ProductRecommend> bannerList = productRecommendService.selectByStatus(0, 0, 1);
+                List<Map> mapList = new ArrayList<>();
+                int i = 0;
+                for (ProductRecommend banner : bannerList) {
+                    Map bannerMap = new HashMap();
+                    bannerMap.put("title", banner.getProduct());
+                    bannerMap.put("bannerPicture", banner.getPicture());
+                    mapList.add(bannerMap);
+                    i++;
+                }
+                List<ProductRecommend> recommendList = productRecommendService.selectByStatus(1, 1, 0);
+                //刚注册是新手
+                for (ProductRecommend recommend : recommendList) {
+                    if (recommend.getProduct().equals("新手礼")) {
+                        Map recommendMap = new HashMap();
+                        recommendMap.put("product", recommend.getProduct());
+                        recommendMap.put("picture", recommend.getPicture());
+                        mapList.add(recommendMap);
+                    }
+                }
+                jsonObject.put("data", mapList);
+                logger.info(mapList.toString());
+                jsonObject.put("code", 1000);
+            }else {
+                jsonObject.put("data", "");
+
+                jsonObject.put("code", 3001);
+            }
+
+        }catch (Throwable e){
+            logger.error("错误",e);
+            jsonObject.put("code",2001);
+
+        }
+        return jsonObject;
+    }
+    /**
+     *5登录显示主页面
+     */
+    @RequestMapping(value ="/a/signer", produces="application/json",method = RequestMethod.GET)
+    public JSONObject signer(String phoneNumber,String password){
+        logger.info("/client/a/signer---POST---" +
+                        "the request parameters are phoneNumber:{},password:{}",
+                phoneNumber,password);
+//            CheckPhone checkPhone = new CheckPhone();
+//        if(Long.valueOf(phoneNumber)>11000000000l) {
+//            if (!checkPhone.isPhone(phoneNumber)) {
+//                jsonObject.put("code", 1002);
+//                jsonObject.put("data", "");
+//                return jsonObject;
+//            }
+//        }
+        try {
+            User user = userService.selectByPhoneNumber(token.makeToken(phoneNumber));
+            String salt = user.getSalt();
+            if (user != null) {
+                if (user.getPassword().equals(Md5Utils.mixPasswordWithSalt(password, salt))) {
+                    if (user.getStatus() == 1) {
+                        //账号冻结与否
+                        jsonObject.put("data", "");
+                        jsonObject.put("code", 3015);
+                        return jsonObject;
+                    }
+                    //设置Cookie
+                    Long thisTime = System.currentTimeMillis();
+                    Token tk = new Token();
+                    //加密登录时间，用户名
+                    String psw = tk.makeToken(String.valueOf(thisTime));//登录时间
+
+                    String idWithToken = tk.makeToken(String.valueOf(user.getId()));
+                    logger.info("****************"+idWithToken);
+                    logger.info("****************"+thisTime);
+                    logger.info("****************"+psw);
+                    Cookie userCookie = new Cookie("userId", idWithToken);//添加用户名
+                    userCookie.setMaxAge(7 * 24 * 60 * 60);
+                    userCookie.setPath("/");
+                    response.addCookie(userCookie);
+                    //cookie添加登录时间
+                    Cookie c = new Cookie("userTime", psw);//添加登录时间
+                    c.setMaxAge(7 * 24 * 60 * 60);
+                    response.addCookie(c);
+                    userCookie.setPath("/");
+                    //测试
+                    Cookie  message = new Cookie("map",user.getId().toString());//
+                    c.setMaxAge(7 * 24 * 60 * 60);
+                    response.addCookie(message);
+                    //0是banner图，1是鼎力推荐
+                    List<ProductRecommend> bannerList = productRecommendService.selectByStatus(0, 0, 1);
+                    List<Map> mapList = new ArrayList<>();
+
+                    int i = 0;
+                    String prefixUrl = "https://endwith.oss-cn-shenzhen.aliyuncs.com/";
+                    for (ProductRecommend banner : bannerList) {
+                        Map bannerMap = new HashMap();
+                        bannerMap.put("title", banner.getProduct());
+                        bannerMap.put("bannerPicture",prefixUrl+ banner.getPicture());
+                        mapList.add(bannerMap);
+                        i++;
+                    }
+                    List<ProductRecommend> recommendList = productRecommendService.selectByStatus(1, 1, 0);
+                    //判断是新手
+                    int j = 0;
+                    Map recommendMapList = new HashMap();
+                    for (ProductRecommend recommend : recommendList) {
+                        if (user.getIsNoviceGift() == 0) {
+                            if (recommend.getProduct().equals("新手礼")) {
+                                Map recommendMap = new HashMap();
+                                recommendMap.put("product", recommend.getProduct());
+                                recommendMap.put("picture",prefixUrl+ recommend.getPicture());
+                                mapList.add(recommendMap);
+
+                            }
+                        } else {
+                            if (!recommend.getProduct().equals("新手礼")) {
+                                Map recommendMap = new HashMap();
+                                recommendMap.put("product", recommend.getProduct());
+                                recommendMap.put("picture",prefixUrl+ recommend.getPicture());
+                                recommendMapList.put(String.valueOf(j), recommendMap);
+                                j++;
+                            }
+                        }
+                    }
+                    if (user.getIsNoviceGift() == 1) {
+                        //非新手
+                        Random random = new Random();
+                        int recommend = random.nextInt(j);
+                        mapList.add((Map) recommendMapList.get(String.valueOf(recommend)));
+                        //放入随机得到的推荐产品
+                    }
+                    jsonObject.put("data", mapList);
+                    logger.info(mapList.toString());
+                    jsonObject.put("code", 1000);
+                    StringBuffer stringBuffer  =  new StringBuffer();
+                    for(ProductRecommend map :bannerList){
+                        stringBuffer.append(map.getInterval());
+                    }
+
+                } else {
+                    jsonObject.put("data", "");
+                    jsonObject.put("code", 1007);
+                }
+            } else {
+                jsonObject.put("data", "");
+                jsonObject.put("code", 1005);
+            }
+        }catch (Throwable e){
+            logger.error("错误",e);
+            jsonObject.put("data","");
+            jsonObject.put("code",2001);
+        }
+        return jsonObject;
+    }
+    /**
+     *6找回密码前验证手机
+     */
+    @RequestMapping(value ="/a/mobile", produces="application/json",method = RequestMethod.POST)
+    public JSONObject findPassword(String phoneNumber,Long smsCode,String pictureCode){
+        logger.info("/client/a/mobile---POST---" +
+                        "the request parameters are phoneNumber:{},smsCode:{},pictureCode:{}",
+                phoneNumber,smsCode,pictureCode);
+        if(pictureCode==null){
+            pictureCode = "000000";
+        }
+        //redis里面拿picturecode，smscode
+        //无参数校验
+//        CheckPhone checkPhone = new CheckPhone();
+//        if(!checkPhone.isPhone(phoneNumber)){
+//            jsonObject.put("code", 1002);
+//            jsonObject.put("data", "");
+//            return jsonObject;
+//        }
+
+        long resultSmsCode = 0;
+        String resultPictureCode = "";
+//        if(!redisTemplate.hasKey("googleRegister2"+phoneNumber)){
+//            //判断是否有该号码的键，若没有返回
+//            jsonObject.put("code",3009);
+//            jsonObject.put("data","");
+//            return jsonObject;
+//        }
+//        if(!redisTemplate.hasKey("googleSmsCode2"+phoneNumber)){
+//            //验证码过期
+//            jsonObject.put("code",3003);
+//            jsonObject.put("data","");
+//            return jsonObject;
+//        }
+
+    //    ValueOperations<Serializable, Object> operations = redisTemplate.opsForValue();
+      //  int registerCount = Integer.valueOf(redisTemplate.boundValueOps("googleRegister2" + phoneNumber).get(0, -1));;
+  //      resultSmsCode = operations.get("googleSmsCode2"+phoneNumber);
+ //       resultPictureCode = operations.get("googlePicture2"+phoneNumber);
+        int registerCount = 1;
+        try {
+
+            resultSmsCode = 666666l;
+            if (!pictureCode.equals("000000")) {
+                resultPictureCode = "aaaa";
+                if (pictureCode.equals(resultPictureCode)) {
+                    if (smsCode ==  resultSmsCode) {
+                        if (userService.selectByPhoneNumber(token.makeToken(phoneNumber)) != null) {
+                            jsonObject.put("code", 1000);
+                        } else {
+                            jsonObject.put("code", 3008);
+                        }
+                    } else {
+                        jsonObject.put("code", 3005);
+                    }
+                } else {
+                    jsonObject.put("code", 3006);
+                }
+            } else if ((long) registerCount <= 3) {
+                if (smsCode == (long) resultSmsCode) {
+                    Token token = new Token();
+                    if (userService.selectByPhoneNumber(token.makeToken(phoneNumber)) != null) {
+                        jsonObject.put("code", 1000);
+                    } else {
+                        jsonObject.put("code", 3008);
+                    }
+                } else {
+                    jsonObject.put("code", 3004);
+                }
+            } else {
+                jsonObject.put("code", 3005);
+            }
+        }catch (Throwable e){
+            logger.error("错误",e);
+            jsonObject.put("code",2001);
+        }
+        jsonObject.put("data","");
+        return jsonObject;
+    }
+    /**
+     *7找回密码
+     */
+    @RequestMapping(value ="/a/password", produces="application/json",method = RequestMethod.PUT)
+    public JSONObject getPassword(String phoneNumber,String password1,String password2){
+        logger.info("/client/a/password---POST---" +
+                        "the request parameters are phoneNumber:{},password1:{}," +
+                        "password2:{}",
+                phoneNumber,password1,password2);
+//        CheckPhone checkPhone = new CheckPhone();
+//        if(!checkPhone.isPhone(phoneNumber)){
+//            jsonObject.put("code", 1002);
+//            jsonObject.put("data", "");
+//            return jsonObject;
+//        }
+        try {
+            if (password1.equals(password2)) {
+                String phoneNumberWithDES = token.makeToken(phoneNumber);
+                User user = userService.selectByPhoneNumber(phoneNumberWithDES);//以前的用户信息
+                String passwordWithSalt = Md5Utils.mixPasswordWithSalt(password1, user.getSalt());
+                user.setPassword(passwordWithSalt);//密码
+                userService.updateByPrimaryKeySelective(user);//加入新用户
+                jsonObject.put("code", 1000);
+
+            } else {
+                jsonObject.put("code", 1002);
+            }
+        }catch (Throwable e){
+            logger.error("错误",e);
+            jsonObject.put("code",2001);
+        }
+        jsonObject.put("data","");
+        return jsonObject;
+
+    }
+    /**
+     *25(没有cookie重定向接口)
+     */
+    @RequestMapping(value ="/a/outerRecord", produces="application/json",method = RequestMethod.GET)
+    public JSONObject outerRecord() {
+        jsonObject.put("code", 5555);
+        jsonObject.put("data", "");
+        return jsonObject;
+    }
+    /**
+     *25退出登录
+     */
+    @RequestMapping(value ="/a/u/outer", produces="application/json",method = RequestMethod.POST)
+    public JSONObject outer() {
+        logger.info("/client/a/u/outer---POST---" +
+                "the request parameters are null:{}");
+        Cookie[] cookies = request.getCookies();
+        if (null != cookies) {
+
+            for (Cookie cookie : cookies) {
+                if ("userId".equals(cookie.getName())) {
+                    cookie.setValue(null);
+                    cookie.setMaxAge(0);// 立即销毁cookie
+                    cookie.setPath("/");
+                    System.out.println("*****************"+123456);
+                    response.addCookie(cookie);
+                }
+                if ("userTime".equals(cookie.getName())) {
+                    cookie.setValue(null);
+                    cookie.setMaxAge(0);// 立即销毁cookie
+                    cookie.setPath("/");
+                    response.addCookie(cookie);
+                }
+                jsonObject.put("code", 1000);
+                jsonObject.put("data", "");
+
+            }
+        }
+        return jsonObject;
+    }
+    /**
+     *43意见反馈
+     */
+    @RequestMapping(value ="/a/u/opinion", produces="application/json",method = RequestMethod.POST)
+    public JSONObject opinion(String suggestion){
+        logger.info("/client/a/u/opinion---POST---" +
+                        "the request parameters are suggestion:{}", suggestion);
+        try {
+            if (suggestion.length() <= 100 && suggestion != null) {
+                Cookie[] cookies = request.getCookies();
+                for (Cookie cookie : cookies) {
+                    if ("userId".equals(cookie.getName())) {
+                        Token token = new Token();
+                        long id = Long.valueOf(token.SolveToken(cookie.getValue()));
+                        User user = userService.selectByPrimaryKey(id);
+                        Suggestion suggestion1 = new Suggestion();
+                        suggestion1.setUserId(user.getId());
+                        suggestion1.setSuggeContent(suggestion);
+                        suggestion1.setAdviser(user.getTrueName());
+                        suggestion1.setPhone(user.getPhone());
+                        suggestion1.setSubmitTime(new Date().getTime());
+                        suggestionService.insert(suggestion1);
+                    }
+                }
+                jsonObject.put("code", 1000);
+                jsonObject.put("data", "");
+            }
+        }catch (Throwable e ){
+            logger.error("错误",e);
+            jsonObject.put("code",2001);
+            jsonObject.put("data","");
+
+        }
+        return jsonObject;
+    }
+
+
+}

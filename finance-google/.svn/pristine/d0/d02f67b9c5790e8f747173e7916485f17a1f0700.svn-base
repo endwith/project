@@ -1,0 +1,21 @@
+package com.ptteng.controller;
+
+import com.ptteng.service.FeignService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class FeignController {
+
+    @Autowired
+    FeignService feignService;
+    /**
+     *调用接口中的方法，就能直接访问对应的客户端中的url接口
+     */
+    @RequestMapping(value = "/json/students",method = RequestMethod.GET)
+    public String sayHi(){
+        return feignService.FromClient();
+    }
+}

@@ -1,0 +1,86 @@
+package com.ptteng.service.impl;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.UserOperationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@Component
+public class UserOperationServiceHystric implements UserOperationService {
+    @Autowired
+    private JSONObject jsonObject;
+    @Override
+    public JSONObject verify(String phoneNumber, long moduleId,HttpServletRequest request) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject verifyphone(String phoneNumber,long smsCode,String pictureCode) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject pictureCode(String phoneNumber) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject register(String phoneNumber,String password1,String password2,HttpServletResponse response) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject signer(String phoneNumber, String password,HttpServletResponse response) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+
+    @Override
+    public JSONObject findPassword(String phoneNumber,long smsCode,String pictureCode) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject getPassword(String phoneNumber,String password1,String password2) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject outerRecord() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject outer(HttpServletRequest request,HttpServletResponse response) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject opinion(String suggestion,HttpServletRequest request) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+}

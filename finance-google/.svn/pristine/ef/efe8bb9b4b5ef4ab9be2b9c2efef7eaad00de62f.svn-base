@@ -1,0 +1,60 @@
+package com.ptteng.quartz;
+
+
+import org.quartz.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.quartz.SchedulerFactoryBean;
+import org.springframework.stereotype.Component;
+
+
+@Component
+public class SchedulerAllJob {
+    @Autowired
+    private SchedulerFactoryBean schedulerFactoryBean;
+    @Autowired
+    private ConfigRepository repository;
+
+    /**
+     * 该方法用来启动所有的定时任务
+     * @throws SchedulerException
+     */
+    public void scheduleJobs() throws SchedulerException {
+        Scheduler scheduler = schedulerFactoryBean.getScheduler();
+
+        /**
+         *
+         */
+        scheduleJob1(scheduler);
+        scheduleJob2(scheduler);
+    }
+
+    /**
+     * 配置Job1
+     * 此处的任务可以配置可以放到properties或者是放到数据库中
+     * @param scheduler
+     * @throws SchedulerException
+     */
+    private void scheduleJob1(Scheduler scheduler) throws SchedulerException{
+        JobDetail jobDetail = JobBuilder.newJob(JobOne.class) .withIdentity("job1", "group1").build();
+        String searchCron = repository.findOne(1L).getCron();
+        System.out.println("***************"+searchCron);
+        CronScheduleBuilder scheduleBuilder = CronScheduleBuilder.cronSchedule(searchCron);
+        CronTrigger cronTrigger = TriggerBuilder.newTrigger().withIdentity("trigger1", "group1") .withSchedule(scheduleBuilder).build();
+        scheduler.scheduleJob(jobDetail,cronTrigger);
+    }
+
+    /**
+     * 配置Job
+     * @param scheduler
+     * @throws SchedulerException
+     */
+    private void scheduleJob2(Scheduler scheduler) throws SchedulerException{
+        JobDetail jobDetail = JobBuilder.newJob(JobTwo.class) .withIdentity("job2", "group2").build();
+        String searchCron = repository.findOne(2L).getCron();
+        System.out.println("***************"+searchCron);
+        CronScheduleBuilder scheduleBuilder = CronScheduleBuilder.cronSchedule(searchCron);
+        // 每10s执行一次
+        CronTrigger cronTrigger = TriggerBuilder.newTrigger().withIdentity("trigger2", "group2") .withSchedule(scheduleBuilder).build();
+        scheduler.scheduleJob(jobDetail,cronTrigger);
+    }
+}

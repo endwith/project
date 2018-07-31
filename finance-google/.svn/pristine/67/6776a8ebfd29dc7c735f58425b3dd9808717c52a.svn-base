@@ -1,0 +1,38 @@
+package com.ptteng.service.impl;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.InformationService;
+import org.springframework.stereotype.Component;
+
+@Component
+public class InformationServiceHystric implements InformationService {
+    @Override
+    public JSONObject getAllInformation() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getInformation() {
+        return null;
+    }
+
+    @Override
+    public JSONObject addInformation() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getInformationById() {
+        return null;
+    }
+
+    @Override
+    public JSONObject updateInformation() {
+        return null;
+    }
+
+    @Override
+    public JSONObject deleteInformation() {
+        return null;
+    }
+}

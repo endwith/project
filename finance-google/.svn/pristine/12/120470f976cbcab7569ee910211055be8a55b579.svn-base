@@ -1,0 +1,108 @@
+package com.ptteng.controller;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.model.Suggestion;
+import com.ptteng.service.SuggestionService;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@RefreshScope
+@Controller
+public class SuggestionController {
+    org.slf4j.Logger logger = LoggerFactory.getLogger(SuggestionController.class);
+    @Autowired
+    private JSONObject jsonObject;
+    @Resource
+    private SuggestionService suggestionService;
+    /**
+     *92意见反馈入口
+     */
+    @RequestMapping(value ="/admin/a/u/all-suggestion", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getAllSuggestion(Long page,Long size){
+        logger.info("/admin/a/u/all-suggestion---GET---the request parameters are page:{},size:{}",page,size);
+        List<Suggestion> suggestions;
+        if(page!=null){
+            suggestions=suggestionService.forSelect((page-1)*size, size);
+        }else {
+            suggestions=suggestionService.forSelect(0L,size);
+        }
+        logger.info(suggestions.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",suggestions);
+        return jsonObject;
+    }
+    /**
+     *93意见反馈查询
+     */
+    @RequestMapping(value ="/admin/a/u/suggestion", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getSuggestions(Long page,Long size,Long id,String suggeContent,String adviser, String phone){
+        logger.info("/admin/a/u/suggestion---GET---the request parameters are size:{},page:{},id:{},suggeContent:{},adviser:{},phone:{}",id,suggeContent,adviser,phone);
+        List<Suggestion> suggestions;
+        if(page!=null){
+            suggestions=suggestionService.select((page-1)*size, size,id,suggeContent,adviser,phone);
+        }else {
+            suggestions=suggestionService.select(0L,size,id,suggeContent,adviser,phone);
+        }
+        logger.info(suggestions.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",suggestions);
+        return jsonObject;
+    }
+    /**
+     *94意见反馈查看详情
+     *95意见反馈回复-获取
+     */
+    @RequestMapping(value ="/admin/a/u/suggestion/{id}", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getSuggestionById(Long id){
+        logger.info("/admin/a/u/suggestion/{id}---GET---the request parameters are id:{}", id);
+        Suggestion suggestion=suggestionService.selectByPrimaryKey(id);
+        logger.info(suggestion.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",suggestion);
+        return jsonObject;
+    }
+    /**
+     *96意见反馈回复
+     */
+    @RequestMapping(value ="/admin/a/u/suggestion/{id}", produces="application/json",method = RequestMethod.PUT)
+    @ResponseBody
+    public JSONObject updateSuggestion(Long id,int status,String replyContent,Suggestion suggestion){
+        logger.info("/admin/a/u/suggestion/{id}---PUT---the request parameters are id:{},status:{},replyContent:{}",id,status,replyContent);
+        int a=suggestionService.updateByPrimaryKeySelective(suggestion);
+        if(a>0)
+            jsonObject.put("code",1000);
+        else
+            jsonObject.put("code",1001);
+        jsonObject.put("data","");
+        return jsonObject;
+    }
+    /**
+     *97意见反馈删除
+     */
+    @RequestMapping(value ="/admin/a/u/suggestion/{id}", produces="application/json",method = RequestMethod.DELETE)
+    @ResponseBody
+    public JSONObject deleteSuggestion(Long id){
+        logger.info("/admin/a/u/suggestion/{id}---DELETE---the request parameters are id:{}", id);
+        int a=suggestionService.deleteByPrimaryKey(id);
+        if(a>0)
+            jsonObject.put("code",1000);
+        else
+            jsonObject.put("code",1001);
+        jsonObject.put("data","");
+        return jsonObject;
+    }
+
+}

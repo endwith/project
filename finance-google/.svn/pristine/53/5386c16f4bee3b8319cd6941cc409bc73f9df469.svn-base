@@ -1,0 +1,53 @@
+package com.ptteng.service.impl;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.service.ObligatoryRightService;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ObligatoryRightServiceHystric implements ObligatoryRightService {
+    @Override
+    public JSONObject getAllOblRight() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getOblRights() {
+        return null;
+    }
+
+    @Override
+    public JSONObject addOblRight() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getOblRight() {
+        return null;
+    }
+
+    @Override
+    public JSONObject updateOblRight() {
+        return null;
+    }
+
+    @Override
+    public JSONObject deleteOblRight() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getUnmatchedOblRight() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getMatchedContract() {
+        return null;
+    }
+
+    @Override
+    public JSONObject matchingOblRight() {
+        return null;
+    }
+}

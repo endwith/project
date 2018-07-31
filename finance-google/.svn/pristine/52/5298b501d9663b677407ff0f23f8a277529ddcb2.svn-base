@@ -1,0 +1,161 @@
+package com.ptteng.service.impl;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.model.User;
+import com.ptteng.service.FinanceService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@Component
+public class FinanceServiceHystric implements FinanceService {
+    @Autowired
+    private JSONObject jsonObject;
+    @Override
+    public JSONObject mainPage() {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject product(String product,long id) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject productRecord(String product,Long page,Long size) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject finances(long count,HttpServletRequest request) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject buy(Long id,HttpServletRequest request) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject payment(HttpServletRequest request,Long money,String bankCard,Long id) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject choosePay(HttpServletRequest request) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+
+    @Override
+    public JSONObject realPayment(HttpServletRequest request,Long id) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject realPaymentReport(HttpServletRequest request,HttpServletResponse response) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject finance(HttpServletRequest request, HttpServletResponse response,Integer status) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject contract(Long tradeId) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject reservation(Long id,Integer status) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+
+    @Override
+    public JSONObject quitedContract(HttpServletRequest request) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject records(HttpServletRequest request) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject bankCards(HttpServletRequest request) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject bankCard(HttpServletRequest request) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject bankMessage(HttpServletRequest request,String bankCard) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+
+
+    @Override
+    public JSONObject newBankCard(HttpServletRequest request,String smsCode,String bank,String bankCard,String phone,User user) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+    @Override
+    public JSONObject oneBank(HttpServletRequest request,String  bankCard) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+
+
+
+    @Override
+    public JSONObject unbingCard(String smsCode,HttpServletRequest request,String  bankCard) {
+        jsonObject.put("code",2002);
+        jsonObject.put("data","");
+        return  jsonObject;
+    }
+}

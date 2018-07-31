@@ -1,0 +1,112 @@
+package com.ptteng.controller;
+
+import com.alibaba.fastjson.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.*;
+
+@RefreshScope
+@Controller
+public class ModuleManageController {
+    @Autowired
+    private JSONObject jsonObject;
+    /**
+     *106模块管理查询模块
+     */
+    @RequestMapping(value ="/admin/a/u/all-module", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getAllModule(long page,long size){
+        List<Map> mapList = new ArrayList<>();
+        for(int i =0;i<size;i++) {
+            Map map  = new HashMap();
+            map.put("id",i );
+            map.put("moduleId","MK0000"+String.valueOf(i));
+            map.put("name","后台管理");
+            map.put("parentModule",0);
+            map.put("type","web");
+            map.put("updateAt",new Date().getTime());
+            map.put("createAt",new Date().getTime());
+            map.put("founder","敌法师");
+            map.put("modifier","习大大");
+            mapList.add(map);
+
+        }
+        jsonObject.put("code",1000);
+        jsonObject.put("data",mapList);
+        return jsonObject;
+    }
+    /**
+     *107模块模糊查询查询
+     */
+    @RequestMapping(value ="/admin/a/u/modules", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getModules(String moduleId,String moduleName,String parentModule
+    ,String founder,long page,long size){
+        List<Map> mapList = new ArrayList<>();
+        for(int i =0;i<size;i++) {
+            Map map  = new HashMap();
+            map.put("id",i );
+            map.put("moduleId","MK0000"+String.valueOf(i));
+            map.put("name","运营管理");
+            map.put("parentModule",0);
+            map.put("type","web");
+            map.put("updateAt",new Date().getTime());
+            map.put("createAt",new Date().getTime());
+            map.put("founder","敌法师");
+            map.put("modifier","毛太祖");
+            mapList.add(map);
+
+        }
+        jsonObject.put("code",1000);
+        jsonObject.put("data",mapList);
+        return jsonObject;
+    }
+    /**
+     *108模块查找（实际上是编辑按钮）
+     */
+    @RequestMapping(value ="/admin/a/u/module/{id}", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getModuleById(long id){
+
+            Map map  = new HashMap();
+            map.put("id",1 );
+            map.put("moduleId","MK000001");
+            map.put("name","运营管理");
+            map.put("parentModule",0);
+            map.put("type","web");
+            map.put("updateAt",new Date().getTime());
+            map.put("createAt",new Date().getTime());
+            map.put("founder","波风水门");
+            map.put("modifier","螺旋丸");
+        jsonObject.put("code",1000);
+        jsonObject.put("data",map);
+        return jsonObject;
+    }
+    /**
+     *109模块删除
+     */
+    @RequestMapping(value ="/admin/a/u/module/{id}", produces="application/json",method = RequestMethod.DELETE)
+    @ResponseBody
+    public JSONObject deleteModule(long id){
+        jsonObject.put("code",1000);
+        jsonObject.put("data","");
+        return jsonObject;
+    }
+    /**
+     *110模块更改（编辑好角色后点击保存）
+     */
+    @RequestMapping(value ="/admin/a/u/module", produces="application/json",method = RequestMethod.PUT)
+    @ResponseBody
+    public JSONObject updateModule(long id,String moduleName,String ModuleUrl
+            ,String parentModule,String type){
+        jsonObject.put("code",1000);
+        jsonObject.put("data","");
+        return jsonObject;
+    }
+
+}

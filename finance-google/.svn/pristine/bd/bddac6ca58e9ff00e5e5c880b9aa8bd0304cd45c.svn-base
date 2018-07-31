@@ -1,0 +1,36 @@
+package com.ptteng.quartz;
+
+import org.quartz.SchedulerException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.scheduling.quartz.SchedulerFactoryBean;
+import org.springframework.stereotype.Component;
+
+@Configuration
+@EnableScheduling
+@Component
+public class SchedulerListener {
+
+    @Autowired
+    public SchedulerAllJob myScheduler;
+//    fixedRate = 5000
+    /**
+     * 每一百秒查一次数据库
+     */
+    @Scheduled(fixedRate = 1000000)
+    public void schedule() throws SchedulerException {
+        myScheduler.scheduleJobs();
+    }
+
+    @Bean
+    public SchedulerFactoryBean schedulerFactoryBean(){
+        SchedulerFactoryBean schedulerFactoryBean = new SchedulerFactoryBean();
+        schedulerFactoryBean.setOverwriteExistingJobs(true);
+        // 延时启动，应用启动1秒后
+        schedulerFactoryBean.setStartupDelay(1);
+        return schedulerFactoryBean;
+    }
+}

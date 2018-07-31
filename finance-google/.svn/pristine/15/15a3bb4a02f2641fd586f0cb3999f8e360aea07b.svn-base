@@ -1,0 +1,43 @@
+package com.ptteng.service.impl;
+
+import com.ptteng.dao.MatchMapper;
+import com.ptteng.model.Match;
+import com.ptteng.service.MatchService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+
+@Service
+public class MatchServiceImpl implements MatchService {
+@Resource
+private MatchMapper matchMapper;
+    @Override
+    public int deleteByPrimaryKey(Long id) {
+        return 0;
+    }
+
+    @Override
+    public int insert(Match record) {
+        return this.matchMapper.insert(record);
+    }
+
+    @Override
+    public int insertSelective(Match record) {
+        return 0;
+    }
+
+    @Override
+    public Match selectByPrimaryKey(Long id) {
+        return null;
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(Match record) {
+        return 0;
+    }
+
+    @Override
+    public int updateByPrimaryKey(Match record) {
+        return 0;
+    }
+}

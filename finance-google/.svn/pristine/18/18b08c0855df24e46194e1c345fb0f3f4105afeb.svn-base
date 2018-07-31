@@ -1,0 +1,35 @@
+package com.ptteng.quartz.job;
+
+import com.ptteng.model.Trade;
+import com.ptteng.service.TradeService;
+import org.quartz.Job;
+import org.quartz.JobExecutionContext;
+import org.quartz.JobExecutionException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+public class ReturnInterestJob implements Job {
+@Autowired
+private TradeService tradeService;
+@Autowired
+private RedisTemplate redisTemplate;
+    @Override
+    public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
+
+        long total = tradeService.selectCount();
+        int page = (int) (total/5+1);
+        for(int i =0; i<page;i++) {
+            List<Trade>  tradeList = tradeService.forSelect(i*5l, 5l);
+            for (Trade trade : tradeList){
+        //        Calendar calendar =
+        //        if(trade.getExpireTime()>new Date().getTime())
+            }
+        }
+
+    }
+}

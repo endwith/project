@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ptteng.dao.InformationManageMapper" >
+  <resultMap id="BaseResultMap" type="com.ptteng.model.InformationManage" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="infor_id" property="inforId" jdbcType="VARCHAR" />
+    <result column="infor_title" property="inforTitle" jdbcType="VARCHAR" />
+    <result column="founder" property="founder" jdbcType="VARCHAR" />
+    <result column="create_at" property="createAt" jdbcType="BIGINT" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />
+    <result column="update_at" property="updateAt" jdbcType="BIGINT" />
+    <result column="infor_status" property="inforStatus" jdbcType="INTEGER" />
+    <result column="send_time" property="sendTime" jdbcType="BIGINT" />
+    <result column="infor_content" property="inforContent" jdbcType="VARCHAR" />
+    <result column="infor_picture" property="inforPicture" jdbcType="VARCHAR" />
+  </resultMap>
+  <!-- 定义resultMap，type为HashMap -->
+  <resultMap id="PartInforMap" type="java.util.HashMap">
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="infor_title" property="inforTitle" jdbcType="VARCHAR" />
+    <result column="send_time" property="sendtime" jdbcType="BIGINT" />
+    <result column="readStatus" property="readStatus" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="PartInforMapOne" type="java.util.HashMap">
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="infor_content" property="inforContent" jdbcType="VARCHAR" />
+    <result column="infor_picture" property="inforPicture" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    id, infor_id, infor_title, founder, create_at, modifier, update_at, infor_status, 
+    send_time, infor_content, infor_picture
+  </sql>
+
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from information_manage
+    where infor_status =0
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from information_manage
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from information_manage
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ptteng.model.InformationManage" >
+    insert into information_manage (id, infor_id, infor_title, 
+      founder, create_at, modifier, 
+      update_at, infor_status, send_time, 
+      infor_content, infor_picture)
+    values (#{id,jdbcType=BIGINT}, #{inforId,jdbcType=VARCHAR}, #{inforTitle,jdbcType=VARCHAR}, 
+      #{founder,jdbcType=VARCHAR}, #{createAt,jdbcType=BIGINT}, #{modifier,jdbcType=VARCHAR}, 
+      #{updateAt,jdbcType=BIGINT}, #{inforStatus,jdbcType=INTEGER}, #{sendTime,jdbcType=BIGINT}, 
+      #{inforContent,jdbcType=VARCHAR}, #{inforPicture,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ptteng.model.InformationManage" >
+    insert into information_manage
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="inforId != null" >
+        infor_id,
+      </if>
+      <if test="inforTitle != null" >
+        infor_title,
+      </if>
+      <if test="founder != null" >
+        founder,
+      </if>
+      <if test="createAt != null" >
+        create_at,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="updateAt != null" >
+        update_at,
+      </if>
+      <if test="inforStatus != null" >
+        infor_status,
+      </if>
+      <if test="sendTime != null" >
+        send_time,
+      </if>
+      <if test="inforContent != null" >
+        infor_content,
+      </if>
+      <if test="inforPicture != null" >
+        infor_picture,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="inforId != null" >
+        #{inforId,jdbcType=VARCHAR},
+      </if>
+      <if test="inforTitle != null" >
+        #{inforTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="founder != null" >
+        #{founder,jdbcType=VARCHAR},
+      </if>
+      <if test="createAt != null" >
+        #{createAt,jdbcType=BIGINT},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="updateAt != null" >
+        #{updateAt,jdbcType=BIGINT},
+      </if>
+      <if test="inforStatus != null" >
+        #{inforStatus,jdbcType=INTEGER},
+      </if>
+      <if test="sendTime != null" >
+        #{sendTime,jdbcType=BIGINT},
+      </if>
+      <if test="inforContent != null" >
+        #{inforContent,jdbcType=VARCHAR},
+      </if>
+      <if test="inforPicture != null" >
+        #{inforPicture,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ptteng.model.InformationManage" >
+    update information_manage
+    <set >
+      <if test="inforId != null" >
+        infor_id = #{inforId,jdbcType=VARCHAR},
+      </if>
+      <if test="inforTitle != null" >
+        infor_title = #{inforTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="founder != null" >
+        founder = #{founder,jdbcType=VARCHAR},
+      </if>
+      <if test="createAt != null" >
+        create_at = #{createAt,jdbcType=BIGINT},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="updateAt != null" >
+        update_at = #{updateAt,jdbcType=BIGINT},
+      </if>
+      <if test="inforStatus != null" >
+        infor_status = #{inforStatus,jdbcType=INTEGER},
+      </if>
+      <if test="sendTime != null" >
+        send_time = #{sendTime,jdbcType=BIGINT},
+      </if>
+      <if test="inforContent != null" >
+        infor_content = #{inforContent,jdbcType=VARCHAR},
+      </if>
+      <if test="inforPicture != null" >
+        infor_picture = #{inforPicture,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ptteng.model.InformationManage" >
+    update information_manage
+    set infor_id = #{inforId,jdbcType=VARCHAR},
+      infor_title = #{inforTitle,jdbcType=VARCHAR},
+      founder = #{founder,jdbcType=VARCHAR},
+      create_at = #{createAt,jdbcType=BIGINT},
+      modifier = #{modifier,jdbcType=VARCHAR},
+      update_at = #{updateAt,jdbcType=BIGINT},
+      infor_status = #{inforStatus,jdbcType=INTEGER},
+      send_time = #{sendTime,jdbcType=BIGINT},
+      infor_content = #{inforContent,jdbcType=VARCHAR},
+      infor_picture = #{inforPicture,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="forSelect" resultMap="BaseResultMap" parameterType="Long">
+    select * from information_manage
+    order by infor_status asc limit #{a},#{b}
+  </select>
+  <select id="selectCount" resultType="Long" >
+    select count(1) from information_manage
+  </select>
+  <select id="selectCountWithCondition" resultType="Long" >
+    select count(1) from information_manage
+    <where>
+      <if test="inforTitle != null">
+        inforTitle like #{inforTitle}
+      </if>
+      <if test="company != null">
+        AND infor_status = #{inforStatus}
+      </if>
+      <if test="corporate != null ">
+        AND founder like #{founder}
+      </if>
+      <if test="sendBeginTime != null ">
+        AND send_time &gt;= #{sendBeginTime}
+      </if>
+      <if test="sendBeginTime != null ">
+        AND send_time &lt;= #{sendEndTime}
+      </if>
+    </where>
+  </select>
+  <select id="select" resultMap="BaseResultMap" >
+    SELECT * FROM  information_manage order by infor_status asc
+    <where>
+      <if test="inforTitle != null">
+        inforTitle like #{inforTitle}
+      </if>
+      <if test="company != null">
+        AND infor_status = #{inforStatus}
+      </if>
+      <if test="corporate != null ">
+        AND founder like #{founder}
+      </if>
+      <if test="sendBeginTime != null ">
+        AND send_time &gt;= #{sendBeginTime}
+      </if>
+      <if test="sendBeginTime != null ">
+        AND send_time &lt;= #{sendEndTime}
+      </if>
+    </where>
+    limit #{a},#{b}
+  </select>
+<select id="selectInforByRead" resultMap="PartInforMap" parameterType="Long">
+ SELECT
+	infor_title,
+	send_time,
+	id,
+	(
+		CASE
+		WHEN (
+			id IN (
+				SELECT
+					infor_id
+				FROM
+					message_relationship
+				WHERE
+					user_id = #{userId}
+			)
+		) THEN
+			'0'
+		ELSE
+			'1'
+end
+	)as readStatus
+FROM
+	information_manage
+	 where infor_status=2
+	 order by readStatus desc ,send_time desc
+	 limit 0,#{b}
+</select>
+  <select id="selectInforByReadList" resultMap="PartInforMap">
+ SELECT
+	infor_title,
+	send_time,
+	id,
+	(
+		CASE
+		WHEN (
+			id IN (
+    <foreach collection="list" item="infor" index="index" separator="," >
+      #{infor.inforId,jdbcType=BIGINT}
+    </foreach>
+    )
+		) THEN
+			'0'
+		ELSE
+			'1'
+end
+	)as readStatus
+FROM
+	information_manage
+	 where infor_status=2
+	 order by readStatus desc ,send_time desc
+	 limit 0,#{b}
+</select>
+
+  <select id="selectContent" resultMap="PartInforMapOne">
+    select infor_content ,infor_picture
+    FROM
+	information_manage
+	where
+	id=#{id}
+  </select>
+
+
+</mapper>

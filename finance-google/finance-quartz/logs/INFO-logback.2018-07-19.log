@@ -1,0 +1,43 @@
+16:20:35.091 polyfinanace-business-service [main] INFO  c.p.s.InformationManageServiceTest - Starting InformationManageServiceTest on T6IMSTWF1UR3X30 with PID 10732 (started by Administrator in G:\ideaproject\finance-google\finance-quartz)
+16:20:35.093 polyfinanace-business-service [main] INFO  c.p.s.InformationManageServiceTest - No active profile set, falling back to default profiles: default
+16:20:35.126 polyfinanace-business-service [main] INFO  o.s.c.a.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@25084a1e: startup date [Thu Jul 19 16:20:35 CST 2018]; root of context hierarchy
+16:20:35.974 polyfinanace-business-service [main] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'dataSource' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic; factoryMethodName=dataSource; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Generic.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Dbcp2; factoryMethodName=dataSource; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Dbcp2.class]]
+16:20:36.040 polyfinanace-business-service [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:20:36.111 polyfinanace-business-service [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:20:36.148 polyfinanace-business-service [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ptteng.quartz.ConfigRepository.
+16:20:37.157 polyfinanace-business-service [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+16:20:37.189 polyfinanace-business-service [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+16:20:37.277 polyfinanace-business-service [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+16:20:37.278 polyfinanace-business-service [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+16:20:37.279 polyfinanace-business-service [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+16:20:37.326 polyfinanace-business-service [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+16:20:37.462 polyfinanace-business-service [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+16:20:37.993 polyfinanace-business-service [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:20:38.053 polyfinanace-business-service [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+16:20:38.067 polyfinanace-business-service [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+16:20:38.068 polyfinanace-business-service [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+16:20:38.069 polyfinanace-business-service [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+16:20:38.070 polyfinanace-business-service [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'mySchedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+16:20:38.070 polyfinanace-business-service [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'mySchedulerFactoryBean' initialized from an externally provided properties instance.
+16:20:38.070 polyfinanace-business-service [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+16:20:38.315 polyfinanace-business-service [main] INFO  com.ptteng.config.SpringUtil - ========ApplicationContext配置成功,在普通类可以通过调用SpringUtils.getApplicationContext()获取applicationContext对象,applicationContext=org.springframework.context.annotation.AnnotationConfigApplicationContext@25084a1e: startup date [Thu Jul 19 16:20:35 CST 2018]; root of context hierarchy========
+16:20:38.978 polyfinanace-business-service [main] WARN  o.s.b.s.r.RedisStarterDeprecationWarningAutoConfiguration - spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+16:20:39.006 polyfinanace-business-service [main] INFO  o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 2147483647
+16:20:39.006 polyfinanace-business-service [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Will start Quartz Scheduler [mySchedulerFactoryBean] in 1 seconds
+16:20:39.077 polyfinanace-business-service [main] INFO  c.p.s.InformationManageServiceTest - Started InformationManageServiceTest in 4.668 seconds (JVM running for 5.421)
+16:20:39.141 polyfinanace-business-service [Thread-6] INFO  o.s.c.a.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@25084a1e: startup date [Thu Jul 19 16:20:35 CST 2018]; root of context hierarchy
+16:20:39.143 polyfinanace-business-service [Thread-6] INFO  o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 2147483647
+16:20:39.146 polyfinanace-business-service [Thread-6] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+16:20:39.147 polyfinanace-business-service [Thread-6] INFO  org.quartz.core.QuartzScheduler - Scheduler mySchedulerFactoryBean_$_NON_CLUSTERED shutting down.
+16:20:39.147 polyfinanace-business-service [Thread-6] INFO  org.quartz.core.QuartzScheduler - Scheduler mySchedulerFactoryBean_$_NON_CLUSTERED paused.
+16:20:39.147 polyfinanace-business-service [Thread-6] INFO  org.quartz.core.QuartzScheduler - Scheduler mySchedulerFactoryBean_$_NON_CLUSTERED shutdown complete.
+16:20:39.147 polyfinanace-business-service [Thread-6] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ptteng.dao.ObligatoryRightMapper" >
+  <resultMap id="BaseResultMap" type="com.ptteng.model.ObligatoryRight" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="company" property="company" jdbcType="VARCHAR" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="id_card" property="idCard" jdbcType="VARCHAR" />
+    <result column="loan_sum" property="loanSum" jdbcType="DECIMAL" />
+    <result column="loan_term" property="loanTerm" jdbcType="BIGINT" />
+    <result column="loan_time" property="loanTime" jdbcType="BIGINT" />
+    <result column="repay_time" property="repayTime" jdbcType="BIGINT" />
+    <result column="matching_amount" property="matchingAmount" jdbcType="DECIMAL" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="corporate" property="corporate" jdbcType="VARCHAR" />
+    <result column="founder" property="founder" jdbcType="VARCHAR" />
+    <result column="create_at" property="createAt" jdbcType="BIGINT" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />
+    <result column="update_at" property="updateAt" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, company, mobile, id_card, loan_sum, loan_term, loan_time, repay_time, matching_amount, 
+    status, corporate, founder, create_at, modifier, update_at
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from obligatory_right
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from obligatory_right
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ptteng.model.ObligatoryRight" >
+    insert into obligatory_right (id, company, mobile, 
+      id_card, loan_sum, loan_term, 
+      loan_time, repay_time, matching_amount, 
+      status, corporate, founder, 
+      create_at, modifier, update_at
+      )
+    values (#{id,jdbcType=BIGINT}, #{company,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{idCard,jdbcType=VARCHAR}, #{loanSum,jdbcType=DECIMAL}, #{loanTerm,jdbcType=BIGINT}, 
+      #{loanTime,jdbcType=BIGINT}, #{repayTime,jdbcType=BIGINT}, #{matchingAmount,jdbcType=DECIMAL}, 
+      #{status,jdbcType=INTEGER}, #{corporate,jdbcType=VARCHAR}, #{founder,jdbcType=VARCHAR}, 
+      #{createAt,jdbcType=BIGINT}, #{modifier,jdbcType=VARCHAR}, #{updateAt,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ptteng.model.ObligatoryRight" >
+    insert into obligatory_right
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="company != null" >
+        company,
+      </if>
+      <if test="mobile != null" >
+        mobile,
+      </if>
+      <if test="idCard != null" >
+        id_card,
+      </if>
+      <if test="loanSum != null" >
+        loan_sum,
+      </if>
+      <if test="loanTerm != null" >
+        loan_term,
+      </if>
+      <if test="loanTime != null" >
+        loan_time,
+      </if>
+      <if test="repayTime != null" >
+        repay_time,
+      </if>
+      <if test="matchingAmount != null" >
+        matching_amount,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="corporate != null" >
+        corporate,
+      </if>
+      <if test="founder != null" >
+        founder,
+      </if>
+      <if test="createAt != null" >
+        create_at,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="updateAt != null" >
+        update_at,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="company != null" >
+        #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="loanSum != null" >
+        #{loanSum,jdbcType=DECIMAL},
+      </if>
+      <if test="loanTerm != null" >
+        #{loanTerm,jdbcType=BIGINT},
+      </if>
+      <if test="loanTime != null" >
+        #{loanTime,jdbcType=BIGINT},
+      </if>
+      <if test="repayTime != null" >
+        #{repayTime,jdbcType=BIGINT},
+      </if>
+      <if test="matchingAmount != null" >
+        #{matchingAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="corporate != null" >
+        #{corporate,jdbcType=VARCHAR},
+      </if>
+      <if test="founder != null" >
+        #{founder,jdbcType=VARCHAR},
+      </if>
+      <if test="createAt != null" >
+        #{createAt,jdbcType=BIGINT},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="updateAt != null" >
+        #{updateAt,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ptteng.model.ObligatoryRight" >
+    update obligatory_right
+    <set >
+      <if test="company != null" >
+        company = #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        id_card = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="loanSum != null" >
+        loan_sum = #{loanSum,jdbcType=DECIMAL},
+      </if>
+      <if test="loanTerm != null" >
+        loan_term = #{loanTerm,jdbcType=BIGINT},
+      </if>
+      <if test="loanTime != null" >
+        loan_time = #{loanTime,jdbcType=BIGINT},
+      </if>
+      <if test="repayTime != null" >
+        repay_time = #{repayTime,jdbcType=BIGINT},
+      </if>
+      <if test="matchingAmount != null" >
+        matching_amount = #{matchingAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="corporate != null" >
+        corporate = #{corporate,jdbcType=VARCHAR},
+      </if>
+      <if test="founder != null" >
+        founder = #{founder,jdbcType=VARCHAR},
+      </if>
+      <if test="createAt != null" >
+        create_at = #{createAt,jdbcType=BIGINT},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="updateAt != null" >
+        update_at = #{updateAt,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ptteng.model.ObligatoryRight" >
+    update obligatory_right
+    set company = #{company,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      loan_sum = #{loanSum,jdbcType=DECIMAL},
+      loan_term = #{loanTerm,jdbcType=BIGINT},
+      loan_time = #{loanTime,jdbcType=BIGINT},
+      repay_time = #{repayTime,jdbcType=BIGINT},
+      matching_amount = #{matchingAmount,jdbcType=DECIMAL},
+      status = #{status,jdbcType=INTEGER},
+      corporate = #{corporate,jdbcType=VARCHAR},
+      founder = #{founder,jdbcType=VARCHAR},
+      create_at = #{createAt,jdbcType=BIGINT},
+      modifier = #{modifier,jdbcType=VARCHAR},
+      update_at = #{updateAt,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="forSelect" resultMap="BaseResultMap" parameterType="Long">
+    select * from obligatory_right limit #{a},#{b}
+  </select>
+  <select id="selectCount" resultType="Long">
+    select count(1) from obligatory_right
+  </select>
+  <select id="select" resultMap="BaseResultMap" >
+    SELECT * FROM  obligatory_right
+    <where>
+      <if test="id != null">
+        id=#{id}
+      </if>
+      <if test="company != null">
+        AND company like #{company}
+      </if>
+      <if test="corporate != null ">
+        AND corporate like #{corporate}
+      </if>
+      <if test="status != null ">
+        AND status like #{status}
+      </if>
+    </where>
+    limit #{a},#{b}
+  </select>
+  <select id="selectCountWithCondition" resultType="Long" >
+    SELECT count(1) FROM  obligatory_right
+    <where>
+      <if test="id != null">
+        id=#{id}
+      </if>
+      <if test="company != null">
+        AND company like #{company}
+      </if>
+      <if test="corporate != null ">
+        AND corporate like #{corporate}
+      </if>
+      <if test="status != null ">
+        AND status like #{status}
+      </if>
+    </where>
+  </select>
+<update id="updateById">
+  update obligatory_right set matching_amount = #{matchingAmount}
+  where id=#{id}
+</update>
+
+</mapper>

@@ -1,0 +1,148 @@
+package com.ptteng.controller;
+
+import com.alibaba.fastjson.JSONObject;
+import com.ptteng.model.HistoryProduct;
+import com.ptteng.model.InvestmentContract;
+import com.ptteng.model.User;
+import com.ptteng.service.HistoryProductService;
+import com.ptteng.service.InvestmentContractService;
+import com.ptteng.service.UserService;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import javax.annotation.Resource;
+import java.util.List;
+
+
+@RefreshScope
+@Controller
+public class ManageUserController {
+    org.slf4j.Logger logger = LoggerFactory.getLogger(ManageUserController.class);
+    @Autowired
+    private JSONObject jsonObject;
+    @Resource
+    private UserService userService;
+    @Resource
+    private HistoryProductService historyProductService;
+    @Resource
+    private InvestmentContractService investmentContractService;
+    /**
+     *45后台登录
+     */
+    @RequestMapping(value ="/admin/a/u/usersmanage", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject usersManage(Long page,Long size){
+        logger.info("/admin/a/u/usersmanage---GET---the request parameters are page:{},size:{}",page,size);
+        List<User> users;
+        if(page!=null){
+            users=userService.forSelect((page-1)*size, size);
+        }else {
+            users=userService.forSelect(0L,size);
+        }
+        logger.info(users.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",users);
+        return jsonObject;
+    }
+    /**
+     *46模糊查询用户
+     */
+    @RequestMapping(value ="/admin/a/u/users", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getUsers(Long size,Long page,String trueName,String phone,Long id,Integer status){
+        logger.info("/admin/a/u/users---GET---the request parameters are size:{},page:{},trueName:{},phone:{},id:{},status:{}",size,page,trueName,phone,id,status);
+        List<User> users;
+        if(page!=null){
+            users=userService.select((page-1)*size, size,id,trueName,phone,status);
+        }else {
+            users=userService.select(0L,size,id,trueName,phone,status);
+        }
+        logger.info(users.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",users);
+        return jsonObject;
+    }
+    /**
+     *47冻结账户（点冻结status-0，解冻status-1—默认1）
+     *49更换手机
+     *50解绑银行卡1-2
+     */
+    @RequestMapping(value ="/admin/a/u/user/{id}", produces="application/json",method = RequestMethod.PUT)
+    @ResponseBody
+    public JSONObject freeze(int status,String phone,Long id,String bankCard1,String bankCard2,User user){
+        logger.info("/admin/a/u/user/{id}---PUT---the request parameters are status:{},phone:{},id:{},bankCard1:{},bankCard2:{},",status,phone,id,bankCard1,bankCard2);
+        int a=userService.updateByPrimaryKeySelective(user);
+        logger.info(""+a);
+        jsonObject.put("code",1000);
+        jsonObject.put("data","");
+        return jsonObject;
+    }
+    /**
+     *48查看指定用户详情（原型图中银行卡1、2都要显示）
+     */
+    @RequestMapping(value ="/admin/a/u/user/{id}", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getUser(@PathVariable Long id){
+        logger.info("/admin/a/u/user/{id}---GET---the request parameters are id:{},",id);
+        User user= userService.selectByPrimaryKey(id);
+        logger.info(user.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",user);
+        return jsonObject;
+    }
+    /**
+     *51后台查看个人交易记录
+     */
+    @RequestMapping(value ="/admin/a/u/user/record/{id}", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getRecord(String phone,Long size,Long page){
+        logger.info("/admin/a/u/user/record/{id}---GET---the request parameters are phone:{},size:{},page:{}",phone,size,page);
+        List<HistoryProduct> historyProducts;
+        if(page!=null){
+            historyProducts=historyProductService.selectByPhone(phone,(page-1)*size,size);
+        }else {
+            historyProducts=historyProductService.selectByPhone(phone,0L,size);
+        }
+        logger.info(historyProducts.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",historyProducts);
+        return jsonObject;
+    }
+    /**
+     *52后台查看个人投资合同
+     */
+    @RequestMapping(value ="/admin/a/u/user/contract", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject contractAll(String phone,Long size,Long page){
+        logger.info("/admin/a/u/user/contract---GET---the request parameters are phone:{},size:{},page:{}",phone,size,page);
+        List<InvestmentContract> investmentContracts;
+        if(page!=null){
+            investmentContracts=investmentContractService.selectByPhone(phone,(page-1)*size,size);
+        }else {
+            investmentContracts=investmentContractService.selectByPhone(phone,0L,size);
+        }
+        logger.info(investmentContracts.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",investmentContracts);
+        return jsonObject;
+    }
+    /**
+     *53后台查看个人投资合同详情
+     */
+    @RequestMapping(value ="/admin/a/u/user/contract/{id}", produces="application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject contract(@PathVariable Long id){
+        logger.info("/admin/a/u/user/contract/{id}---GET---the request parameters are id:{}",id);
+        InvestmentContract investmentContract=investmentContractService.selectByPrimaryKey(id);
+        logger.info(investmentContract.toString());
+        jsonObject.put("code",1000);
+        jsonObject.put("data",investmentContract);
+        return jsonObject;
+    }
+
+}

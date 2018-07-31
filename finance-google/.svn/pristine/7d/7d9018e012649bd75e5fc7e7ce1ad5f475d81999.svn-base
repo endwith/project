@@ -1,0 +1,51 @@
+package com.ptteng.service.impl;
+
+import com.ptteng.dao.HistoryProductMapper;
+import com.ptteng.model.HistoryProduct;
+import com.ptteng.service.HistoryProductService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
+@Service
+public class HistoryProductServiceImpl implements HistoryProductService {
+  @Resource
+  private HistoryProductMapper historyProduct;
+    @Override
+    public int deleteByPrimaryKey(Long id) {
+        return 0;
+    }
+
+    @Override
+    public int insert(HistoryProduct record) {
+        return this.historyProduct.insert(record);
+    }
+
+    @Override
+    public int insertSelective(HistoryProduct record) {
+        return 0;
+    }
+
+    @Override
+    public HistoryProduct selectByPrimaryKey(Long id) {
+        return null;
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(HistoryProduct record) {
+        return 0;
+    }
+
+    @Override
+    public int updateByPrimaryKey(HistoryProduct record) {
+        return 0;
+    }
+
+    @Override
+    public List<HistoryProduct> selectByPhone(String phone, Long a, Long b) {
+        return this.historyProduct.selectByPhone(phone,a,b);
+    }
+
+
+}
