@@ -1,5 +1,6 @@
 # project
 初学spring cloud 框架，许多知识点在这里记录下
+
 1>feign调用服务丢失session，feign无法将cookie返回个客户端，HttpServletRespose respose添加请求的内容不能通过feign返回给客户端
   ：丢失session参考博文https://blog.csdn.net/crystalqy/article/details/79083857，注意启动类中注入该配置文件，
   ：respose无法通过feign返回给客户端cookie，导致登录认证无法实现，这里可以直接将登录模块从业务逻辑模块抽出，直接nginx方向代理登录模块，不通过feign。
