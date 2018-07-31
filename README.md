@@ -39,91 +39,51 @@
 }
 
 4>zull上传文件：在application.yml文件添加如下
-zuul:
 
-  routes:
-  
-    uploadfile:
-    
-      path: /admin/**
-      
-      serviceId: server-feign-admin
+
+    zuul:
+     routes:
+      uploadfile:
+       path: /admin/**
+       serviceId: server-feign-admin
       
       
 在实际负载的服务server的application.yml添加如下
 
-spring.http.multipart.enabled= true
+    spring.http.multipart.enabled= true
 
-spring.http.multipart.max-file-size=10Mb
+    spring.http.multipart.max-file-size=10Mb
 
-spring.http.multipart.max-request-size=10Mb
+    spring.http.multipart.max-request-size=10Mb
 
-
-文件较大，上传时间长，在zuul配置文件添加 
-
- ribbon:
- 
- ReadTimeout: 120000
- 
- ConnectTimeout: 30000
- 
-feign:
-
-  hystrix:
-  
-    enabled: true
-    
-hystrix:
-
-  command:
-  
-    default:
-    
-      execution:
-      
-        isolation:
-      
-          thread:
-          
-            timeoutInMilliseconds: 60000
-            
             
  5>请求时间长，熔断器触发，实际服务器没有问题
  
  在zuul和feign配置文件application.yml添加如下
  
-  ribbon:
-  
- ReadTimeout: 120000
- 
- ConnectTimeout: 30000
- 
-feign:
+    ribbon:
+     ReadTimeout: 120000
+     ConnectTimeout: 30000
 
-  hystrix:
-  
-    enabled: true
+    feign:
+     hystrix:
+      enabled: true
     
-hystrix:
-
-  command:
-  
-    default:
+    hystrix:
+     command:
+      default:
     
-      execution:
-      
+       execution:
         isolation:
-        
           thread:
-          
             timeoutInMilliseconds: 60000
             
             
 6>服务server断开，eureka剔除该服务
 
-eureka:
+    eureka:
 
-  server:
+     server:
   
         enableSelfPreservation: false
         
@@ -132,13 +92,13 @@ eureka:
     
 7>服务server向eureka发起心跳
 
-#租期更新时间间隔（默认30秒）
+    #租期更新时间间隔（默认30秒）
 
-eureka.instance.lease-renewal-interval-in-seconds = 10
+    eureka.instance.lease-renewal-interval-in-seconds = 10
 
-#租期到期时间（默认90秒）
+    #租期到期时间（默认90秒）
 
-eureka.instance.lease-expiration-duration-in-seconds = 30
+    eureka.instance.lease-expiration-duration-in-seconds = 30
             
 
 8>部署服务器ip地址不是真实ip地址，无法从git上面fetch配置文件
