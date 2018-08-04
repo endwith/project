@@ -43,7 +43,7 @@
 
     zuul:
      routes:
-      uploadfile:
+      admin:
        path: /admin/**
        serviceId: server-feign-admin
       
