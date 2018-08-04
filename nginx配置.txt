@@ -61,7 +61,7 @@ location /admin {
         proxy_set_header        Host            $host;
 }
 location /a/b {
-        proxy_pass  http://118.126.113.248:20405;
+        proxy_pass  http://ipµÿ÷∑:20405;
 
         proxy_set_header        Host            $host;
 }
