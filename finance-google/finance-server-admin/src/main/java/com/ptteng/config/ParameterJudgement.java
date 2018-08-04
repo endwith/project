@@ -1,0 +1,18 @@
+package com.ptteng.config;
+
+
+import java.util.List;
+import java.util.Map;
+
+public class ParameterJudgement {
+    public static  int isNullOrBlank(List list){
+        int status = 1;
+        for(Object value: list){
+            String judgement = (String)value;
+            if(null==judgement||"".equals(judgement)){
+               return status=0;
+            }
+        }
+        return status=1;
+    }
+}

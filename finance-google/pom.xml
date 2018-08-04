@@ -15,10 +15,9 @@
         <module>finance-eureka-config</module>
         <module>finance-feign-admin</module>
         <module>finance-feign-client</module>
-        <module>finance-web-admin</module>
-        <module>finance-web-client</module>
         <module>finance-zuul</module>
         <module>finance-quartz</module>
+        <module>finance-pay</module>
     </modules>
     <packaging>pom</packaging>
 

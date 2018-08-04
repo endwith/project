@@ -32,7 +32,7 @@ server{
 
 1，location_polyfinance_google_home.conf文件
 location /client {
-        proxy_pass  http://118.126.113.248:20413;
+        proxy_pass  http://ip地址:20413;
 
         proxy_set_header        Host            $host;
 }
@@ -45,18 +45,18 @@ location /c/b {
 location / {
      root /data/svn/polyFinance-google-html/polyFinance-google-home-html/dist;
      index  index.html index2.htm;
-#     try_files $uri $uri/ /index.html =404;
+     try_files $uri $uri/ /index.html =404;
 }
 
 location /ajax/  {
         rewrite  /ajax/(.*)  /$1 break;
-        proxy_pass http://118.126.113.248:20413;
+        proxy_pass http://ip地址:20413;
         proxy_set_header        Host            $host;
 }
 
 2，location_polyfinance_google_admin.conf文件
 location /admin {
-        proxy_pass  http://118.126.113.248:20413;
+        proxy_pass  http://ip地址:20413;
 
         proxy_set_header        Host            $host;
 }
@@ -69,11 +69,11 @@ location /a/b {
 location / {
      root /data/svn/polyFinance-google-html/polyFinance-google-admin-html;
      index  index.html index2.htm;
-#     try_files $uri $uri/ /index.html =404;
+     try_files $uri $uri/ /index.html =404;
 }
 
 location /ajax/  {
         rewrite  /ajax/(.*)  /$1 break;
-        proxy_pass http://118.126.113.248:20413;
+        proxy_pass http://ip地址:20413;
         proxy_set_header        Host            $host;
 }
