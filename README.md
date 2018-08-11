@@ -103,4 +103,4 @@
 
 8>部署服务器ip地址不是真实ip地址，无法从git上面fetch配置文件
   
-  我的解决办法https://blog.csdn.net/as4566/article/details/81292333
+  我的解决办法https://blog.csdn.net/IIIidan_Stormrage/article/details/81453421
