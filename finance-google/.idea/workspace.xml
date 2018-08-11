@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/finance-server-client/src/test/com/ptteng/myTest.java" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="4f418310-dc21-4c61-8384-1132b33265bd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/finance-pay" beforeDir="true" afterPath="$PROJECT_DIR$/finance-pay" afterDir="true" />
-      <change beforePath="$PROJECT_DIR$/finance-pay/finance-pay.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/finance-pay/financepay.iml" beforeDir="false" />
-    </list>
+    <list default="true" readonly="true" id="4f418310-dc21-4c61-8384-1132b33265bd" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/finance-core/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/finance-zuul/target/" />
@@ -46,84 +45,80 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FinanceController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/finance-pay/src/main/java/com/fangyuyang/controller/FinanceController.java">
+      <file leaf-file-name="ManageUserService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/ManageUserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state relative-caret-position="297">
+              <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FinanceController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/controller/FinanceController.java">
+      <file leaf-file-name="ManageUserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ManageUserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="427" column="24" selection-start-line="427" selection-start-column="24" selection-end-line="427" selection-end-column="24" />
+            <state relative-caret-position="-3565">
+              <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="finance-pay.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/finance-pay/finance-pay.iml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="financepay.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/finance-pay/financepay.iml">
+      <file leaf-file-name="ManageUserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/ManageUserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+            <state relative-caret-position="368">
+              <caret line="54" column="37" lean-forward="true" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/finance-pay/src/main/webapp/WEB-INF/views/index.jsp">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/finance-feign-admin/pom.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="mvnw.cmd" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance-feign-admin/mvnw.cmd">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+            <state relative-caret-position="-219" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InformationService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/InformationService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JudgeHoliday.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/finance-quartz/src/main/java/com/ptteng/config/JudgeHoliday.java">
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance-feign-client/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-99">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="-207" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewOrderData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/pay/client/txn/NewOrderData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyJobFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/finance-quartz/src/main/java/com/ptteng/quartz/config/MyJobFactory.java">
+      <file leaf-file-name="DateUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/pay/client/util/DateUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpringUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/finance-quartz/src/main/java/com/ptteng/quartz/config/SpringUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MySchedulerListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/finance-quartz/src/main/java/com/ptteng/quartz/config/MySchedulerListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="92">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -164,12 +159,12 @@
       <find>selectCount</find>
       <find>16</find>
       <find>finances</find>
-      <find>selectByUserId</find>
       <find>getTrade</find>
       <find>limitMatchSelect</find>
       <find>54</find>
       <find>99</find>
       <find>10</find>
+      <find>selectByUserId</find>
     </findStrings>
     <replaceStrings>
       <replace>/</replace>
@@ -178,27 +173,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/finance-server-admin/src/main/resources/mapper/ObligatoryRightMapper.xml" />
-        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/RoleController.java" />
-        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/RoleService.java" />
-        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/impl/RoleServiceHystric.java" />
-        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/UserService.java" />
-        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/impl/UserServiceHystric.java" />
-        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/finance-feign-admin/pom.xml" />
-        <option value="$PROJECT_DIR$/finance-server-admin/pom.xml" />
-        <option value="$PROJECT_DIR$/finance-feign-client/src/main/java/com/ptteng/controller/FinanceController.java" />
-        <option value="$PROJECT_DIR$/finance-eureka/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/finance-eureka-config/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/userHandler/UserRoleHandler.java" />
-        <option value="$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/shiro/ShiroConfig.java" />
-        <option value="$PROJECT_DIR$/finance-server-client/src/main/resources/bootstrap.properties" />
-        <option value="$PROJECT_DIR$/finance-server-client/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/finance-config-server/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/config/FeignClientsConfigurationCustom.java" />
-        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/userHandler/UserRoleHandler.java" />
-        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/ProductRecommendService.java" />
-        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/impl/ProductRecommendServiceHystric.java" />
         <option value="$PROJECT_DIR$/finance-server-admin/src/main/resources/bootstrap.properties" />
         <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/ModuleManageController.java" />
         <option value="$PROJECT_DIR$/finance-feign-client/src/main/java/com/ptteng/controller/UserOperationController.java" />
@@ -211,24 +185,45 @@
         <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/service/UserService.java" />
         <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/finance-zuul/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/finance-server-admin/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/config/ParameterJudgement.java" />
         <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ManageUserController.java" />
         <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/RoleController.java" />
-        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/BackstageAccountController.java" />
-        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ModuleManageController.java" />
-        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ProductController.java" />
         <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ProductRecommendController.java" />
         <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/SuggestionController.java" />
-        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/InformationController.java" />
-        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ObligatoryRightController.java" />
         <option value="$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/config/ParameterJudgement.java" />
-        <option value="$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/controller/UserMessageController.java" />
-        <option value="$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/controller/UserOperationController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/finance-pay/pom.xml" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/main/resources/mapper/SuggestionMapper.xml" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ProductController.java" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/resources/mapper/ProductMapper.xml" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/dao/ProductMapper.java" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/service/ProductService.java" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/service/impl/ProductServiceImpl.java" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/resources/mapper/ProductRecommendMapper.xml" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/InformationController.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/model/BackstageAccount.java" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/ObligatoryRightController.java" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/dao/InformationManageMapper.java" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/dao/MessageRelationshipMapper.java" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/service/impl/InformationManageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/service/impl/MessageRelationshipServiceImpl.java" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/service/InformationManageService.java" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/service/MessageRelationshipService.java" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/main/resources/mapper/MessageRelationshipMapper.xml" />
+        <option value="$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/ManageUserController.java" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/userHandler/UserRoleHandler.java" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/controller/UserMessageController.java" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ModuleManageController.java" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/resources/mapper/SuggestionMapper.xml" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/BackstageAccountController.java" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ObligatoryRightController.java" />
+        <option value="$PROJECT_DIR$/finance-feign-client/src/main/java/com/ptteng/service/FinanceOneService.java" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/test/com/ptteng/myTest.java" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/controller/UserOperationController.java" />
+        <option value="$PROJECT_DIR$/finance-server-client/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/controller/FinanceController.java" />
+        <option value="$PROJECT_DIR$/finance-server-admin/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -271,10 +266,13 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="477" />
-    <option name="y" value="56" />
-    <option name="width" value="1293" />
-    <option name="height" value="1019" />
+    <option name="x" value="143" />
+    <option name="y" value="128" />
+    <option name="width" value="1446" />
+    <option name="height" value="847" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -283,8 +281,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -292,11 +288,355 @@
               <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
               <item name="finance-google" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-feign-admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-feign-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-feign-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-feign-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-feign-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-feign-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ptteng" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-feign-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ptteng" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-feign-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ptteng" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-feign-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ptteng" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-feign-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ptteng" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ptteng" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ptteng" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ptteng" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ptteng" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ptteng" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ptteng" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ptteng" type="462c0819:PsiDirectoryNode" />
+              <item name="pay" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ptteng" type="462c0819:PsiDirectoryNode" />
+              <item name="pay" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ptteng" type="462c0819:PsiDirectoryNode" />
+              <item name="pay" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="txn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ptteng" type="462c0819:PsiDirectoryNode" />
+              <item name="pay" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ptteng" type="462c0819:PsiDirectoryNode" />
+              <item name="userHandler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ptteng" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finance-google" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finance-google" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-server-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ptteng" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -334,7 +674,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/finance-pay/src/main/webapp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../task4" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -371,194 +711,6 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.ptteng.quartz" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\.mvn</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\.mvn\wrapper</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\.mvn\wrapper\maven-wrapper.jar</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\.mvn\wrapper\maven-wrapper.properties</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\.gitignore</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\mvnw</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\src</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\src\main</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\src\main\java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\src\main\java\com</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\src\main\java\com\ptteng</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\src\main\java\com\ptteng\FinanceWebClientApplication.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\src\main\java\com\ptteng\controller</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\src\main\java\com\ptteng\controller\UserOperationController.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\src\main\java\com\ptteng\controller\FinanceController.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\src\main\java\com\ptteng\controller\UserMessageController.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\src\main\java\com\ptteng\controller\Product.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\src\main\resources</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\src\main\resources\application.yml</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\src\main\resources\static</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\src\main\resources\templates</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\mvnw.cmd</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-client\pom.xml</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\.gitignore</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\mvnw</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\FinanceWebAdminApplication.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\model</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\model\Module.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\model\Suggestion.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\model\InvestmentContract.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\model\Match.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\model\ModuleManage.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\model\InformationManage.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\model\Trade.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\model\BackstageAccount.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\model\HistoryProduct.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\model\SonModule.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\model\MessageRelationship.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\model\ObligatoryRight.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\model\RoleManage.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\model\ProductRecommend.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\model\User.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\model\FatherModule.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\model\Product.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\controller</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\controller\ProductController.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\controller\BackstageAccountController.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\controller\RoleController.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\controller\InformationController.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\controller\ManageUserController.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\controller\SuggestionController.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\controller\ObligatoryRightController.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\controller\ProductRecommendController.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\controller\ModuleManageController.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\controller\UserController.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\dao</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\java\com\ptteng\dao\ModuleMapper.java</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\resources</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\resources\static</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\resources\templates</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\resources\application.yml</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\resources\mapper</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\resources\mapper\ModuleMapper.xml</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\src\main\resources\code.properties</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\mvnw.cmd</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\pom.xml</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\.mvn</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\.mvn\wrapper</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\.mvn\wrapper\maven-wrapper.jar</PATH>
-          <PATH vcs="svn" revision="24386">G:\ideaproject\finance-google\finance-web-admin\.mvn\wrapper\maven-wrapper.properties</PATH>
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -622,20 +774,13 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="ProductServiceTest.updateByPrimaryKeySelective" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="finance-server-admin" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ptteng.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.ptteng.service" />
-      <option name="MAIN_CLASS_NAME" value="com.ptteng.service.ProductServiceTest" />
-      <option name="METHOD_NAME" value="updateByPrimaryKeySelective" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -645,13 +790,20 @@
       </option>
       <patterns />
     </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
+    <configuration name="myTest.sssssss" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="finance-server-client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ptteng.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.ptteng" />
+      <option name="MAIN_CLASS_NAME" value="com.ptteng.myTest" />
+      <option name="METHOD_NAME" value="sssssss" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -786,18 +938,18 @@
       <item itemvalue="Spring Boot.FinanceWebClientApplication" />
       <item itemvalue="Spring Boot.FinanceEurekaConfigApplication" />
       <item itemvalue="JUnit.myTest.ttt" />
-      <item itemvalue="JUnit.ProductServiceTest.updateByPrimaryKeySelective" />
       <item itemvalue="JUnit.myTest.ttts" />
       <item itemvalue="JUnit.MyTest.tswswet" />
       <item itemvalue="JUnit.MyTest.sss" />
+      <item itemvalue="JUnit.myTest.sssssss" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.myTest.sssssss" />
+        <item itemvalue="JUnit.myTest.ttts" />
         <item itemvalue="JUnit.MyTest.tswswet" />
         <item itemvalue="JUnit.MyTest.sss" />
-        <item itemvalue="JUnit.myTest.ttts" />
         <item itemvalue="JUnit.myTest.ttt" />
-        <item itemvalue="JUnit.ProductServiceTest.updateByPrimaryKeySelective" />
       </list>
     </recent_temporary>
   </component>
@@ -837,6 +989,10 @@
           <option name="myCopyRoot" value="G:\ideaproject\finance-google\finance-feign-client" />
         </SvnCopyRootSimple>
         <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="G:\ideaproject\finance-google\finance-pay" />
+          <option name="myCopyRoot" value="G:\ideaproject\finance-google\finance-pay" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
           <option name="myVcsRoot" value="G:\ideaproject\finance-google\finance-quartz" />
           <option name="myCopyRoot" value="G:\ideaproject\finance-google\finance-quartz" />
         </SvnCopyRootSimple>
@@ -847,14 +1003,6 @@
         <SvnCopyRootSimple>
           <option name="myVcsRoot" value="G:\ideaproject\finance-google\finance-server-client" />
           <option name="myCopyRoot" value="G:\ideaproject\finance-google\finance-server-client" />
-        </SvnCopyRootSimple>
-        <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="G:\ideaproject\finance-google\finance-web-admin" />
-          <option name="myCopyRoot" value="G:\ideaproject\finance-google\finance-web-admin" />
-        </SvnCopyRootSimple>
-        <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="G:\ideaproject\finance-google\finance-web-client" />
-          <option name="myCopyRoot" value="G:\ideaproject\finance-google\finance-web-client" />
         </SvnCopyRootSimple>
         <SvnCopyRootSimple>
           <option name="myVcsRoot" value="G:\ideaproject\finance-google\finance-zuul" />
@@ -931,245 +1079,19 @@
       <workItem from="1533281357590" duration="320000" />
       <workItem from="1533290968841" duration="821000" />
       <workItem from="1533345746163" duration="5208000" />
-      <workItem from="1533363598368" duration="1465000" />
-    </task>
-    <task id="LOCAL-00128">
-      <created>1532677561691</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1532677561691</updated>
-    </task>
-    <task id="LOCAL-00129">
-      <created>1532678261794</created>
-      <option name="number" value="00129" />
-      <option name="presentableId" value="LOCAL-00129" />
-      <option name="project" value="LOCAL" />
-      <updated>1532678261794</updated>
-    </task>
-    <task id="LOCAL-00130">
-      <created>1532679174393</created>
-      <option name="number" value="00130" />
-      <option name="presentableId" value="LOCAL-00130" />
-      <option name="project" value="LOCAL" />
-      <updated>1532679174393</updated>
-    </task>
-    <task id="LOCAL-00131">
-      <created>1532694938772</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1532694938772</updated>
-    </task>
-    <task id="LOCAL-00132">
-      <created>1532700900256</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1532700900257</updated>
-    </task>
-    <task id="LOCAL-00133">
-      <created>1532741986774</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1532741986775</updated>
-    </task>
-    <task id="LOCAL-00134">
-      <created>1532760935914</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1532760935914</updated>
-    </task>
-    <task id="LOCAL-00135">
-      <created>1532763724107</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1532763724107</updated>
-    </task>
-    <task id="LOCAL-00136">
-      <created>1532830734952</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1532830734953</updated>
-    </task>
-    <task id="LOCAL-00137">
-      <created>1532832042797</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1532832042797</updated>
-    </task>
-    <task id="LOCAL-00138">
-      <created>1532843485421</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1532843485422</updated>
-    </task>
-    <task id="LOCAL-00139">
-      <created>1532848283437</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1532848283437</updated>
-    </task>
-    <task id="LOCAL-00140">
-      <created>1532855508151</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1532855508151</updated>
-    </task>
-    <task id="LOCAL-00141">
-      <created>1532856867804</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1532856867805</updated>
-    </task>
-    <task id="LOCAL-00142">
-      <created>1532914079559</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1532914079560</updated>
-    </task>
-    <task id="LOCAL-00143">
-      <created>1532915216025</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1532915216025</updated>
-    </task>
-    <task id="LOCAL-00144">
-      <created>1532915827361</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
-      <option name="project" value="LOCAL" />
-      <updated>1532915827361</updated>
-    </task>
-    <task id="LOCAL-00145">
-      <created>1532915854430</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
-      <option name="project" value="LOCAL" />
-      <updated>1532915854430</updated>
-    </task>
-    <task id="LOCAL-00146">
-      <created>1532915930565</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1532915930566</updated>
-    </task>
-    <task id="LOCAL-00147">
-      <created>1532917152545</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1532917152545</updated>
-    </task>
-    <task id="LOCAL-00148">
-      <created>1532917843904</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1532917843904</updated>
-    </task>
-    <task id="LOCAL-00149">
-      <created>1532917894008</created>
-      <option name="number" value="00149" />
-      <option name="presentableId" value="LOCAL-00149" />
-      <option name="project" value="LOCAL" />
-      <updated>1532917894008</updated>
-    </task>
-    <task id="LOCAL-00150">
-      <created>1532931867648</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1532931867648</updated>
-    </task>
-    <task id="LOCAL-00151">
-      <created>1532948143400</created>
-      <option name="number" value="00151" />
-      <option name="presentableId" value="LOCAL-00151" />
-      <option name="project" value="LOCAL" />
-      <updated>1532948143400</updated>
-    </task>
-    <task id="LOCAL-00152">
-      <created>1532948581687</created>
-      <option name="number" value="00152" />
-      <option name="presentableId" value="LOCAL-00152" />
-      <option name="project" value="LOCAL" />
-      <updated>1532948581687</updated>
-    </task>
-    <task id="LOCAL-00153">
-      <created>1532951481673</created>
-      <option name="number" value="00153" />
-      <option name="presentableId" value="LOCAL-00153" />
-      <option name="project" value="LOCAL" />
-      <updated>1532951481673</updated>
-    </task>
-    <task id="LOCAL-00154">
-      <created>1532953763185</created>
-      <option name="number" value="00154" />
-      <option name="presentableId" value="LOCAL-00154" />
-      <option name="project" value="LOCAL" />
-      <updated>1532953763185</updated>
-    </task>
-    <task id="LOCAL-00155">
-      <created>1532953788799</created>
-      <option name="number" value="00155" />
-      <option name="presentableId" value="LOCAL-00155" />
-      <option name="project" value="LOCAL" />
-      <updated>1532953788799</updated>
-    </task>
-    <task id="LOCAL-00156">
-      <created>1533000433387</created>
-      <option name="number" value="00156" />
-      <option name="presentableId" value="LOCAL-00156" />
-      <option name="project" value="LOCAL" />
-      <updated>1533000433388</updated>
-    </task>
-    <task id="LOCAL-00157">
-      <created>1533001124347</created>
-      <option name="number" value="00157" />
-      <option name="presentableId" value="LOCAL-00157" />
-      <option name="project" value="LOCAL" />
-      <updated>1533001124347</updated>
-    </task>
-    <task id="LOCAL-00158">
-      <created>1533007142532</created>
-      <option name="number" value="00158" />
-      <option name="presentableId" value="LOCAL-00158" />
-      <option name="project" value="LOCAL" />
-      <updated>1533007142532</updated>
-    </task>
-    <task id="LOCAL-00159">
-      <created>1533036833494</created>
-      <option name="number" value="00159" />
-      <option name="presentableId" value="LOCAL-00159" />
-      <option name="project" value="LOCAL" />
-      <updated>1533036833495</updated>
-    </task>
-    <task id="LOCAL-00160">
-      <created>1533091589996</created>
-      <option name="number" value="00160" />
-      <option name="presentableId" value="LOCAL-00160" />
-      <option name="project" value="LOCAL" />
-      <updated>1533091589997</updated>
-    </task>
-    <task id="LOCAL-00161">
-      <created>1533104235908</created>
-      <option name="number" value="00161" />
-      <option name="presentableId" value="LOCAL-00161" />
-      <option name="project" value="LOCAL" />
-      <updated>1533104235908</updated>
+      <workItem from="1533363598368" duration="3065000" />
+      <workItem from="1533367985620" duration="6177000" />
+      <workItem from="1533388786428" duration="866000" />
+      <workItem from="1533450146098" duration="2551000" />
+      <workItem from="1533454264550" duration="6030000" />
+      <workItem from="1533469694108" duration="1346000" />
+      <workItem from="1533550536827" duration="1210000" />
+      <workItem from="1533558266151" duration="2615000" />
+      <workItem from="1533604620785" duration="4134000" />
+      <workItem from="1533626133441" duration="2595000" />
+      <workItem from="1533722388961" duration="3425000" />
+      <workItem from="1533797013255" duration="16532000" />
+      <workItem from="1533864015604" duration="6344000" />
     </task>
     <task id="LOCAL-00162">
       <created>1533105859152</created>
@@ -1276,43 +1198,281 @@
       <option name="project" value="LOCAL" />
       <updated>1533364687290</updated>
     </task>
-    <option name="localTasksCounter" value="177" />
+    <task id="LOCAL-00177">
+      <created>1533368241058</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1533368241059</updated>
+    </task>
+    <task id="LOCAL-00178">
+      <created>1533381950135</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
+      <option name="project" value="LOCAL" />
+      <updated>1533381950135</updated>
+    </task>
+    <task id="LOCAL-00179">
+      <created>1533382286217</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
+      <option name="project" value="LOCAL" />
+      <updated>1533382286217</updated>
+    </task>
+    <task id="LOCAL-00180">
+      <created>1533382353832</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1533382353832</updated>
+    </task>
+    <task id="LOCAL-00181">
+      <created>1533382941087</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1533382941087</updated>
+    </task>
+    <task id="LOCAL-00182">
+      <created>1533383233300</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1533383233300</updated>
+    </task>
+    <task id="LOCAL-00183">
+      <created>1533384788942</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1533384788942</updated>
+    </task>
+    <task id="LOCAL-00184">
+      <created>1533387171410</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1533387171410</updated>
+    </task>
+    <task id="LOCAL-00185">
+      <created>1533451796890</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1533451796891</updated>
+    </task>
+    <task id="LOCAL-00186">
+      <created>1533455393638</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1533455393639</updated>
+    </task>
+    <task id="LOCAL-00187">
+      <created>1533456495653</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1533456495653</updated>
+    </task>
+    <task id="LOCAL-00188">
+      <created>1533725186306</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1533725186307</updated>
+    </task>
+    <task id="LOCAL-00189">
+      <created>1533797657046</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1533797657046</updated>
+    </task>
+    <task id="LOCAL-00190">
+      <created>1533798487459</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1533798487460</updated>
+    </task>
+    <task id="LOCAL-00191">
+      <created>1533799616562</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1533799616562</updated>
+    </task>
+    <task id="LOCAL-00192">
+      <created>1533802329854</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1533802329854</updated>
+    </task>
+    <task id="LOCAL-00193">
+      <created>1533803293298</created>
+      <option name="number" value="00193" />
+      <option name="presentableId" value="LOCAL-00193" />
+      <option name="project" value="LOCAL" />
+      <updated>1533803293298</updated>
+    </task>
+    <task id="LOCAL-00194">
+      <created>1533804055610</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
+      <option name="project" value="LOCAL" />
+      <updated>1533804055610</updated>
+    </task>
+    <task id="LOCAL-00195">
+      <created>1533804461245</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
+      <option name="project" value="LOCAL" />
+      <updated>1533804461245</updated>
+    </task>
+    <task id="LOCAL-00196">
+      <created>1533804647639</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1533804647639</updated>
+    </task>
+    <task id="LOCAL-00197">
+      <created>1533813997915</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1533813997915</updated>
+    </task>
+    <task id="LOCAL-00198">
+      <created>1533814345771</created>
+      <option name="number" value="00198" />
+      <option name="presentableId" value="LOCAL-00198" />
+      <option name="project" value="LOCAL" />
+      <updated>1533814345771</updated>
+    </task>
+    <task id="LOCAL-00199">
+      <created>1533815159418</created>
+      <option name="number" value="00199" />
+      <option name="presentableId" value="LOCAL-00199" />
+      <option name="project" value="LOCAL" />
+      <updated>1533815159418</updated>
+    </task>
+    <task id="LOCAL-00200">
+      <created>1533815392464</created>
+      <option name="number" value="00200" />
+      <option name="presentableId" value="LOCAL-00200" />
+      <option name="project" value="LOCAL" />
+      <updated>1533815392464</updated>
+    </task>
+    <task id="LOCAL-00201">
+      <created>1533815937996</created>
+      <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
+      <option name="project" value="LOCAL" />
+      <updated>1533815937996</updated>
+    </task>
+    <task id="LOCAL-00202">
+      <created>1533816166714</created>
+      <option name="number" value="00202" />
+      <option name="presentableId" value="LOCAL-00202" />
+      <option name="project" value="LOCAL" />
+      <updated>1533816166714</updated>
+    </task>
+    <task id="LOCAL-00203">
+      <created>1533816546615</created>
+      <option name="number" value="00203" />
+      <option name="presentableId" value="LOCAL-00203" />
+      <option name="project" value="LOCAL" />
+      <updated>1533816546615</updated>
+    </task>
+    <task id="LOCAL-00204">
+      <created>1533816934785</created>
+      <option name="number" value="00204" />
+      <option name="presentableId" value="LOCAL-00204" />
+      <option name="project" value="LOCAL" />
+      <updated>1533816934786</updated>
+    </task>
+    <task id="LOCAL-00205">
+      <created>1533818176127</created>
+      <option name="number" value="00205" />
+      <option name="presentableId" value="LOCAL-00205" />
+      <option name="project" value="LOCAL" />
+      <updated>1533818176127</updated>
+    </task>
+    <task id="LOCAL-00206">
+      <created>1533818666507</created>
+      <option name="number" value="00206" />
+      <option name="presentableId" value="LOCAL-00206" />
+      <option name="project" value="LOCAL" />
+      <updated>1533818666507</updated>
+    </task>
+    <task id="LOCAL-00207">
+      <created>1533818680998</created>
+      <option name="number" value="00207" />
+      <option name="presentableId" value="LOCAL-00207" />
+      <option name="project" value="LOCAL" />
+      <updated>1533818680998</updated>
+    </task>
+    <task id="LOCAL-00208">
+      <created>1533818845463</created>
+      <option name="number" value="00208" />
+      <option name="presentableId" value="LOCAL-00208" />
+      <option name="project" value="LOCAL" />
+      <updated>1533818845463</updated>
+    </task>
+    <task id="LOCAL-00209">
+      <created>1533819044473</created>
+      <option name="number" value="00209" />
+      <option name="presentableId" value="LOCAL-00209" />
+      <option name="project" value="LOCAL" />
+      <updated>1533819044473</updated>
+    </task>
+    <task id="LOCAL-00210">
+      <created>1533819758121</created>
+      <option name="number" value="00210" />
+      <option name="presentableId" value="LOCAL-00210" />
+      <option name="project" value="LOCAL" />
+      <updated>1533819758121</updated>
+    </task>
+    <option name="localTasksCounter" value="211" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MyTest_sss - 2018.07.25 at 12h 51m 17s.xml">
-      <configuration name="MyTest.sss" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyTest_tswswet - 2018.07.25 at 21h 37m 37s.xml">
-      <configuration name="MyTest.tswswet" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyTest_tswswet - 2018.07.25 at 21h 38m 38s.xml">
-      <configuration name="MyTest.tswswet" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyTest_tswswet - 2018.07.25 at 21h 46m 23s.xml">
-      <configuration name="MyTest.tswswet" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyTest_tswswet - 2018.07.25 at 21h 50m 06s.xml">
-      <configuration name="MyTest.tswswet" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyTest_tswswet - 2018.07.25 at 21h 51m 29s.xml">
-      <configuration name="MyTest.tswswet" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyTest_tswswet - 2018.07.25 at 21h 54m 31s.xml">
-      <configuration name="MyTest.tswswet" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyTest_tswswet - 2018.07.25 at 21h 57m 29s.xml">
-      <configuration name="MyTest.tswswet" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyTest_tswswet - 2018.07.26 at 16h 20m 59s.xml">
-      <configuration name="MyTest.tswswet" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MyTest_tswswet - 2018.07.26 at 16h 21m 05s.xml">
       <configuration name="MyTest.tswswet" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="myTest_ttts - 2018.08.05 at 16h 36m 19s.xml">
+      <configuration name="myTest.ttts" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="myTest_ttts - 2018.08.05 at 16h 37m 29s.xml">
+      <configuration name="myTest.ttts" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="myTest_ttts - 2018.08.05 at 16h 42m 23s.xml">
+      <configuration name="myTest.ttts" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="myTest_ttts - 2018.08.05 at 16h 43m 17s.xml">
+      <configuration name="myTest.ttts" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="myTest_ttts - 2018.08.05 at 16h 46m 22s.xml">
+      <configuration name="myTest.ttts" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="myTest_ttts - 2018.08.08 at 18h 21m 40s.xml">
+      <configuration name="myTest.ttts" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="myTest_sssssss - 2018.08.09 at 20h 41m 21s.xml">
+      <configuration name="myTest.sssssss" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="myTest_sssssss - 2018.08.09 at 20h 42m 17s.xml">
+      <configuration name="myTest.sssssss" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="myTest_sssssss - 2018.08.09 at 20h 43m 21s.xml">
+      <configuration name="myTest.sssssss" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="476510000" />
+    <option name="totallyTimeSpent" value="531935000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1340,12 +1500,13 @@
       <window_info id="UI Designer" order="5" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32997763" />
+      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.499354" weight="0.37583894" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="4" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32997763" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.33668903" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978678" weight="0.6163311" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978678" weight="0.19574945" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32997763" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32997763" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49392712" visible="true" weight="0.195629" />
@@ -1354,7 +1515,6 @@
       <window_info id="JRebel" order="3" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="6" sideWeight="0.5060729" side_tool="true" weight="0.17697228" />
-      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.499354" weight="0.37583894" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -1362,43 +1522,6 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info id="JRebel" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Spring" order="7" weight="0.32997763" />
-      <window_info id="Image Layers" order="4" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" visible="true" weight="0.1409396" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.5060729" side_tool="true" weight="0.17697228" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32997763" />
-      <window_info id="Capture Tool" order="8" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.50159913" side_tool="true" weight="0.42393735" />
-      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.499354" weight="0.37583894" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32997763" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Java Enterprise" order="10" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.19322033" />
-      <window_info anchor="right" id="Maven Projects" order="9" weight="0.32142857" />
-      <window_info anchor="bottom" id="JRebel Executor" order="12" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49392712" weight="0.13486141" />
-      <window_info anchor="bottom" id="JRebel Console" order="13" side_tool="true" />
-      <window_info anchor="right" id="Database" order="5" weight="0.2707889" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info id="Structure" order="1" sideWeight="0.50086653" side_tool="true" weight="0.26545843" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Bean Validation" order="8" weight="0.32995737" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1419,80 +1542,157 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="65" column="74" selection-start-line="65" selection-start-column="74" selection-end-line="65" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/resources/mapper/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6141">
-          <caret line="267" column="28" selection-start-line="267" selection-start-column="28" selection-end-line="267" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-zuul/src/main/java/com/ptteng/FinanceZuulApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-zuul/src/main/java/com/ptteng/accessFilter/AccessFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-feign-client/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/config/FeignHystrixConcurrencyStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/config/FeignClientsConfigurationCustom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/RoleController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/SuggestionController.java">
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ProductRecommendController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-client/src/main/java/com/ptteng/service/FinanceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-527">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-client/src/main/java/com/ptteng/controller/UserMessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/ProductRecommendController.java">
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/FinanceServerClientApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="161">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/ObligatoryRightController.java">
+    <entry file="file://$PROJECT_DIR$/finance-feign-client/src/main/java/com/ptteng/controller/FinanceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2583">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-client/src/main/java/com/ptteng/service/impl/FinanceOneServiceHystric.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1249">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-client/src/main/java/com/ptteng/controller/UserOperationController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-client/src/main/java/com/ptteng/service/UserOperationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-client/src/main/java/com/ptteng/service/UserMessageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-client/src/main/java/com/ptteng/service/FinanceOneService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="82" column="20" lean-forward="true" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/config/RedisConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="66" column="24" lean-forward="true" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/config/ParameterJudgement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/1.7.2.RELEASE/spring-data-redis-1.7.2.RELEASE.jar!/org/springframework/data/redis/core/RedisTemplate.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17871">
+          <caret line="777" column="12" selection-start-line="777" selection-start-column="12" selection-end-line="777" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/userHandler/UserRoleHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1081">
+          <caret line="61" column="59" selection-start-line="61" selection-start-column="59" selection-end-line="61" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/test/com/ptteng/myTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2231">
+          <caret line="120" column="16" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/controller/UserOperationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3243">
+          <caret line="172" column="28" selection-start-line="172" selection-start-column="28" selection-end-line="172" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/controller/UserMessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5865">
+          <caret line="278" column="117" selection-start-line="278" selection-start-column="117" selection-end-line="278" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/util/ElTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/controller/FinanceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23966">
+          <caret line="1079" column="9" selection-start-line="1079" selection-start-column="9" selection-end-line="1079" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/impl/BackstageAccountServiceHystric.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-368">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/InformationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1503,6 +1703,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/config/FeignClientsConfigurationCustom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-115">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/config/UploadOOS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1099">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/config/RedisConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/config/ParameterJudgement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/config/MyWebAppConfigurer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/config/CustomMVCConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ModuleManageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="166" column="21" selection-start-line="166" selection-start-column="21" selection-end-line="166" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/FinanceFeignAdminApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -1510,38 +1759,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/ModuleManageController.java">
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/ManageUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-netflix-core/1.3.1.RELEASE/spring-cloud-netflix-core-1.3.1.RELEASE.jar!/org/springframework/cloud/netflix/zuul/filters/ZuulProperties.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2875">
-          <caret line="189" column="20" selection-start-line="189" selection-start-column="20" selection-end-line="189" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-zuul/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        <state relative-caret-position="207">
+          <caret line="9" column="52" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -1552,207 +1773,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/config/ParameterJudgement.java">
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/ProductRecommendService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        <state relative-caret-position="212">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/impl/ManageUserServiceHystric.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-322">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/BackstageAccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/RoleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/ObligatoryRightService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/ModuleManageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1334">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        <state relative-caret-position="207">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ProductController.java">
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/util/FuiouUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1635">
-          <caret line="209" column="14" selection-start-line="209" selection-start-column="14" selection-end-line="209" selection-end-column="14" />
+        <state relative-caret-position="115">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ProductRecommendController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/RoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4004">
-          <caret line="316" column="46" selection-start-line="316" selection-start-column="46" selection-end-line="316" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/SuggestionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1612">
-          <caret line="135" column="9" selection-start-line="135" selection-start-column="9" selection-end-line="135" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="51" column="27" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/BackstageAccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7590">
-          <caret line="353" column="38" selection-start-line="353" selection-start-column="38" selection-end-line="353" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/InformationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3703">
-          <caret line="184" column="38" selection-start-line="184" selection-start-column="38" selection-end-line="184" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ModuleManageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2852">
-          <caret line="143" column="9" selection-start-line="143" selection-start-column="9" selection-end-line="143" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ObligatoryRightController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8349">
-          <caret line="386" column="31" selection-start-line="386" selection-start-column="31" selection-end-line="386" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ManageUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6026">
-          <caret line="282" column="9" selection-start-line="274" selection-start-column="7" selection-end-line="282" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/controller/UserMessageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10971">
-          <caret line="499" column="19" selection-start-line="499" selection-start-column="19" selection-end-line="499" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/controller/UserOperationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17618">
-          <caret line="797" selection-start-line="797" selection-end-line="797" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-pay/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-pay/src/main/webapp/WEB-INF/views/error.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-pay/src/main/webapp/WEB-INF/views/send_dirpay.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-pay/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="164" column="11" selection-start-line="164" selection-start-column="11" selection-end-line="164" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-pay/src/main/java/com/fangyuyang/pay/client/util/DateUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-pay/src/main/java/com/fangyuyang/pay/client/util/MD5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-pay/src/main/java/com/fangyuyang/pay/client/util/StringUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-pay/src/main/java/com/fangyuyang/pay/client/txn/NewOrderData.java">
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/pay/client/txn/NewOrderData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/controller/FinanceController.java">
+    <entry file="file://$PROJECT_DIR$/finance-server-client/src/main/java/com/ptteng/pay/client/util/DateUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="427" column="24" selection-start-line="427" selection-start-column="24" selection-end-line="427" selection-end-column="24" />
+        <state relative-caret-position="92">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finance-pay/financepay.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-pay/src/main/webapp/WEB-INF/views/index.jsp">
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/finance-quartz/src/main/java/com/ptteng/config/JudgeHoliday.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-99">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-quartz/src/main/java/com/ptteng/quartz/config/MyJobFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-quartz/src/main/java/com/ptteng/quartz/config/MySchedulerListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-quartz/src/main/java/com/ptteng/quartz/config/SpringUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finance-pay/finance-pay.iml">
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/mvnw.cmd">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/finance-pay/src/main/java/com/fangyuyang/controller/FinanceController.java">
+    <entry file="file://$PROJECT_DIR$/finance-feign-client/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="-207" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-219" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/InformationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/controller/ManageUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="54" column="37" lean-forward="true" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-server-admin/src/main/java/com/ptteng/controller/ManageUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3565">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-feign-admin/src/main/java/com/ptteng/service/ManageUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
         </state>
       </provider>
     </entry>

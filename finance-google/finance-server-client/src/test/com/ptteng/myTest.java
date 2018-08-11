@@ -10,11 +10,14 @@ import com.ptteng.util.FuiouUtil;
 import com.ptteng.util.Token;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 //
@@ -29,6 +32,8 @@ public class myTest {
     private InformationManageService informationManageService;
     @Resource
     private HistoryProductService historyProductService;
+    @Autowired
+    private RedisTemplate redisTemplate;
     @Test
     public void tsettt(){
        informationManageService.selectInforByRead(1L,1L);
@@ -92,9 +97,28 @@ FuiouUtil fuiouUtil=new FuiouUtil();
     @Test
     public void ttts() throws Exception {
         List<Object> informations;
-        List<Long> s =messageRelationshipService.selectByUserId(33L);
+        List<Long> s =messageRelationshipService.selectByUserId(46L);
+        System.out.println("s"+s);
+//        for (Object ss : s) {
+////            System.out.println("ssssssssssssssss"+ss);
+////        }
+        Iterator iterator = s.iterator();
+        while (iterator.hasNext()) {
+            Map next = (Map)iterator.next();
+            System.out.println("infoId: "+next.get("inforId"));
+        }
         System.out.println("*****"+s.toString());
         informations=informationManageService.selectInforByReadList(s,5L);
         System.out.println("*****"+informations.toString());
     }
+
+
+@Test
+public void sssssss(){
+    String str="googleSmsCode"+String.valueOf(3) + 12343444;
+    redisTemplate.opsForValue().set(str, 123345);
+    System.out.println("1111111111111111111111");
+    String code=String.valueOf(redisTemplate.opsForValue().get(str));
+    System.out.println(code);
+}
 }
